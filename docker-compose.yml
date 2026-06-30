@@ -1,0 +1,9 @@
+services:
+  martin-portfolio:
+    build: .
+    container_name: martin-portfolio
+    restart: unless-stopped
+    environment:
+      - TZ=Europe/Oslo
+    ports:
+      - "3030:80"

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martin Davidsen — Software & AI Engineer</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="description" content="Martin Davidsen — Software & AI engineer based in Stavanger, Norway. I build and ship full-stack software, LLM-driven systems, and industrial automation — from subsea control systems to self-hosted AI platforms.">
+    <meta property="og:title" content="Martin Davidsen — Software & AI Engineer">
+    <meta property="og:description" content="Software & AI engineer based in Stavanger, Norway. Full-stack software, LLM-driven systems, and industrial automation.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="styles.css?v=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-monogram">MD</span>
+                <span class="logo-text">Martin Davidsen</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#about" data-en="About" data-no="Om meg">About</a>
+                <a href="#focus" data-en="What I Do" data-no="Hva jeg gjør">What I Do</a>
+                <a href="#work" data-en="Work" data-no="Prosjekter">Work</a>
+                <a href="#experience" data-en="Experience" data-no="Erfaring">Experience</a>
+                <a href="#skills" data-en="Skills" data-no="Ferdigheter">Skills</a>
+                <a href="#contact" data-en="Contact" data-no="Kontakt">Contact</a>
+                <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+                    <span class="lang-flag">EN</span>
+                    <span class="lang-divider">|</span>
+                    <span class="lang-flag">NO</span>
+                </button>
+            </div>
+            <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-content">
+            <div class="hero-badge" data-en="Stavanger, Norway" data-no="Stavanger, Norge">Stavanger, Norway</div>
+            <h1 class="hero-name">Martin Davidsen</h1>
+            <p class="hero-role"><span class="hero-highlight" data-en="Software &amp; AI Engineer" data-no="Programvare- &amp; AI-ingeniør">Software &amp; AI Engineer</span></p>
+            <p class="hero-sub" data-en="Eight years building and operating software for critical systems — from subsea control software on the Norwegian shelf to LLM-driven applications running in production." data-no="Åtte år med å bygge og drifte programvare for kritiske systemer — fra subsea-styringsprogramvare på norsk sokkel til LLM-drevne applikasjoner i produksjon.">Eight years building and operating software for critical systems — from subsea control software on the Norwegian shelf to LLM-driven applications running in production.</p>
+            <div class="hero-actions">
+                <a href="#work" class="btn btn-primary" data-en="See My Work" data-no="Se prosjektene mine">See My Work</a>
+                <a href="#contact" class="btn btn-outline" data-en="Get in Touch" data-no="Ta kontakt">Get in Touch</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-num">8+</span>
+                    <span class="stat-label" data-en="Years Engineering" data-no="Års erfaring">Years Engineering</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num">15+</span>
+                    <span class="stat-label" data-en="Services Self-Hosted" data-no="Selvhostede tjenester">Services Self-Hosted</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num">100%</span>
+                    <span class="stat-label" data-en="Hands-On Delivery" data-no="Praktisk leveranse">Hands-On Delivery</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="scroll-indicator"></div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <div class="container">
+            <div class="section-label" data-en="About Me" data-no="Om meg">About Me</div>
+            <div class="about-grid about-grid-photo">
+                <div class="about-portrait">
+                    <img class="about-photo" src="images/martin.jpg" srcset="images/martin.jpg 1x, images/martin@2x.jpg 2x" alt="Martin Davidsen" width="200" height="200">
+                    <div class="about-meta">
+                        <div class="about-name">Martin Davidsen</div>
+                        <div class="about-role" data-en="Software &amp; AI Engineer" data-no="Programvare- &amp; AI-ingeniør">Software &amp; AI Engineer</div>
+                        <div class="about-location" data-en="Stavanger, Rogaland — Norway" data-no="Stavanger, Rogaland — Norge">Stavanger, Rogaland — Norway</div>
+                        <div class="about-links">
+                            <a href="https://linkedin.com/in/martin-davidsen-51425a111" target="_blank" rel="noopener">LinkedIn</a>
+                            <a href="https://github.com/Defcons" target="_blank" rel="noopener">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h2 data-en="Engineer at the meeting point of hardware, software, and AI" data-no="Ingeniør i skjæringspunktet mellom hardware, software og AI">Engineer at the meeting point of hardware, software, and AI</h2>
+                    <p data-en="I started out in the physical world — a Bachelor's in Maritime Electrical Automation, certified electrician credentials, and years of hands-on offshore commissioning. That background taught me how real systems fail and what it takes to make them reliable when the stakes are high." data-no="Jeg startet i den fysiske verdenen — en bachelor i maritim elektroautomasjon, sertifisert elektrikerkompetanse og flere år med praktisk offshore-igangkjøring. Den bakgrunnen lærte meg hvordan ekte systemer feiler, og hva som skal til for å gjøre dem pålitelige når innsatsen er høy.">I started out in the physical world — a Bachelor's in Maritime Electrical Automation, certified electrician credentials, and years of hands-on offshore commissioning. That background taught me how real systems fail and what it takes to make them reliable when the stakes are high.</p>
+                    <p data-en="From there I moved up the stack — into the software that runs underwater production equipment, offshore platforms, and critical infrastructure. Today my focus is full-stack software and AI engineering: I design, build, and operate LLM-driven systems and web applications, and I use AI tooling as a core part of how I ship." data-no="Derfra beveget jeg meg oppover i stacken — inn i programvaren som driver undervannsproduksjonsutstyr, offshoreplattformer og kritisk infrastruktur. I dag er fokuset mitt full-stack programvare og AI-utvikling: jeg designer, bygger og drifter LLM-drevne systemer og webapplikasjoner, og jeg bruker AI-verktøy som en kjernedel av måten jeg leverer på.">From there I moved up the stack — into the software that runs underwater production equipment, offshore platforms, and critical infrastructure. Today my focus is full-stack software and AI engineering: I design, build, and operate LLM-driven systems and web applications, and I use AI tooling as a core part of how I ship.</p>
+                    <p class="about-bridge" data-en="The combination — industrial discipline paired with modern, AI-augmented software engineering — is what I bring to a team." data-no="Kombinasjonen — industriell disiplin sammen med moderne, AI-forsterket programvareutvikling — er det jeg tar med meg inn i et team.">The combination — industrial discipline paired with modern, AI-augmented software engineering — is what I bring to a team.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What I Do -->
+    <section id="focus">
+        <div class="container">
+            <div class="section-label" data-en="What I Do" data-no="Hva jeg gjør">What I Do</div>
+            <h2 class="section-title" data-en="Four things I'm good at" data-no="Fire ting jeg er god på">Four things I'm good at</h2>
+            <div class="services-grid focus-grid">
+                <div class="service-card">
+                    <div class="service-num">01</div>
+                    <h3 data-en="Full-Stack Software" data-no="Full-stack programvare">Full-Stack Software</h3>
+                    <p data-en="End-to-end web applications — back-end services, data pipelines, APIs, and clean front-ends. I build the whole thing and I run it in production, not just to a demo." data-no="Web-applikasjoner fra ende til ende — backend-tjenester, datapipelines, API-er og rene frontends. Jeg bygger hele greia og drifter den i produksjon, ikke bare til en demo.">End-to-end web applications — back-end services, data pipelines, APIs, and clean front-ends. I build the whole thing and I run it in production, not just to a demo.</p>
+                    <div class="service-tags">
+                        <span>Go</span><span>Python</span><span>Node.js</span><span>React</span>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-num">02</div>
+                    <h3 data-en="AI Engineering" data-no="AI-utvikling">AI Engineering</h3>
+                    <p data-en="LLM-driven systems built and operated for real use — agents, automation pipelines, and AI-augmented tooling. I use Claude Code daily as a core part of how I design and ship software." data-no="LLM-drevne systemer bygget og driftet for ekte bruk — agenter, automasjonspipelines og AI-forsterket verktøy. Jeg bruker Claude Code daglig som en kjernedel av måten jeg designer og leverer programvare på.">LLM-driven systems built and operated for real use — agents, automation pipelines, and AI-augmented tooling. I use Claude Code daily as a core part of how I design and ship software.</p>
+                    <div class="service-tags">
+                        <span>LLMs</span><span>Claude Code</span><span>Agents</span><span>RAG</span>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-num">03</div>
+                    <h3 data-en="Industrial Automation" data-no="Industriell automasjon">Industrial Automation</h3>
+                    <p data-en="Control software for critical systems — PLC programming, operator screens (HMI/SCADA), and the communication that ties field equipment to the systems above it. Proven on live oil &amp; gas and infrastructure projects." data-no="Styringsprogramvare for kritiske systemer — PLS-programmering, operatørskjermer (HMI/SCADA), og kommunikasjonen som binder feltutstyr til systemene over. Bevist på aktive olje- &amp; gass- og infrastrukturprosjekter.">Control software for critical systems — PLC programming, operator screens (HMI/SCADA), and the communication that ties field equipment to the systems above it. Proven on live oil &amp; gas and infrastructure projects.</p>
+                    <div class="service-tags">
+                        <span>Siemens S7</span><span>TIA Portal</span><span>WinCC</span><span>OPC UA</span>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-num">04</div>
+                    <h3 data-en="Infrastructure &amp; DevOps" data-no="Infrastruktur &amp; DevOps">Infrastructure &amp; DevOps</h3>
+                    <p data-en="I run my own production-grade homelab — containers, reverse proxies, CI/CD, monitoring, and layered security with rehearsed backups. The same operational discipline I apply to client systems, applied to my own." data-no="Jeg drifter min egen hjemmelab i produksjonskvalitet — containere, reverse proxy-er, CI/CD, overvåking og lagdelt sikkerhet med øvde backuper. Samme driftsdisiplin som jeg bruker på klientsystemer, brukt på mine egne.">I run my own production-grade homelab — containers, reverse proxies, CI/CD, monitoring, and layered security with rehearsed backups. The same operational discipline I apply to client systems, applied to my own.</p>
+                    <div class="service-tags">
+                        <span>Docker</span><span>Proxmox</span><span>Linux</span><span>CI/CD</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work / Things I've built -->
+    <section id="work">
+        <div class="container">
+            <div class="section-label" data-en="Selected Work" data-no="Utvalgt arbeid">Selected Work</div>
+            <h2 class="section-title" data-en="Things I've built and run myself" data-no="Ting jeg har bygget og driftet selv">Things I've built and run myself</h2>
+            <p class="section-lead" data-en="A selection of software and AI systems I've built end-to-end on my own infrastructure. Real users, real traffic, real consequences when something breaks. Each one focuses on the engineering — the architecture and the operational discipline — rather than the specific domain it serves." data-no="Et utvalg programvare- og AI-systemer jeg har bygget fra A til Å på egen infrastruktur. Ekte brukere, ekte trafikk, ekte konsekvenser når noe ryker. Hver enkelt fokuserer på ingeniørarbeidet — arkitekturen og driftsdisiplinen — fremfor det spesifikke domenet det betjener.">A selection of software and AI systems I've built end-to-end on my own infrastructure. Real users, real traffic, real consequences when something breaks. Each one focuses on the engineering — the architecture and the operational discipline — rather than the specific domain it serves.</p>
+            <div class="ai-grid">
+                <div class="ai-card">
+                    <div class="ai-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
+                    </div>
+                    <h3 data-en="Multi-Tenant Analytics Platform" data-no="Analyseplattform med flere leietakere">Multi-Tenant Analytics Platform</h3>
+                    <p data-en="A public analytics platform with a server-side parsing pipeline (worker-thread architecture for high-throughput ingestion), normalised relational storage, and a modern web front-end. Runs across four isolated containers — dev + prod per tenant — behind a shared reverse proxy. Built and operated single-handedly." data-no="En offentlig analyseplattform med en server-side parser-pipeline (worker-thread-arkitektur for høyt ingest-volum), normalisert relasjonell lagring, og en moderne web-frontend. Kjører på tvers av fire isolerte containere — dev + prod per leietaker — bak en delt reverse proxy. Bygget og driftet alene.">A public analytics platform with a server-side parsing pipeline (worker-thread architecture for high-throughput ingestion), normalised relational storage, and a modern web front-end. Runs across four isolated containers — dev + prod per tenant — behind a shared reverse proxy. Built and operated single-handedly.</p>
+                    <div class="service-tags">
+                        <span>Node.js</span><span>SQLite</span><span>Workers</span><span>Docker</span>
+                    </div>
+                </div>
+                <div class="ai-card">
+                    <div class="ai-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg>
+                    </div>
+                    <h3 data-en="Go Computational Simulator" data-no="Beregningsbasert simulator i Go">Go Computational Simulator</h3>
+                    <p data-en="A computational simulator written in Go with a browser-based UI and a continuous evaluation harness that compares simulator output against real observed data — surfacing discrepancies explicitly rather than papering over them. Multi-class architecture with a shared widget system across simulators." data-no="En beregningsbasert simulator skrevet i Go med et nettleserbasert grensesnitt og en kontinuerlig evalueringsharness som sammenligner simulator-output mot reelt observert data — synliggjør avvik eksplisitt fremfor å skjule dem. Multi-klasse-arkitektur med et delt widget-system på tvers av simulatorer.">A computational simulator written in Go with a browser-based UI and a continuous evaluation harness that compares simulator output against real observed data — surfacing discrepancies explicitly rather than papering over them. Multi-class architecture with a shared widget system across simulators.</p>
+                    <div class="service-tags">
+                        <span>Go</span><span>WebUI</span><span>Eval harness</span>
+                    </div>
+                </div>
+                <div class="ai-card">
+                    <div class="ai-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-0.5 8-5 8-10V6l-8-4z"/></svg>
+                    </div>
+                    <h3 data-en="Self-Hosted File Platform" data-no="Selvhostet filplattform">Self-Hosted File Platform</h3>
+                    <p data-en="A self-hosted file-management platform (Go + React) built around a deliberate security model from day one — access control, audit logging, encrypted backups, and regularly rehearsed recovery. Designed so that &ldquo;self-hosted&rdquo; is safer than the cloud alternative, not an excuse to be sloppier." data-no="En selvhostet filhåndteringsplattform (Go + React) bygget rundt en bevisst sikkerhetsmodell fra dag én — tilgangskontroll, audit-logging, krypterte backuper, og regelmessig øvd gjenoppretting. Designet slik at «selvhostet» er tryggere enn skyalternativet, ikke en unnskyldning til å være slurvete.">A self-hosted file-management platform (Go + React) built around a deliberate security model from day one — access control, audit logging, encrypted backups, and regularly rehearsed recovery. Designed so that &ldquo;self-hosted&rdquo; is safer than the cloud alternative, not an excuse to be sloppier.</p>
+                    <div class="service-tags">
+                        <span>Go</span><span>React</span><span>Security</span>
+                    </div>
+                </div>
+                <div class="ai-card">
+                    <div class="ai-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14M5 17l2-6h10l2 6M5 17v3h3v-3M16 17v3h3v-3"/><circle cx="8" cy="14" r="1"/><circle cx="16" cy="14" r="1"/></svg>
+                    </div>
+                    <h3 data-en="Vehicle Telemetry Automation" data-no="Automatisering av kjøretøytelemetri">Vehicle Telemetry Automation</h3>
+                    <p data-en="An automation pipeline that pulls live vehicle telemetry into a structured database, then runs scheduled jobs that feed mileage and timesheet entries to downstream business systems. Replaces a recurring monthly manual task entirely — small in scope, real in time saved." data-no="En automatiseringspipeline som henter sanntidstelemetri fra kjøretøy inn i en strukturert database, deretter kjører planlagte jobber som mater kilometer- og timeoppføringer til nedstrøms forretningssystemer. Erstatter en gjentakende manuell månedlig oppgave fullstendig — lite i omfang, ekte i spart tid.">An automation pipeline that pulls live vehicle telemetry into a structured database, then runs scheduled jobs that feed mileage and timesheet entries to downstream business systems. Replaces a recurring monthly manual task entirely — small in scope, real in time saved.</p>
+                    <div class="service-tags">
+                        <span>Python</span><span>APIs</span><span>Cron</span>
+                    </div>
+                </div>
+                <div class="ai-card">
+                    <div class="ai-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><circle cx="7" cy="7" r="0.5" fill="currentColor"/><circle cx="7" cy="17" r="0.5" fill="currentColor"/></svg>
+                    </div>
+                    <h3 data-en="Production-Grade Homelab" data-no="Hjemmelab i produksjonskvalitet">Production-Grade Homelab</h3>
+                    <p data-en="A multi-server environment grown over two years into a small private cloud — 15+ services across web apps, automation, monitoring, and home systems. Standardised deployment pipeline, layered defence-in-depth security, three-tier backups with rehearsed recovery, and a living architecture reference kept like a runbook." data-no="Et multi-server-miljø utviklet over to år til en liten privat sky — 15+ tjenester på tvers av webapper, automatisering, overvåking og hjemmesystemer. Standardisert utrullingspipeline, lagdelt defence-in-depth-sikkerhet, tre-lags backup med øvd gjenoppretting, og en levende arkitekturreferanse holdt som en runbook.">A multi-server environment grown over two years into a small private cloud — 15+ services across web apps, automation, monitoring, and home systems. Standardised deployment pipeline, layered defence-in-depth security, three-tier backups with rehearsed recovery, and a living architecture reference kept like a runbook.</p>
+                    <div class="service-tags">
+                        <span>Proxmox</span><span>Docker</span><span>CI/CD</span><span>Restic</span>
+                    </div>
+                </div>
+                <div class="ai-card">
+                    <div class="ai-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </div>
+                    <h3 data-en="3D Survival Game" data-no="3D-overlevelsesspill">3D Survival Game</h3>
+                    <p data-en="A top-down 3D survival game built in TypeScript on Three.js with an entity-component-system architecture — chunked world streaming, a deterministic simulation core, hundreds of unit tests, and an automated play-testing harness that drives the real game over a debug protocol." data-no="Et top-down 3D-overlevelsesspill bygget i TypeScript på Three.js med en entity-component-system-arkitektur — chunket verden-streaming, en deterministisk simuleringskjerne, hundrevis av enhetstester, og en automatisert spilltest-harness som styrer det ekte spillet over en debug-protokoll.">A top-down 3D survival game built in TypeScript on Three.js with an entity-component-system architecture — chunked world streaming, a deterministic simulation core, hundreds of unit tests, and an automated play-testing harness that drives the real game over a debug protocol.</p>
+                    <div class="service-tags">
+                        <span>TypeScript</span><span>Three.js</span><span>ECS</span><span>Vite</span>
+                    </div>
+                </div>
+            </div>
+            <p class="ai-repo-note">
+                <span data-en="Most repositories are private, but I'm happy to do a code walkthrough or live demo for a serious conversation — just" data-no="De fleste kodebasene er private, men jeg gjør gjerne en kodegjennomgang eller live-demo for en seriøs samtale — bare">Most repositories are private, but I'm happy to do a code walkthrough or live demo for a serious conversation — just</span>
+                <a href="#contact" data-en="get in touch" data-no="ta kontakt">get in touch</a><span>.</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-label" data-en="Experience" data-no="Erfaring">Experience</div>
+            <h2 class="section-title" data-en="Where I've delivered" data-no="Hvor jeg har levert">Where I've delivered</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-head">
+                            <h3 data-en="Software Lead — Subsea Control Systems" data-no="Software Lead — Subsea kontrollsystemer">Software Lead — Subsea Control Systems</h3>
+                            <span class="timeline-org">Siemens Energy</span>
+                        </div>
+                        <p data-en="Software lead for complete subsea control systems on the Symra and Hanz tie-ins (Ivar Aasen). Built the software managing communication between the platform and underwater equipment, operator screens, simulation tools, and integration of valves, flow meters, and hydraulic systems — delivered through factory testing, on-site startup, and into production." data-no="Software lead for komplette subsea-kontrollsystemer på Symra- og Hanz-tilkoblingene (Ivar Aasen). Bygget programvaren som styrer kommunikasjonen mellom plattformen og undervannsutstyret, operatørskjermer, simuleringsverktøy og integrasjon av ventiler, strømningsmålere og hydrauliske systemer — levert gjennom fabrikktesting, igangkjøring på stedet, og inn i produksjon.">Software lead for complete subsea control systems on the Symra and Hanz tie-ins (Ivar Aasen). Built the software managing communication between the platform and underwater equipment, operator screens, simulation tools, and integration of valves, flow meters, and hydraulic systems — delivered through factory testing, on-site startup, and into production.</p>
+                        <div class="service-tags">
+                            <span>Siemens S7</span><span>MDIS</span><span>OPC UA</span><span>Subsea</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-head">
+                            <h3 data-en="Automation &amp; Software Engineer — Critical Infrastructure" data-no="Automasjons- &amp; programvareingeniør — Kritisk infrastruktur">Automation &amp; Software Engineer — Critical Infrastructure</h3>
+                            <span class="timeline-org">OneCo</span>
+                        </div>
+                        <p data-en="Control software and operator screens for critical infrastructure — a backup water-supply system for Norway's capital, and smart building automation (intelligent lighting and building management) for one of Norway's largest hospital construction projects, Nye SUS in Stavanger." data-no="Styringsprogramvare og operatørskjermer for kritisk infrastruktur — et reservevannforsyningssystem for Norges hovedstad, og smart bygningsautomasjon (intelligent lysstyring og bygningsforvaltning) for et av Norges største sykehusbyggeprosjekter, Nye SUS i Stavanger.">Control software and operator screens for critical infrastructure — a backup water-supply system for Norway's capital, and smart building automation (intelligent lighting and building management) for one of Norway's largest hospital construction projects, Nye SUS in Stavanger.</p>
+                        <div class="service-tags">
+                            <span>TIA Portal</span><span>SCL</span><span>HMI/SCADA</span><span>Building Automation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-head">
+                            <h3 data-en="Automation Engineer — Platform Digitalization" data-no="Automasjonsingeniør — Plattformdigitalisering">Automation Engineer — Platform Digitalization</h3>
+                            <span class="timeline-org">Siemens</span>
+                        </div>
+                        <p data-en="Modernizing and digitizing control systems on the Valhall offshore platform — upgrading monitoring software and producing safety documentation to Norwegian industry standards." data-no="Modernisering og digitalisering av kontrollsystemer på Valhall offshoreplattform — oppgradering av overvåkingsprogramvare og produksjon av sikkerhetsdokumentasjon etter norske bransjestandarder.">Modernizing and digitizing control systems on the Valhall offshore platform — upgrading monitoring software and producing safety documentation to Norwegian industry standards.</p>
+                        <div class="service-tags">
+                            <span>PCS7</span><span>Offshore</span><span>Documentation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-head">
+                            <h3 data-en="Foundation — Electrical Automation &amp; Offshore Commissioning" data-no="Grunnlag — Elektroautomasjon &amp; offshore-igangkjøring">Foundation — Electrical Automation &amp; Offshore Commissioning</h3>
+                            <span class="timeline-org" data-en="Earlier career" data-no="Tidlig karriere">Earlier career</span>
+                        </div>
+                        <p data-en="Bachelor's in Maritime Electrical Automation and certified electrician credentials, followed by hands-on offshore commissioning and startup work. This is where I learned how real, high-stakes systems behave — knowledge I still draw on when building software today." data-no="Bachelor i maritim elektroautomasjon og sertifisert elektrikerkompetanse, etterfulgt av praktisk offshore-igangkjøring og oppstartsarbeid. Det var her jeg lærte hvordan ekte systemer med høy innsats oppfører seg — kunnskap jeg fortsatt bruker når jeg bygger programvare i dag.">Bachelor's in Maritime Electrical Automation and certified electrician credentials, followed by hands-on offshore commissioning and startup work. This is where I learned how real, high-stakes systems behave — knowledge I still draw on when building software today.</p>
+                        <div class="service-tags">
+                            <span>Electrician</span><span>Commissioning</span><span>FAT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Companies worked with -->
+            <div class="clients-section">
+                <h3 class="clients-title" data-en="Companies I've worked with" data-no="Selskaper jeg har jobbet med">Companies I've worked with</h3>
+                <div class="clients-grid">
+                    <div class="client-item"><img src="images/siemens.png" alt="Siemens" class="client-logo"></div>
+                    <div class="client-item"><img src="images/siemens-energy.svg" alt="Siemens Energy" class="client-logo"></div>
+                    <div class="client-item"><img src="images/oneco.svg" alt="OneCo" class="client-logo"></div>
+                    <div class="client-item"><img src="images/rhenac.png" alt="Rhenac" class="client-logo"></div>
+                    <div class="client-item"><img src="images/turfpal.png" alt="Turfpal" class="client-logo"></div>
+                    <div class="client-item"><img src="images/powerpal.png" alt="Powerpal" class="client-logo"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-label" data-en="Toolbox" data-no="Verktøykasse">Toolbox</div>
+            <h2 class="section-title" data-en="What I build with" data-no="Hva jeg bygger med">What I build with</h2>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h3 data-en="Languages" data-no="Språk">Languages</h3>
+                    <div class="service-tags">
+                        <span>Go</span><span>Python</span><span>JavaScript</span><span>TypeScript</span><span>Lua</span><span>SCL</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3 data-en="Web &amp; Backend" data-no="Web &amp; backend">Web &amp; Backend</h3>
+                    <div class="service-tags">
+                        <span>Node.js</span><span>React</span><span>Vite</span><span>REST APIs</span><span>SQLite</span><span>Three.js</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3 data-en="AI &amp; LLMs" data-no="AI &amp; LLM-er">AI &amp; LLMs</h3>
+                    <div class="service-tags">
+                        <span>Claude Code</span><span>LLM systems</span><span>Agents</span><span>RAG</span><span>Prompt engineering</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3 data-en="Infrastructure" data-no="Infrastruktur">Infrastructure</h3>
+                    <div class="service-tags">
+                        <span>Docker</span><span>Proxmox</span><span>Linux</span><span>Nginx</span><span>CI/CD</span><span>Tailscale</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3 data-en="Industrial &amp; Automation" data-no="Industri &amp; automasjon">Industrial &amp; Automation</h3>
+                    <div class="service-tags">
+                        <span>Siemens S7</span><span>TIA Portal</span><span>WinCC</span><span>PCS7</span><span>OPC UA</span><span>Modbus</span><span>MQTT</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3 data-en="Ways of Working" data-no="Arbeidsmåte">Ways of Working</h3>
+                    <div class="service-tags">
+                        <span>AI-augmented dev</span><span>Test-driven</span><span>Git</span><span>Self-hosting</span><span>DevOps</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="section-label" data-en="Get in Touch" data-no="Ta kontakt">Get in Touch</div>
+                    <h2 data-en="Let's talk" data-no="La oss prate">Let's talk</h2>
+                    <p data-en="I'm open to interesting roles and conversations — software engineering, AI engineering, or anything at the intersection of software and the physical world. Drop me a line and I'll get back to you." data-no="Jeg er åpen for interessante stillinger og samtaler — programvareutvikling, AI-utvikling, eller hva som helst i skjæringspunktet mellom programvare og den fysiske verden. Send meg en melding, så svarer jeg deg.">I'm open to interesting roles and conversations — software engineering, AI engineering, or anything at the intersection of software and the physical world. Drop me a line and I'll get back to you.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <div>
+                                <span class="contact-label">Email</span>
+                                <a id="cc-email" href="#">Email</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                            <div>
+                                <span class="contact-label">LinkedIn</span>
+                                <a href="https://linkedin.com/in/martin-davidsen-51425a111" target="_blank" rel="noopener">Martin Davidsen</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            <div>
+                                <span class="contact-label">GitHub</span>
+                                <a href="https://github.com/Defcons" target="_blank" rel="noopener">@Defcons</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <div>
+                                <span class="contact-label" data-en="Location" data-no="Sted">Location</span>
+                                <span>Stavanger, Norway</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrap">
+                    <form id="contactForm" onsubmit="return false;">
+                        <div class="form-group">
+                            <label for="name" data-en="Name" data-no="Navn">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-en="Email" data-no="E-post">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-en="Message" data-no="Melding">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full" data-en="Send Message" data-no="Send melding">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-bottom footer-single">
+                <p>&copy; 2026 Martin Davidsen. <span data-en="Built and shipped with Claude Code." data-no="Bygget og levert med Claude Code.">Built and shipped with Claude Code.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js?v=1"></script>
+</body>
+</html>
