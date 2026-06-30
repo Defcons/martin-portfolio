@@ -6,4 +6,4 @@ services:
     environment:
       - TZ=Europe/Oslo
     ports:
-      - "3030:80"
+      - "3040:80"
