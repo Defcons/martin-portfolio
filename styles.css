@@ -820,12 +820,13 @@ section { padding: 120px 0; }
     max-width: 100px;
     width: auto;
     object-fit: contain;
-    filter: grayscale(100%) opacity(0.55);
+    /* Uniform dark silhouettes so light/white logos stay visible on the light bg */
+    filter: brightness(0) opacity(0.5);
     transition: filter var(--transition);
 }
 
 .client-item:hover .client-logo {
-    filter: grayscale(0) opacity(1);
+    filter: brightness(0) opacity(0.85);
 }
 
 /* ---- AI Section ---- */
