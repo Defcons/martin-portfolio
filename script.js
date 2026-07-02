@@ -58,7 +58,7 @@
     // ---- Scroll Animations ----
     function initScrollAnimations() {
         const elements = document.querySelectorAll(
-            '.service-card, .ai-card, .timeline-item, .skill-group, .client-item, .about-text, .contact-info, .contact-form-wrap'
+            '.service-card, .ai-card, .timeline-item, .skill-group, .beyond-card, .client-item, .about-text, .contact-info, .contact-form-wrap'
         );
 
         elements.forEach(el => el.classList.add('fade-in'));
