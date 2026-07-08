@@ -9,7 +9,7 @@
     <meta property="og:title" content="Martin Davidsen — Software & AI Engineer">
     <meta property="og:description" content="Software & AI engineer based in Stavanger, Norway. Full-stack software, LLM-driven systems, and industrial automation.">
     <meta property="og:type" content="website">
-    <link rel="stylesheet" href="styles.css?v=3">
+    <link rel="stylesheet" href="styles.css?v=4">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -151,7 +151,9 @@
             <h2 class="section-title" data-en="Things I've built and run myself" data-no="Ting jeg har bygget og driftet selv">Things I've built and run myself</h2>
             <p class="section-lead" data-en="A selection of software and AI systems I've built end-to-end on my own infrastructure. Real users, real traffic, real consequences when something breaks. Each one focuses on the engineering — the architecture and the operational discipline — rather than the specific domain it serves." data-no="Et utvalg programvare- og AI-systemer jeg har bygget fra A til Å på egen infrastruktur. Ekte brukere, ekte trafikk, ekte konsekvenser når noe ryker. Hver enkelt fokuserer på ingeniørarbeidet — arkitekturen og driftsdisiplinen — fremfor det spesifikke domenet det betjener.">A selection of software and AI systems I've built end-to-end on my own infrastructure. Real users, real traffic, real consequences when something breaks. Each one focuses on the engineering — the architecture and the operational discipline — rather than the specific domain it serves.</p>
             <div class="ai-grid">
-                <div class="ai-card">
+                <div class="ai-card ai-card--modal" role="button" tabindex="0"
+                     data-shot="images/epoglogs.jpg?v=1" data-shot2="images/epoglogs-2.jpg?v=1" data-link="https://epoglogs.com" data-link-label="epoglogs.com">
+                    <span class="ai-badge ai-badge--live" data-en="Live" data-no="Live">Live</span>
                     <div class="ai-card-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
                     </div>
@@ -160,8 +162,11 @@
                     <div class="service-tags">
                         <span>Node.js</span><span>SQLite</span><span>Workers</span><span>Docker</span>
                     </div>
+                <span class="ai-card-cta"><span data-en="View details" data-no="Se detaljer">View details</span> →</span>
                 </div>
-                <div class="ai-card">
+                <div class="ai-card ai-card--modal" role="button" tabindex="0"
+                     data-shot="images/sim.jpg?v=1" data-link="https://sim.epoglogs.com" data-link-label="sim.epoglogs.com">
+                    <span class="ai-badge ai-badge--live" data-en="Live" data-no="Live">Live</span>
                     <div class="ai-card-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg>
                     </div>
@@ -170,8 +175,11 @@
                     <div class="service-tags">
                         <span>Go</span><span>WebUI</span><span>Eval harness</span>
                     </div>
+                <span class="ai-card-cta"><span data-en="View details" data-no="Se detaljer">View details</span> →</span>
                 </div>
-                <div class="ai-card">
+                <div class="ai-card ai-card--modal" role="button" tabindex="0"
+                     data-shot="images/clouddrive.jpg?v=1" data-private="1">
+                    <span class="ai-badge" data-en="Private" data-no="Privat">Private</span>
                     <div class="ai-card-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-0.5 8-5 8-10V6l-8-4z"/></svg>
                     </div>
@@ -180,8 +188,11 @@
                     <div class="service-tags">
                         <span>Go</span><span>React</span><span>Security</span>
                     </div>
+                <span class="ai-card-cta"><span data-en="View details" data-no="Se detaljer">View details</span> →</span>
                 </div>
-                <div class="ai-card">
+                <div class="ai-card ai-card--modal" role="button" tabindex="0"
+                     data-shot="images/vehicle.jpg?v=1" data-private="1">
+                    <span class="ai-badge" data-en="Private" data-no="Privat">Private</span>
                     <div class="ai-card-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14M5 17l2-6h10l2 6M5 17v3h3v-3M16 17v3h3v-3"/><circle cx="8" cy="14" r="1"/><circle cx="16" cy="14" r="1"/></svg>
                     </div>
@@ -190,26 +201,62 @@
                     <div class="service-tags">
                         <span>Python</span><span>APIs</span><span>Cron</span>
                     </div>
+                <span class="ai-card-cta"><span data-en="View details" data-no="Se detaljer">View details</span> →</span>
                 </div>
-                <div class="ai-card">
+                <div class="ai-card ai-card--modal" role="button" tabindex="0"
+                     data-shot="images/homelab.jpg?v=1" data-private="1">
+                    <span class="ai-badge" data-en="Private" data-no="Privat">Private</span>
                     <div class="ai-card-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><circle cx="7" cy="7" r="0.5" fill="currentColor"/><circle cx="7" cy="17" r="0.5" fill="currentColor"/></svg>
                     </div>
-                    <h3 data-en="Production-Grade Homelab" data-no="Hjemmelab i produksjonskvalitet">Production-Grade Homelab</h3>
+                    <h3 data-en="Private Cloud Infrastructure" data-no="Privat sky-infrastruktur">Private Cloud Infrastructure</h3>
                     <p data-en="A multi-server environment grown over two years into a small private cloud — 15+ services across web apps, automation, monitoring, and home systems. Standardised deployment pipeline, layered defence-in-depth security, three-tier backups with rehearsed recovery, and a living architecture reference kept like a runbook." data-no="Et multi-server-miljø utviklet over to år til en liten privat sky — 15+ tjenester på tvers av webapper, automatisering, overvåking og hjemmesystemer. Standardisert utrullingspipeline, lagdelt defence-in-depth-sikkerhet, tre-lags backup med øvd gjenoppretting, og en levende arkitekturreferanse holdt som en runbook.">A multi-server environment grown over two years into a small private cloud — 15+ services across web apps, automation, monitoring, and home systems. Standardised deployment pipeline, layered defence-in-depth security, three-tier backups with rehearsed recovery, and a living architecture reference kept like a runbook.</p>
                     <div class="service-tags">
                         <span>Proxmox</span><span>Docker</span><span>CI/CD</span><span>Restic</span>
                     </div>
+                <span class="ai-card-cta"><span data-en="View details" data-no="Se detaljer">View details</span> →</span>
                 </div>
-                <div class="ai-card">
+                <div class="ai-card ai-card--modal" role="button" tabindex="0"
+                     data-shot="images/frostwake.jpg?v=1" data-shot2="images/frostwake-2.jpg?v=1" data-link="https://frostwake.codecrafts.cc" data-link-label="frostwake.codecrafts.cc">
+                    <span class="ai-badge ai-badge--live" data-en="Live" data-no="Live">Live</span>
                     <div class="ai-card-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
                     </div>
-                    <h3 data-en="3D Survival Game" data-no="3D-overlevelsesspill">3D Survival Game</h3>
+                    <h3 data-en="Frostwake — 3D Survival Game" data-no="Frostwake — 3D-overlevelsesspill">Frostwake — 3D Survival Game</h3>
                     <p data-en="A top-down 3D survival game built in TypeScript on Three.js with an entity-component-system architecture — chunked world streaming, a deterministic simulation core, hundreds of unit tests, and an automated play-testing harness that drives the real game over a debug protocol." data-no="Et top-down 3D-overlevelsesspill bygget i TypeScript på Three.js med en entity-component-system-arkitektur — chunket verden-streaming, en deterministisk simuleringskjerne, hundrevis av enhetstester, og en automatisert spilltest-harness som styrer det ekte spillet over en debug-protokoll.">A top-down 3D survival game built in TypeScript on Three.js with an entity-component-system architecture — chunked world streaming, a deterministic simulation core, hundreds of unit tests, and an automated play-testing harness that drives the real game over a debug protocol.</p>
                     <div class="service-tags">
                         <span>TypeScript</span><span>Three.js</span><span>ECS</span><span>Vite</span>
                     </div>
+                <span class="ai-card-cta"><span data-en="View details" data-no="Se detaljer">View details</span> →</span>
+                </div>
+                <div class="ai-card ai-card--modal" role="button" tabindex="0"
+                     data-shot="images/dreadmark.jpg?v=1"
+                     data-link="https://dreadmark.codecrafts.cc" data-link-label="dreadmark.codecrafts.cc">
+                    <span class="ai-badge ai-badge--dev" data-en="In dev" data-no="Under utvikling">In dev</span>
+                    <div class="ai-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5"/><line x1="13" y1="19" x2="19" y2="13"/><line x1="16" y1="16" x2="20" y2="20"/><line x1="19" y1="21" x2="21" y2="19"/></svg>
+                    </div>
+                    <h3 data-en="Dreadmark — Isometric Action-RPG" data-no="Dreadmark — Isometrisk action-RPG">Dreadmark — Isometric Action-RPG</h3>
+                    <p data-en="A top-down isometric gothic action-RPG — Diablo-leaning combat and a legible loot loop, built in TypeScript, Three.js and an ECS on the Frostwake engine foundation. A playable prototype exploring real-time 3D combat with the same AI-augmented, multi-session workflow." data-no="Et top-down isometrisk gotisk action-RPG — Diablo-inspirert kamp og en lesbar loot-loop, bygget i TypeScript, Three.js og et ECS på Frostwake-motorens fundament. En spillbar prototype som utforsker sanntids 3D-kamp med den samme AI-forsterkede arbeidsflyten på tvers av parallelle økter.">A top-down isometric gothic action-RPG — Diablo-leaning combat and a legible loot loop, built in TypeScript, Three.js and an ECS on the Frostwake engine foundation. A playable prototype exploring real-time 3D combat with the same AI-augmented, multi-session workflow.</p>
+                    <div class="service-tags">
+                        <span>TypeScript</span><span>Three.js</span><span>ECS</span>
+                    </div>
+                    <span class="ai-card-cta"><span data-en="View details" data-no="Se detaljer">View details</span> →</span>
+                </div>
+                <div class="ai-card ai-card--modal" role="button" tabindex="0"
+                     data-shot="images/nobs.jpg?v=1" data-shot2="images/nobs-2.jpg?v=1"
+                     data-fit="contain"
+                     data-link="https://nobs.codecrafts.cc" data-link-label="nobs.codecrafts.cc">
+                    <span class="ai-badge ai-badge--live" data-en="Live" data-no="Live">Live</span>
+                    <div class="ai-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="9" width="3" height="6" rx="1"/><rect x="5.5" y="7" width="3" height="10" rx="1"/><rect x="15.5" y="7" width="3" height="10" rx="1"/><rect x="18.5" y="9" width="3" height="6" rx="1"/><path d="M8.5 12h7"/></svg>
+                    </div>
+                    <h3 data-en="NoBS — Workout Log" data-no="NoBS — Treningslogg">NoBS — Workout Log</h3>
+                    <p data-en="A no-BS gym app — only the stuff you use at the rack: sets, reps, kg, a rest timer, heart rate. Local-first, no account, no subscription. Built as a React + TypeScript PWA, packaged for Android with Capacitor, with its own landing page and public APK download." data-no="En no-BS treningsapp — kun det du faktisk bruker ved stativet: sett, reps, kg, en pausetimer, puls. Lokal-først, ingen konto, ingen abonnement. Bygget som en React + TypeScript PWA, pakket for Android med Capacitor, med egen landingsside og offentlig APK-nedlasting.">A no-BS gym app — only the stuff you use at the rack: sets, reps, kg, a rest timer, heart rate. Local-first, no account, no subscription. Built as a React + TypeScript PWA, packaged for Android with Capacitor, with its own landing page and public APK download.</p>
+                    <div class="service-tags">
+                        <span>React</span><span>TypeScript</span><span>PWA</span><span>Capacitor</span>
+                    </div>
+                    <span class="ai-card-cta"><span data-en="View details" data-no="Se detaljer">View details</span> →</span>
                 </div>
             </div>
             <p class="ai-repo-note">
@@ -232,7 +279,7 @@
                             <h3 data-en="Web Developer — Client &amp; Personal Sites" data-no="Webutvikler — Kunde- &amp; egne nettsider">Web Developer — Client &amp; Personal Sites</h3>
                             <span class="timeline-org" data-en="Independent" data-no="Selvstendig">Independent</span>
                         </div>
-                        <p data-en="I design, build, and host websites end-to-end — from sites for local businesses to personal portfolios (including this one). I handle the whole stack myself: design, front-end, containerised deployment, reverse proxy, DNS, and hosting on my own infrastructure. Multiple sites live in production." data-no="Jeg designer, bygger og drifter nettsider fra ende til ende — fra sider for lokale bedrifter til personlige porteføljer (inkludert denne). Jeg håndterer hele stacken selv: design, frontend, containerisert utrulling, reverse proxy, DNS og hosting på egen infrastruktur. Flere sider er live i produksjon.">I design, build, and host websites end-to-end — from sites for local businesses to personal portfolios (including this one). I handle the whole stack myself: design, front-end, containerised deployment, reverse proxy, DNS, and hosting on my own infrastructure. Multiple sites live in production.</p>
+                        <p data-en="I design, build, and host websites end-to-end — from sites for local businesses, delivered through my productised pipeline at web.codecrafts.cc, to personal portfolios (including this one). I handle the whole stack myself: design, front-end, containerised deployment, reverse proxy, DNS, and hosting on my own infrastructure. Multiple sites live in production." data-no="Jeg designer, bygger og drifter nettsider fra ende til ende — fra sider for lokale bedrifter, levert gjennom min produktiserte pipeline på web.codecrafts.cc, til personlige porteføljer (inkludert denne). Jeg håndterer hele stacken selv: design, frontend, containerisert utrulling, reverse proxy, DNS og hosting på egen infrastruktur. Flere sider er live i produksjon.">I design, build, and host websites end-to-end — from sites for local businesses, delivered through my productised pipeline at web.codecrafts.cc, to personal portfolios (including this one). I handle the whole stack myself: design, front-end, containerised deployment, reverse proxy, DNS, and hosting on my own infrastructure. Multiple sites live in production.</p>
                         <div class="service-tags">
                             <span>HTML/CSS/JS</span><span>Nginx</span><span>Docker</span><span>Cloudflare</span>
                         </div>
@@ -454,6 +501,26 @@
         </div>
     </footer>
 
-    <script src="script.js?v=2"></script>
+    <!-- Project detail modal -->
+    <div class="modal-overlay" id="projectModal" hidden>
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+            <div class="modal-media" id="modalMedia">
+                <img class="modal-img" id="modalImg" src="" alt="">
+                <div class="modal-thumbs" id="modalThumbs"></div>
+            </div>
+            <div class="modal-body">
+                <span class="modal-badge" id="modalBadge" hidden></span>
+                <h3 id="modalTitle"></h3>
+                <p id="modalDesc"></p>
+                <div class="modal-private" id="modalPrivate" hidden>
+                    <span data-en="Private project — the repository is kept closed, but I'm happy to give a guided walkthrough or live demo on request." data-no="Privat prosjekt — kodebasen holdes lukket, men jeg gir gjerne en guidet gjennomgang eller live-demo på forespørsel.">Private project — the repository is kept closed, but I'm happy to give a guided walkthrough or live demo on request.</span>
+                </div>
+                <div class="modal-actions" id="modalActions"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js?v=3"></script>
 </body>
 </html>
