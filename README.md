@@ -3,7 +3,7 @@
 Person-first portfolio site for job applications. Software & AI engineer framing
 (not a company), so prospective employers see *me*, not a consultancy.
 
-Shares its visual language with [codecraft.cc](https://codecrafts.cc) (same dark
+Shares its visual language with [agentas.net](https://agentas.net) (same dark
 theme, Inter, card styling) but the content is re-framed entirely in the first
 person and leads with software/AI work, with the industrial track record as
 supporting experience.
@@ -13,10 +13,10 @@ supporting experience.
 Plain static site — no build step.
 
 - `index.html` — single page, bilingual (EN / NO via `data-en` / `data-no`)
-- `styles.css` — base shared with codecraft + personal-portfolio additions at the bottom
+- `styles.css` — base shared with the Agentas site + personal-portfolio additions at the bottom
 - `script.js` — language toggle, mobile menu, scroll animations, runtime-assembled email
 - `images/` — portrait, project shots, company logos
-- `Dockerfile` + `nginx.conf` — nginx:alpine container, same as codecraft
+- `Dockerfile` + `nginx.conf` — nginx:alpine container, same as the Agentas sites
 
 ## Run locally
 
@@ -37,4 +37,4 @@ Hero → About → What I Do → Selected Work → Experience (timeline) → Ski
 - Email address is base64-assembled at runtime in `script.js` to keep the
   plaintext out of the committed source (bot harvesting).
 - Project descriptions are deliberately domain-generic, matching what's already
-  public on codecraft.cc.
+  public on agentas.net.

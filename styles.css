@@ -1,6 +1,6 @@
 /* ============================================
    Martin Davidsen — Personal Portfolio Styles
-   (base shared with codecraft.cc, re-skinned personal)
+   (base shared with agentas.net, re-skinned personal)
    ============================================ */
 
 :root {
@@ -1445,6 +1445,25 @@ footer {
     margin-bottom: 16px;
 }
 
+.timeline-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    margin-bottom: 14px;
+    font-size: 0.85rem;
+}
+
+.timeline-links a {
+    color: var(--accent-secondary);
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+    transition: var(--transition);
+}
+
+.timeline-links a:hover {
+    border-bottom-color: var(--accent-secondary);
+}
+
 /* ---- Skills grid ---- */
 #skills { background: var(--bg-primary); }
 
@@ -1560,7 +1579,7 @@ footer {
 }
 
 /* ============================================
-   Project cards → detail modal (ported from codecraft-website)
+   Project cards → detail modal (ported from agentas-sites)
    ============================================ */
 body.modal-open { overflow: hidden; }
 
