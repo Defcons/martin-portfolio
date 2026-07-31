@@ -27,6 +27,15 @@
                 (flag.textContent === 'NO' && lang === 'no')
             );
         });
+
+        // Control aria-labels aren't [data-en]/[data-no] elements, so translate them here
+        const labels = lang === 'no'
+            ? { toggle: 'Bytt til engelsk', menu: 'Åpne/lukk meny', close: 'Lukk' }
+            : { toggle: 'Switch to Norwegian', menu: 'Toggle menu', close: 'Close' };
+        const setLabel = (id, val) => { const el = document.getElementById(id); if (el) el.setAttribute('aria-label', val); };
+        setLabel('langToggle', labels.toggle);
+        setLabel('hamburger', labels.menu);
+        setLabel('modalClose', labels.close);
     }
 
     // ---- Navbar Scroll Effect ----
@@ -46,12 +55,15 @@
     function toggleMenu() {
         hamburger.classList.toggle('active');
         navLinks.classList.toggle('open');
-        document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+        const open = navLinks.classList.contains('open');
+        hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        document.body.style.overflow = open ? 'hidden' : '';
     }
 
     function closeMenu() {
         hamburger.classList.remove('active');
         navLinks.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
     }
 
@@ -70,7 +82,7 @@
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        }, { threshold: 0.1, rootMargin: '0px 0px 120px 0px' });
 
         elements.forEach(el => observer.observe(el));
     }
@@ -82,7 +94,8 @@
             e.preventDefault();
             const target = document.querySelector(href);
             if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
+                const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
                 closeMenu();
             }
         }
@@ -120,7 +133,7 @@
         const actions = document.getElementById('modalActions');
         const closeBtn = document.getElementById('modalClose');
 
-        const EXT_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6M10 14L21 3"/></svg>';
+        const EXT_ICON = '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6M10 14L21 3"/></svg>';
 
         let lastFocused = null;
 
@@ -131,11 +144,18 @@
                 const t = document.createElement('img');
                 t.src = src;
                 t.alt = '';
+                t.tabIndex = 0;
+                t.setAttribute('role', 'button');
+                t.setAttribute('aria-label', 'Screenshot ' + (i + 1));
                 if (i === 0) t.classList.add('active');
-                t.addEventListener('click', () => {
+                const activate = () => {
                     img.src = src;
                     thumbs.querySelectorAll('img').forEach(x => x.classList.remove('active'));
                     t.classList.add('active');
+                };
+                t.addEventListener('click', activate);
+                t.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); }
                 });
                 thumbs.appendChild(t);
             });
@@ -203,7 +223,15 @@
             if (lastFocused && lastFocused.focus) lastFocused.focus();
         }
 
-        document.querySelectorAll('.ai-card--modal, .service-card--modal').forEach(card => {
+        document.querySelectorAll('.ai-card--modal, .service-card--modal').forEach((card, i) => {
+            // Give role=button cards a concise accessible name (the h3) instead of the
+            // whole subtree; aria-labelledby follows the h3 through language toggling.
+            const h3 = card.querySelector('h3');
+            if (h3) {
+                if (!h3.id) h3.id = 'card-title-' + i;
+                card.setAttribute('aria-labelledby', h3.id);
+            }
+            card.setAttribute('aria-haspopup', 'dialog');
             card.addEventListener('click', () => openModal(card));
             card.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
@@ -216,7 +244,22 @@
         closeBtn.addEventListener('click', closeModal);
         overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !overlay.hidden) closeModal();
+            if (overlay.hidden) return;
+            if (e.key === 'Escape') { closeModal(); return; }
+            if (e.key !== 'Tab') return;
+            // Trap focus inside the open dialog (aria-modal hides the page behind it)
+            const focusables = Array.from(
+                overlay.querySelectorAll('button, [href], input, [tabindex]:not([tabindex="-1"])')
+            ).filter(el => el.offsetParent !== null);
+            if (!focusables.length) return;
+            const first = focusables[0], last = focusables[focusables.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault(); last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault(); first.focus();
+            } else if (!overlay.contains(document.activeElement)) {
+                e.preventDefault(); first.focus();
+            }
         });
     }
 

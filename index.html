@@ -5,14 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Martin Davidsen — Software & AI Engineer</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <meta name="description" content="Martin Davidsen — Software & AI engineer based in Stavanger, Norway. I build and ship full-stack software, LLM-driven systems, and industrial automation — from subsea control systems to self-hosted AI platforms.">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="canonical" href="https://martindavidsen.cc/">
+    <meta name="description" content="Martin Davidsen — Software & AI Engineer based in Stavanger, Norway. I build and ship full-stack software, LLM-driven systems, and industrial automation — from subsea control systems to self-hosted AI platforms.">
     <meta property="og:title" content="Martin Davidsen — Software & AI Engineer">
-    <meta property="og:description" content="Software & AI engineer based in Stavanger, Norway. Full-stack software, LLM-driven systems, and industrial automation.">
+    <meta property="og:description" content="Software & AI Engineer based in Stavanger, Norway. Full-stack software, LLM-driven systems, and industrial automation.">
     <meta property="og:type" content="website">
-    <link rel="stylesheet" href="styles.css?v=5">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta property="og:url" content="https://martindavidsen.cc/">
+    <meta property="og:image" content="https://martindavidsen.cc/images/og-card.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preload" as="font" type="font/woff2" href="fonts/inter-latin-var.woff2" crossorigin>
+    <link rel="stylesheet" href="styles.css?v=6">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Martin Davidsen",
+      "jobTitle": "Software & AI Engineer",
+      "url": "https://martindavidsen.cc",
+      "image": "https://martindavidsen.cc/images/og-card.jpg",
+      "address": { "@type": "PostalAddress", "addressLocality": "Stavanger", "addressCountry": "NO" },
+      "sameAs": [
+        "https://linkedin.com/in/martin-davidsen-51425a111",
+        "https://github.com/Defcons",
+        "https://agentas.net"
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -36,12 +59,13 @@
                     <span class="lang-flag">NO</span>
                 </button>
             </div>
-            <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+            <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-controls="navLinks" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
         </div>
     </nav>
 
+    <main>
     <!-- Hero -->
     <section id="hero">
         <div class="hero-bg-grid"></div>
@@ -80,7 +104,7 @@
             <div class="section-label" data-en="About Me" data-no="Om meg">About Me</div>
             <div class="about-grid about-grid-photo">
                 <div class="about-portrait">
-                    <img class="about-photo" src="images/martin.jpg" srcset="images/martin.jpg 1x, images/martin@2x.jpg 2x" alt="Martin Davidsen" width="200" height="200">
+                    <img class="about-photo" src="images/martin-200.jpg" srcset="images/martin-200.jpg 1x, images/martin-400.jpg 2x" alt="Martin Davidsen" width="200" height="200" loading="lazy" decoding="async">
                     <div class="about-meta">
                         <div class="about-name">Martin Davidsen</div>
                         <div class="about-role" data-en="Software &amp; AI Engineer · Founder of Agentas AS" data-no="Programvare- &amp; AI-ingeniør · Gründer av Agentas AS">Software &amp; AI Engineer · Founder of Agentas AS</div>
@@ -112,7 +136,7 @@
                 <div class="service-card">
                     <div class="service-num">01</div>
                     <h3 data-en="Full-Stack Software" data-no="Full-stack programvare">Full-Stack Software</h3>
-                    <p data-en="End-to-end web applications — back-end services, data pipelines, APIs, and clean front-ends. I build the whole thing and I run it in production, not just to a demo." data-no="Web-applikasjoner fra ende til ende — backend-tjenester, datapipelines, API-er og rene frontends. Jeg bygger hele greia og drifter den i produksjon, ikke bare til en demo.">End-to-end web applications — back-end services, data pipelines, APIs, and clean front-ends. I build the whole thing and I run it in production, not just to a demo.</p>
+                    <p data-en="End-to-end web applications — back-end services, data pipelines, APIs, and clean front-ends. I build the whole thing and I run it in production, not just to a demo." data-no="Webapplikasjoner fra ende til ende — backend-tjenester, datapipelines, API-er og rene frontends. Jeg bygger hele greia og drifter den i produksjon, ikke bare til en demo.">End-to-end web applications — back-end services, data pipelines, APIs, and clean front-ends. I build the whole thing and I run it in production, not just to a demo.</p>
                     <div class="service-tags">
                         <span>Go</span><span>Python</span><span>Node.js</span><span>React</span>
                     </div>
@@ -128,7 +152,7 @@
                 <div class="service-card">
                     <div class="service-num">03</div>
                     <h3 data-en="Industrial Automation" data-no="Industriell automasjon">Industrial Automation</h3>
-                    <p data-en="Control software for critical systems — PLC programming, operator screens (HMI/SCADA), and the communication that ties field equipment to the systems above it. Proven on live oil &amp; gas and infrastructure projects." data-no="Styringsprogramvare for kritiske systemer — PLS-programmering, operatørskjermer (HMI/SCADA), og kommunikasjonen som binder feltutstyr til systemene over. Bevist på aktive olje- &amp; gass- og infrastrukturprosjekter.">Control software for critical systems — PLC programming, operator screens (HMI/SCADA), and the communication that ties field equipment to the systems above it. Proven on live oil &amp; gas and infrastructure projects.</p>
+                    <p data-en="Control software for critical systems — PLC programming, operator screens (HMI/SCADA), and the communication that ties field equipment to the systems above it. Proven on live oil &amp; gas and infrastructure projects." data-no="Styringsprogramvare for kritiske systemer — PLS-programmering, operatørskjermer (HMI/SCADA) og kommunikasjonen som binder feltutstyr til systemene over. Bevist på aktive olje- &amp; gass- og infrastrukturprosjekter.">Control software for critical systems — PLC programming, operator screens (HMI/SCADA), and the communication that ties field equipment to the systems above it. Proven on live oil &amp; gas and infrastructure projects.</p>
                     <div class="service-tags">
                         <span>Siemens S7</span><span>TIA Portal</span><span>WinCC</span><span>OPC UA</span>
                     </div>
@@ -156,10 +180,10 @@
                      data-shot="images/epoglogs.jpg?v=1" data-shot2="images/epoglogs-2.jpg?v=1" data-link="https://epoglogs.com" data-link-label="epoglogs.com">
                     <span class="ai-badge ai-badge--live" data-en="Live" data-no="Live">Live</span>
                     <div class="ai-card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
                     </div>
                     <h3 data-en="Multi-Tenant Analytics Platform" data-no="Analyseplattform med flere leietakere">Multi-Tenant Analytics Platform</h3>
-                    <p data-en="A public analytics platform with a server-side parsing pipeline (worker-thread architecture for high-throughput ingestion), normalised relational storage, and a modern web front-end. Runs across four isolated containers — dev + prod per tenant — behind a shared reverse proxy. Built and operated single-handedly." data-no="En offentlig analyseplattform med en server-side parser-pipeline (worker-thread-arkitektur for høyt ingest-volum), normalisert relasjonell lagring, og en moderne web-frontend. Kjører på tvers av fire isolerte containere — dev + prod per leietaker — bak en delt reverse proxy. Bygget og driftet alene.">A public analytics platform with a server-side parsing pipeline (worker-thread architecture for high-throughput ingestion), normalised relational storage, and a modern web front-end. Runs across four isolated containers — dev + prod per tenant — behind a shared reverse proxy. Built and operated single-handedly.</p>
+                    <p data-en="A public analytics platform with a server-side parsing pipeline (worker-thread architecture for high-throughput ingestion), normalised relational storage, and a modern web front-end. Runs across four isolated containers — dev + prod per tenant — behind a shared reverse proxy. Built and operated single-handedly." data-no="En offentlig analyseplattform med en server-side parser-pipeline (worker-thread-arkitektur for høyt ingest-volum), normalisert relasjonell lagring og en moderne web-frontend. Kjører på tvers av fire isolerte containere — dev + prod per leietaker — bak en delt reverse proxy. Bygget og driftet alene.">A public analytics platform with a server-side parsing pipeline (worker-thread architecture for high-throughput ingestion), normalised relational storage, and a modern web front-end. Runs across four isolated containers — dev + prod per tenant — behind a shared reverse proxy. Built and operated single-handedly.</p>
                     <div class="service-tags">
                         <span>Node.js</span><span>SQLite</span><span>Workers</span><span>Docker</span>
                     </div>
@@ -169,10 +193,10 @@
                      data-shot="images/sim.jpg?v=1" data-link="https://sim.epoglogs.com" data-link-label="sim.epoglogs.com">
                     <span class="ai-badge ai-badge--live" data-en="Live" data-no="Live">Live</span>
                     <div class="ai-card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg>
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg>
                     </div>
                     <h3 data-en="Go Computational Simulator" data-no="Beregningsbasert simulator i Go">Go Computational Simulator</h3>
-                    <p data-en="A computational simulator written in Go with a browser-based UI and a continuous evaluation harness that compares simulator output against real observed data — surfacing discrepancies explicitly rather than papering over them. Multi-class architecture with a shared widget system across simulators." data-no="En beregningsbasert simulator skrevet i Go med et nettleserbasert grensesnitt og en kontinuerlig evalueringsharness som sammenligner simulator-output mot reelt observert data — synliggjør avvik eksplisitt fremfor å skjule dem. Multi-klasse-arkitektur med et delt widget-system på tvers av simulatorer.">A computational simulator written in Go with a browser-based UI and a continuous evaluation harness that compares simulator output against real observed data — surfacing discrepancies explicitly rather than papering over them. Multi-class architecture with a shared widget system across simulators.</p>
+                    <p data-en="A computational simulator written in Go with a browser-based UI and a continuous evaluation harness that compares simulator output against real observed data — surfacing discrepancies explicitly rather than papering over them. Multi-class architecture with a shared widget system across simulators." data-no="En beregningsbasert simulator skrevet i Go med et nettleserbasert grensesnitt og en kontinuerlig evalueringsharness som sammenligner simulator-output mot reelle observerte data — synliggjør avvik eksplisitt fremfor å skjule dem. Multi-klasse-arkitektur med et delt widget-system på tvers av simulatorer.">A computational simulator written in Go with a browser-based UI and a continuous evaluation harness that compares simulator output against real observed data — surfacing discrepancies explicitly rather than papering over them. Multi-class architecture with a shared widget system across simulators.</p>
                     <div class="service-tags">
                         <span>Go</span><span>WebUI</span><span>Eval harness</span>
                     </div>
@@ -182,10 +206,10 @@
                      data-shot="images/clouddrive.jpg?v=1" data-private="1">
                     <span class="ai-badge" data-en="Private" data-no="Privat">Private</span>
                     <div class="ai-card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-0.5 8-5 8-10V6l-8-4z"/></svg>
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-0.5 8-5 8-10V6l-8-4z"/></svg>
                     </div>
                     <h3 data-en="Self-Hosted File Platform" data-no="Selvhostet filplattform">Self-Hosted File Platform</h3>
-                    <p data-en="A self-hosted file-management platform (Go + React) built around a deliberate security model from day one — access control, audit logging, encrypted backups, and regularly rehearsed recovery. Designed so that &ldquo;self-hosted&rdquo; is safer than the cloud alternative, not an excuse to be sloppier." data-no="En selvhostet filhåndteringsplattform (Go + React) bygget rundt en bevisst sikkerhetsmodell fra dag én — tilgangskontroll, audit-logging, krypterte backuper, og regelmessig øvd gjenoppretting. Designet slik at «selvhostet» er tryggere enn skyalternativet, ikke en unnskyldning til å være slurvete.">A self-hosted file-management platform (Go + React) built around a deliberate security model from day one — access control, audit logging, encrypted backups, and regularly rehearsed recovery. Designed so that &ldquo;self-hosted&rdquo; is safer than the cloud alternative, not an excuse to be sloppier.</p>
+                    <p data-en="A self-hosted file-management platform (Go + React) built around a deliberate security model from day one — access control, audit logging, encrypted backups, and regularly rehearsed recovery. Designed so that &ldquo;self-hosted&rdquo; is safer than the cloud alternative, not an excuse to be sloppier." data-no="En selvhostet filhåndteringsplattform (Go + React) bygget rundt en bevisst sikkerhetsmodell fra dag én — tilgangskontroll, audit-logging, krypterte backuper og regelmessig øvd gjenoppretting. Designet slik at «selvhostet» er tryggere enn skyalternativet, ikke en unnskyldning for å være slurvete.">A self-hosted file-management platform (Go + React) built around a deliberate security model from day one — access control, audit logging, encrypted backups, and regularly rehearsed recovery. Designed so that &ldquo;self-hosted&rdquo; is safer than the cloud alternative, not an excuse to be sloppier.</p>
                     <div class="service-tags">
                         <span>Go</span><span>React</span><span>Security</span>
                     </div>
@@ -195,7 +219,7 @@
                      data-shot="images/vehicle.jpg?v=1" data-private="1">
                     <span class="ai-badge" data-en="Private" data-no="Privat">Private</span>
                     <div class="ai-card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14M5 17l2-6h10l2 6M5 17v3h3v-3M16 17v3h3v-3"/><circle cx="8" cy="14" r="1"/><circle cx="16" cy="14" r="1"/></svg>
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14M5 17l2-6h10l2 6M5 17v3h3v-3M16 17v3h3v-3"/><circle cx="8" cy="14" r="1"/><circle cx="16" cy="14" r="1"/></svg>
                     </div>
                     <h3 data-en="Vehicle Telemetry Automation" data-no="Automatisering av kjøretøytelemetri">Vehicle Telemetry Automation</h3>
                     <p data-en="An automation pipeline that pulls live vehicle telemetry into a structured database, then runs scheduled jobs that feed mileage and timesheet entries to downstream business systems. Replaces a recurring monthly manual task entirely — small in scope, real in time saved." data-no="En automatiseringspipeline som henter sanntidstelemetri fra kjøretøy inn i en strukturert database, deretter kjører planlagte jobber som mater kilometer- og timeoppføringer til nedstrøms forretningssystemer. Erstatter en gjentakende manuell månedlig oppgave fullstendig — lite i omfang, ekte i spart tid.">An automation pipeline that pulls live vehicle telemetry into a structured database, then runs scheduled jobs that feed mileage and timesheet entries to downstream business systems. Replaces a recurring monthly manual task entirely — small in scope, real in time saved.</p>
@@ -208,7 +232,7 @@
                      data-shot="images/homelab.jpg?v=1" data-private="1">
                     <span class="ai-badge" data-en="Private" data-no="Privat">Private</span>
                     <div class="ai-card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><circle cx="7" cy="7" r="0.5" fill="currentColor"/><circle cx="7" cy="17" r="0.5" fill="currentColor"/></svg>
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><circle cx="7" cy="7" r="0.5" fill="currentColor"/><circle cx="7" cy="17" r="0.5" fill="currentColor"/></svg>
                     </div>
                     <h3 data-en="Private Cloud Infrastructure" data-no="Privat sky-infrastruktur">Private Cloud Infrastructure</h3>
                     <p data-en="A multi-server environment grown over two years into a small private cloud — 15+ services across web apps, automation, monitoring, and home systems. Standardised deployment pipeline, layered defence-in-depth security, three-tier backups with rehearsed recovery, and a living architecture reference kept like a runbook." data-no="Et multi-server-miljø utviklet over to år til en liten privat sky — 15+ tjenester på tvers av webapper, automatisering, overvåking og hjemmesystemer. Standardisert utrullingspipeline, lagdelt defence-in-depth-sikkerhet, tre-lags backup med øvd gjenoppretting, og en levende arkitekturreferanse holdt som en runbook.">A multi-server environment grown over two years into a small private cloud — 15+ services across web apps, automation, monitoring, and home systems. Standardised deployment pipeline, layered defence-in-depth security, three-tier backups with rehearsed recovery, and a living architecture reference kept like a runbook.</p>
@@ -221,7 +245,7 @@
                      data-shot="images/frostwake.jpg?v=1" data-shot2="images/frostwake-2.jpg?v=1" data-link="https://frostwake.agentas.net" data-link-label="frostwake.agentas.net">
                     <span class="ai-badge ai-badge--live" data-en="Live" data-no="Live">Live</span>
                     <div class="ai-card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
                     </div>
                     <h3 data-en="Frostwake — 3D Survival Game" data-no="Frostwake — 3D-overlevelsesspill">Frostwake — 3D Survival Game</h3>
                     <p data-en="A top-down 3D survival game built in TypeScript on Three.js with an entity-component-system architecture — chunked world streaming, a deterministic simulation core, hundreds of unit tests, and an automated play-testing harness that drives the real game over a debug protocol." data-no="Et top-down 3D-overlevelsesspill bygget i TypeScript på Three.js med en entity-component-system-arkitektur — chunket verden-streaming, en deterministisk simuleringskjerne, hundrevis av enhetstester, og en automatisert spilltest-harness som styrer det ekte spillet over en debug-protokoll.">A top-down 3D survival game built in TypeScript on Three.js with an entity-component-system architecture — chunked world streaming, a deterministic simulation core, hundreds of unit tests, and an automated play-testing harness that drives the real game over a debug protocol.</p>
@@ -235,7 +259,7 @@
                      data-link="https://dreadmark.agentas.net" data-link-label="dreadmark.agentas.net">
                     <span class="ai-badge ai-badge--dev" data-en="In dev" data-no="Under utvikling">In dev</span>
                     <div class="ai-card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5"/><line x1="13" y1="19" x2="19" y2="13"/><line x1="16" y1="16" x2="20" y2="20"/><line x1="19" y1="21" x2="21" y2="19"/></svg>
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5"/><line x1="13" y1="19" x2="19" y2="13"/><line x1="16" y1="16" x2="20" y2="20"/><line x1="19" y1="21" x2="21" y2="19"/></svg>
                     </div>
                     <h3 data-en="Dreadmark — Isometric Action-RPG" data-no="Dreadmark — Isometrisk action-RPG">Dreadmark — Isometric Action-RPG</h3>
                     <p data-en="A top-down isometric gothic action-RPG — Diablo-leaning combat and a legible loot loop, built in TypeScript, Three.js and an ECS on the Frostwake engine foundation. A playable prototype exploring real-time 3D combat with the same AI-augmented, multi-session workflow." data-no="Et top-down isometrisk gotisk action-RPG — Diablo-inspirert kamp og en lesbar loot-loop, bygget i TypeScript, Three.js og et ECS på Frostwake-motorens fundament. En spillbar prototype som utforsker sanntids 3D-kamp med den samme AI-forsterkede arbeidsflyten på tvers av parallelle økter.">A top-down isometric gothic action-RPG — Diablo-leaning combat and a legible loot loop, built in TypeScript, Three.js and an ECS on the Frostwake engine foundation. A playable prototype exploring real-time 3D combat with the same AI-augmented, multi-session workflow.</p>
@@ -250,7 +274,7 @@
                      data-link="https://nobs.agentas.net" data-link-label="nobs.agentas.net">
                     <span class="ai-badge ai-badge--live" data-en="Live" data-no="Live">Live</span>
                     <div class="ai-card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="9" width="3" height="6" rx="1"/><rect x="5.5" y="7" width="3" height="10" rx="1"/><rect x="15.5" y="7" width="3" height="10" rx="1"/><rect x="18.5" y="9" width="3" height="6" rx="1"/><path d="M8.5 12h7"/></svg>
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="9" width="3" height="6" rx="1"/><rect x="5.5" y="7" width="3" height="10" rx="1"/><rect x="15.5" y="7" width="3" height="10" rx="1"/><rect x="18.5" y="9" width="3" height="6" rx="1"/><path d="M8.5 12h7"/></svg>
                     </div>
                     <h3 data-en="NoBS — Workout Log" data-no="NoBS — Treningslogg">NoBS — Workout Log</h3>
                     <p data-en="A no-BS gym app — only the stuff you use at the rack: sets, reps, kg, a rest timer, heart rate. Local-first, no account, no subscription. Built as a React + TypeScript PWA, packaged for Android with Capacitor, with its own landing page and public APK download." data-no="En no-BS treningsapp — kun det du faktisk bruker ved stativet: sett, reps, kg, en pausetimer, puls. Lokal-først, ingen konto, ingen abonnement. Bygget som en React + TypeScript PWA, pakket for Android med Capacitor, med egen landingsside og offentlig APK-nedlasting.">A no-BS gym app — only the stuff you use at the rack: sets, reps, kg, a rest timer, heart rate. Local-first, no account, no subscription. Built as a React + TypeScript PWA, packaged for Android with Capacitor, with its own landing page and public APK download.</p>
@@ -264,10 +288,10 @@
                      data-link="https://web.agentas.net" data-link-label="web.agentas.net">
                     <span class="ai-badge ai-badge--live" data-en="Live" data-no="Live">Live</span>
                     <div class="ai-card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><circle cx="6.5" cy="6.5" r="0.6" fill="currentColor"/><circle cx="9" cy="6.5" r="0.6" fill="currentColor"/></svg>
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><circle cx="6.5" cy="6.5" r="0.6" fill="currentColor"/><circle cx="9" cy="6.5" r="0.6" fill="currentColor"/></svg>
                     </div>
                     <h3 data-en="Website Studio" data-no="Nettsidestudio">Website Studio</h3>
-                    <p data-en="A productised website service for local businesses and individuals — a library of ready-made, mobile-first templates (business + portfolio), each a real live demo. Tailored per client and hosted end-to-end: design, build, containerised deploy, reverse proxy, DNS. Built and run by me — today it's Agentas Web, the SMB arm of my company Agentas AS." data-no="En produktisert nettside-tjeneste for lokale bedrifter og privatpersoner — et bibliotek av ferdige, mobil-først maler (bedrift + portefølje), hver en ekte live demo. Tilpasset hver kunde og driftet fra ende til ende: design, bygg, containerisert utrulling, reverse proxy, DNS. Bygget og driftet av meg — i dag er det Agentas Web, SMB-delen av selskapet mitt Agentas AS.">A productised website service for local businesses and individuals — a library of ready-made, mobile-first templates (business + portfolio), each a real live demo. Tailored per client and hosted end-to-end: design, build, containerised deploy, reverse proxy, DNS. Built and run by me — today it's Agentas Web, the SMB arm of my company Agentas AS.</p>
+                    <p data-en="A productised website service for local businesses and individuals — a library of ready-made, mobile-first templates (business + portfolio), each a real live demo. Tailored per client and hosted end-to-end: design, build, containerised deploy, reverse proxy, DNS. Built and run by me — today it's Agentas Web, the SMB arm of my company Agentas AS." data-no="En produktisert nettsidetjeneste for lokale bedrifter og privatpersoner — et bibliotek av ferdige, mobil-først maler (bedrift + portefølje), hver en ekte live-demo. Tilpasset hver kunde og driftet fra ende til ende: design, bygg, containerisert utrulling, reverse proxy, DNS. Bygget og driftet av meg — i dag er det Agentas Web, SMB-delen av selskapet mitt Agentas AS.">A productised website service for local businesses and individuals — a library of ready-made, mobile-first templates (business + portfolio), each a real live demo. Tailored per client and hosted end-to-end: design, build, containerised deploy, reverse proxy, DNS. Built and run by me — today it's Agentas Web, the SMB arm of my company Agentas AS.</p>
                     <div class="service-tags">
                         <span>Templates</span><span>Nginx</span><span>Docker</span><span>Cloudflare</span>
                     </div>
@@ -311,7 +335,7 @@
                             <h3 data-en="Software Lead — Subsea Control Systems" data-no="Software Lead — Subsea kontrollsystemer">Software Lead — Subsea Control Systems</h3>
                             <span class="timeline-org">Siemens Energy</span>
                         </div>
-                        <p data-en="Software lead for complete subsea control systems on the Symra and Hanz tie-ins (Ivar Aasen). Built the software managing communication between the platform and underwater equipment, operator screens, simulation tools, and integration of valves, flow meters, and hydraulic systems — delivered through factory testing, on-site startup, and into production. Hanz has been producing since 2024; Symra is ongoing, with four wells now being commissioned." data-no="Software lead for komplette subsea-kontrollsystemer på Symra- og Hanz-tilkoblingene (Ivar Aasen). Bygget programvaren som styrer kommunikasjonen mellom plattformen og undervannsutstyret, operatørskjermer, simuleringsverktøy og integrasjon av ventiler, strømningsmålere og hydrauliske systemer — levert gjennom fabrikktesting, igangkjøring på stedet, og inn i produksjon. Hanz har vært i produksjon siden 2024; Symra pågår, med fire brønner under igangkjøring.">Software lead for complete subsea control systems on the Symra and Hanz tie-ins (Ivar Aasen). Built the software managing communication between the platform and underwater equipment, operator screens, simulation tools, and integration of valves, flow meters, and hydraulic systems — delivered through factory testing, on-site startup, and into production. Hanz has been producing since 2024; Symra is ongoing, with four wells now being commissioned.</p>
+                        <p data-en="Software lead for complete subsea control systems on the Symra and Hanz tie-ins (Ivar Aasen). Built the software managing communication between the platform and underwater equipment, operator screens, simulation tools, and integration of valves, flow meters, and hydraulic systems — delivered through factory testing, on-site startup, and into production. Hanz has been producing since 2024; Symra is ongoing, with four wells now being commissioned." data-no="Software lead for komplette subsea-kontrollsystemer på Symra- og Hanz-tilkoblingene (Ivar Aasen). Bygget programvaren som styrer kommunikasjonen mellom plattformen og undervannsutstyret, operatørskjermer, simuleringsverktøy og integrasjon av ventiler, strømningsmålere og hydrauliske systemer — levert gjennom fabrikktesting, igangkjøring på stedet og inn i produksjon. Hanz har vært i produksjon siden 2024; Symra pågår, med fire brønner under igangkjøring.">Software lead for complete subsea control systems on the Symra and Hanz tie-ins (Ivar Aasen). Built the software managing communication between the platform and underwater equipment, operator screens, simulation tools, and integration of valves, flow meters, and hydraulic systems — delivered through factory testing, on-site startup, and into production. Hanz has been producing since 2024; Symra is ongoing, with four wells now being commissioned.</p>
                         <div class="timeline-links">
                             <a href="https://agentas.net/projects/symra-subsea-tie-in/" target="_blank" rel="noopener"><span data-en="Case study: Symra" data-no="Casestudie: Symra">Case study: Symra</span> →</a>
                             <a href="https://agentas.net/projects/hanz-subsea-tie-in/" target="_blank" rel="noopener"><span data-en="Case study: Hanz" data-no="Casestudie: Hanz">Case study: Hanz</span> →</a>
@@ -341,10 +365,10 @@
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
                         <div class="timeline-head">
-                            <h3 data-en="Automation Engineer — Platform Digitalization" data-no="Automasjonsingeniør — Plattformdigitalisering">Automation Engineer — Platform Digitalization</h3>
+                            <h3 data-en="Automation Engineer — Platform Digitalisation" data-no="Automasjonsingeniør — Plattformdigitalisering">Automation Engineer — Platform Digitalisation</h3>
                             <span class="timeline-org">Siemens</span>
                         </div>
-                        <p data-en="Modernizing and digitizing control systems on the Valhall offshore platform — upgrading monitoring software and producing safety documentation to Norwegian industry standards." data-no="Modernisering og digitalisering av kontrollsystemer på Valhall offshoreplattform — oppgradering av overvåkingsprogramvare og produksjon av sikkerhetsdokumentasjon etter norske bransjestandarder.">Modernizing and digitizing control systems on the Valhall offshore platform — upgrading monitoring software and producing safety documentation to Norwegian industry standards.</p>
+                        <p data-en="Modernising and digitising control systems on the Valhall offshore platform — upgrading monitoring software and producing safety documentation to Norwegian industry standards." data-no="Modernisering og digitalisering av kontrollsystemer på Valhall offshoreplattform — oppgradering av overvåkingsprogramvare og produksjon av sikkerhetsdokumentasjon etter norske bransjestandarder.">Modernising and digitising control systems on the Valhall offshore platform — upgrading monitoring software and producing safety documentation to Norwegian industry standards.</p>
                         <div class="service-tags">
                             <span>PCS7</span><span>Offshore</span><span>Documentation</span>
                         </div>
@@ -369,12 +393,12 @@
             <div class="clients-section">
                 <h3 class="clients-title" data-en="Companies I've worked with" data-no="Selskaper jeg har jobbet med">Companies I've worked with</h3>
                 <div class="clients-grid">
-                    <div class="client-item"><img src="images/siemens.png" alt="Siemens" class="client-logo"></div>
-                    <div class="client-item"><img src="images/siemens-energy.svg" alt="Siemens Energy" class="client-logo"></div>
-                    <div class="client-item"><img src="images/oneco.svg" alt="OneCo" class="client-logo"></div>
-                    <div class="client-item"><img src="images/rhenac.png" alt="Rhenac" class="client-logo"></div>
-                    <div class="client-item"><img src="images/turfpal.png" alt="Turfpal" class="client-logo"></div>
-                    <div class="client-item"><img src="images/powerpal.png" alt="Powerpal" class="client-logo"></div>
+                    <div class="client-item"><img src="images/siemens.png" alt="Siemens" class="client-logo" width="1501" height="240" loading="lazy" decoding="async"></div>
+                    <div class="client-item"><img src="images/siemens-energy.svg" alt="Siemens Energy" class="client-logo" width="1000" height="343" loading="lazy" decoding="async"></div>
+                    <div class="client-item"><img src="images/oneco.svg" alt="OneCo" class="client-logo" width="1200" height="244" loading="lazy" decoding="async"></div>
+                    <div class="client-item"><img src="images/rhenac.png" alt="Rhenac" class="client-logo" width="340" height="156" loading="lazy" decoding="async"></div>
+                    <div class="client-item"><img src="images/turfpal.png" alt="Turfpal" class="client-logo" width="799" height="214" loading="lazy" decoding="async"></div>
+                    <div class="client-item"><img src="images/powerpal.png" alt="Powerpal" class="client-logo" width="819" height="216" loading="lazy" decoding="async"></div>
                 </div>
             </div>
         </div>
@@ -430,26 +454,26 @@
     <section id="beyond">
         <div class="container">
             <div class="section-label" data-en="Beyond the Day Job" data-no="Utenom jobben">Beyond the Day Job</div>
-            <h2 class="section-title" data-en="I don't really switch off" data-no="Jeg kobler egentlig aldri helt av">I don't really switch off</h2>
+            <h2 class="section-title" data-en="I don't really switch off" data-no="Jeg kobler egentlig aldri helt&nbsp;av">I don't really switch off</h2>
             <p class="section-lead" data-en="The curiosity that drives my work doesn't clock out at five. Most of what I know I picked up by building things for myself — which is also the best way I've found to stay sharp." data-no="Nysgjerrigheten som driver arbeidet mitt gir seg ikke klokka fem. Det meste jeg kan har jeg plukket opp ved å bygge ting for meg selv — som også er den beste måten jeg har funnet for å holde meg skarp.">The curiosity that drives my work doesn't clock out at five. Most of what I know I picked up by building things for myself — which is also the best way I've found to stay sharp.</p>
             <div class="beyond-grid">
                 <div class="beyond-card">
                     <div class="beyond-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="M7 12h4M9 10v4"/><circle cx="16" cy="11" r="1"/><circle cx="18.5" cy="13.5" r="1"/></svg>
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="M7 12h4M9 10v4"/><circle cx="16" cy="11" r="1"/><circle cx="18.5" cy="13.5" r="1"/></svg>
                     </div>
                     <h3 data-en="Building games" data-no="Bygger spill">Building games</h3>
                     <p data-en="I make 3D games in my spare time — a survival game in TypeScript on Three.js with a full entity-component-system, deterministic simulation, and hundreds of tests. It's where I get to over-engineer for the fun of it." data-no="Jeg lager 3D-spill på fritiden — et overlevelsesspill i TypeScript på Three.js med et fullt entity-component-system, deterministisk simulering og hundrevis av tester. Det er der jeg får lov til å overingeniøre bare for gøy.">I make 3D games in my spare time — a survival game in TypeScript on Three.js with a full entity-component-system, deterministic simulation, and hundreds of tests. It's where I get to over-engineer for the fun of it.</p>
                 </div>
                 <div class="beyond-card">
                     <div class="beyond-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><circle cx="7" cy="7" r="0.5" fill="currentColor"/><circle cx="7" cy="17" r="0.5" fill="currentColor"/></svg>
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><circle cx="7" cy="7" r="0.5" fill="currentColor"/><circle cx="7" cy="17" r="0.5" fill="currentColor"/></svg>
                     </div>
                     <h3 data-en="Running my own cloud" data-no="Drifter min egen sky">Running my own cloud</h3>
                     <p data-en="My homelab is a small private cloud — servers, containers, monitoring, and rehearsed backups running the same way real production does. If I want to learn something, I stand it up and run it for real." data-no="Hjemmelabben min er en liten privat sky — servere, containere, overvåking og øvde backuper som kjører på samme måte som ekte produksjon. Vil jeg lære noe nytt, setter jeg det opp og drifter det på ordentlig.">My homelab is a small private cloud — servers, containers, monitoring, and rehearsed backups running the same way real production does. If I want to learn something, I stand it up and run it for real.</p>
                 </div>
                 <div class="beyond-card">
                     <div class="beyond-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14M5 17l1.5-5a2 2 0 0 1 1.9-1.4h7.2a2 2 0 0 1 1.9 1.4L19 17M5 17v2a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2M16 17v2a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2"/><path d="M9 21h6"/></svg>
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14M5 17l1.5-5a2 2 0 0 1 1.9-1.4h7.2a2 2 0 0 1 1.9 1.4L19 17M5 17v2a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2M16 17v2a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2"/><path d="M9 21h6"/></svg>
                     </div>
                     <h3 data-en="Automating home &amp; car" data-no="Automatiserer hjem &amp; bil">Automating home &amp; car</h3>
                     <p data-en="I like it when everyday tech just works, so I automate it — a smart home I built and version-control myself, and a pipeline that turns my car's telemetry into finished timesheets. Small problems, properly solved." data-no="Jeg liker det når hverdagsteknologi bare funker, så jeg automatiserer den — et smarthus jeg har bygget og versjonshåndterer selv, og en pipeline som gjør bilens telemetri om til ferdige timelister. Små problemer, ordentlig løst.">I like it when everyday tech just works, so I automate it — a smart home I built and version-control myself, and a pipeline that turns my car's telemetry into finished timesheets. Small problems, properly solved.</p>
@@ -468,31 +492,31 @@
                     <p data-en="I'm open to interesting roles and conversations — software engineering, AI engineering, or anything at the intersection of software and the physical world. Drop me a line and I'll get back to you." data-no="Jeg er åpen for interessante stillinger og samtaler — programvareutvikling, AI-utvikling, eller hva som helst i skjæringspunktet mellom programvare og den fysiske verden. Send meg en melding, så svarer jeg deg.">I'm open to interesting roles and conversations — software engineering, AI engineering, or anything at the intersection of software and the physical world. Drop me a line and I'll get back to you.</p>
                     <div class="contact-details">
                         <div class="contact-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                             <div>
-                                <span class="contact-label">Email</span>
+                                <span class="contact-label" data-en="Email" data-no="E-post">Email</span>
                                 <a id="cc-email" href="#">Email</a>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                             <div>
                                 <span class="contact-label">LinkedIn</span>
                                 <a href="https://linkedin.com/in/martin-davidsen-51425a111" target="_blank" rel="noopener">Martin Davidsen</a>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
                             <div>
                                 <span class="contact-label">GitHub</span>
                                 <a href="https://github.com/Defcons" target="_blank" rel="noopener">@Defcons</a>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                             <div>
                                 <span class="contact-label" data-en="Location" data-no="Sted">Location</span>
-                                <span>Stavanger, Norway</span>
+                                <span data-en="Stavanger, Norway" data-no="Stavanger, Norge">Stavanger, Norway</span>
                             </div>
                         </div>
                     </div>
@@ -517,6 +541,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer>
@@ -547,6 +572,6 @@
         </div>
     </div>
 
-    <script src="script.js?v=3"></script>
+    <script src="script.js?v=4"></script>
 </body>
 </html>
