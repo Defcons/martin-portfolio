@@ -70,7 +70,7 @@
     // ---- Scroll Animations ----
     function initScrollAnimations() {
         const elements = document.querySelectorAll(
-            '.service-card, .ai-card, .timeline-item, .skill-group, .beyond-card, .client-item, .about-text, .contact-info, .contact-form-wrap'
+            '.service-card, .ai-card, .timeline-item, .skill-group, .beyond-card, .client-item, .about-text, .contact-single'
         );
 
         elements.forEach(el => el.classList.add('fade-in'));
@@ -99,23 +99,6 @@
                 closeMenu();
             }
         }
-    }
-
-    // ---- Contact Form (placeholder) ----
-    function handleFormSubmit(e) {
-        e.preventDefault();
-        const btn = e.target.querySelector('button[type="submit"]');
-        const originalText = btn.textContent;
-        btn.textContent = currentLang === 'no' ? 'Sendt!' : 'Sent!';
-        btn.style.background = '#10b981';
-        btn.disabled = true;
-
-        setTimeout(() => {
-            btn.textContent = originalText;
-            btn.style.background = '';
-            btn.disabled = false;
-            e.target.reset();
-        }, 3000);
     }
 
     // ---- Project Detail Modal ----
@@ -182,6 +165,7 @@
                 img.src = shots[0];
                 img.alt = (card.querySelector('h3') || {}).textContent || '';
                 img.classList.toggle('modal-img--contain', card.dataset.fit === 'contain');
+                img.classList.toggle('modal-img--frame', card.dataset.fit === 'frame');
                 media.hidden = false;
                 buildThumbs(shots);
             } else {
@@ -294,17 +278,14 @@
             }
         });
 
-        // Contact form
-        const form = document.getElementById('contactForm');
-        if (form) form.addEventListener('submit', handleFormSubmit);
-
         // Contact email — assembled at runtime so the plaintext address never
         // appears in the committed source (defeats repo email-harvesting bots).
         const emailLink = document.getElementById('cc-email');
-        if (emailLink) {
+        const emailText = document.getElementById('cc-email-text');
+        if (emailLink && emailText) {
             const addr = atob('ZGF2aWRzZW45MDhAZ21haWwuY29t');
             emailLink.href = 'mailto:' + addr;
-            emailLink.textContent = addr;
+            emailText.textContent = addr;
         }
 
         // Project detail modal
