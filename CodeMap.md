@@ -1,6 +1,6 @@
-# CODE-MAP — martin-portfolio (martindavidsen.cc)
+# CodeMap — martin-portfolio (martindavidsen.cc)
 
-_Last verified: 2026-07-31 (post design-polish pass)_
+_Last verified: 2026-08-03 @ ac9caf7 (master) — standardized filename → CodeMap.md; pointers spot-checked_
 
 Single-page static personal portfolio. No build step. Structure: see README.md.
 
