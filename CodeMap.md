@@ -1,6 +1,6 @@
 # CodeMap — martin-portfolio (martindavidsen.cc)
 
-_Last verified: 2026-08-03 (Baby Suite card commit, master) — corrected cache-bust versions to match code (v=7/v=5); screenshot-staging rule added_
+_Last verified: 2026-08-03 (three-cards commit, master) — 13 work cards; screenshot-staging rule clarified (light theme where the app has one)_
 
 Single-page static personal portfolio. No build step. Structure: see README.md.
 
@@ -55,6 +55,7 @@ Single-page static personal portfolio. No build step. Structure: see README.md.
   the 100vh hero defeats the tall-viewport trick. Verify renders with a real browser
   (Chrome MCP: navigate → wait ~1.5s → screenshot).
 - **Images must be marketing-safe** (no client names/repo paths/failing tests) — same rule as
-  agentas-sites. App screenshots are **staged with synthetic demo data** (never real family/user
-  state; sync neutered so demo data can't reach production KV) and shot in the app's **light
-  theme** to match the site (David, 2026-08-03).
+  agentas-sites. App screenshots are **staged with synthetic demo data** (never real user/family/
+  client state; sync/API/DB neutered or stubbed so staging can't touch production) and shot in the
+  app's **light theme where one exists** to match the site — dark-only apps shoot their real theme
+  (David, 2026-08-03).

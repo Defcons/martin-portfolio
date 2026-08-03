@@ -7,8 +7,8 @@ truth lives in [`KnowledgeBase.md`](KnowledgeBase.md); the code index in
 _The triad: **CodeMap = the machine · KnowledgeBase = the model ·
 ResearchJournal = the history.**_
 
-_Last verified: 2026-08-03 (Baby Suite card commit, master) — appended the
-Baby Suite entry._
+_Last verified: 2026-08-03 (three-cards commit, master) — appended the
+Watcher/Oslo-Scout/WebOps entry._
 
 ## Timeline
 
@@ -46,6 +46,18 @@ local copies — worker URL pointed at an unreachable port, synthetic demo data
 seeded via injected localStorage script, **light theme** per David — so no real
 family data or production KV was ever involved. HTML-only change + new image
 filenames → no cache-bust, no CF purge needed.
+
+### 2026-08-03 — Three more work cards: Watcher, Oslo-Scout, WebOps
+Selected Work grew 10 → 13 cards, all Private-badged, same day as the Baby
+Suite. Screenshots staged with synthetic data only: **watcher** + **oslo-scout**
+via node stubs serving each app's REAL dashboard html with fabricated `/api`
+responses (fictional GPU watchlists; fictional Oslo Børs issuers — no real
+tickers); **WebOps** by booting the real app in Fiken-mock mode against a
+seeded scratchpad DB (`DB_PATH` override — production data/tokens untouched).
+These apps are dark-only, so the light-theme screenshot rule didn't apply
+(CodeMap rule wording clarified accordingly). Placement: Oslo-Scout after the
+Go simulator, Watcher after vehicle telemetry, WebOps directly before Website
+Studio (internal platform → productised service).
 
 ## Note
 The domain evolved `martin.defc0n.no` → **martindavidsen.cc** — the permanent
