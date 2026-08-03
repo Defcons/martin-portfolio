@@ -1,0 +1,64 @@
+# martin-portfolio — Knowledge Base
+
+_The distilled truth about the site: what it is, stack, deploy, and the facts
+that bite. The code index (where things live + invariants) is
+[`CodeMap.md`](CodeMap.md); the chronological history is
+[`ResearchJournal.md`](ResearchJournal.md)._
+
+_The triad: **CodeMap = the machine · KnowledgeBase = the model ·
+ResearchJournal = the history.**_
+
+_Last verified: 2026-08-03 @ b16ef6c (master) — seeded from README + CodeMap +
+code spot-checks (title, self-hosted font, `cc-lang` key, cache-bust versions)._
+
+## How to read this doc
+**[FACT]** = code/deploy-verified. **[HYP]** = hypothesis + confidence. Volatile
+numbers a file owns (cache-bust `?v=`, breakpoints) live in CodeMap and in the
+code — code wins any conflict.
+
+## 1. What it is
+- **[FACT]** Single-page **personal portfolio** for **Martin Davidsen** —
+  `<title>` "Martin Davidsen — Software & AI Engineer" (confirmed).
+  **Person-first, not a company**: framed so employers see the individual,
+  leading with software/AI, with the industrial track record as support.
+- **[FACT]** Live at **martindavidsen.cc** (permanent personal-brand domain; born
+  as `martin.defc0n.no`). Shares its **visual language** (dark theme, Inter, card
+  styling) with agentas.net, but the content is re-framed first-person —
+  **cross-link, don't duplicate** the two.
+
+## 2. Stack
+- **[FACT]** Plain **static** site, **no build step**: `index.html` +
+  `styles.css` + `script.js` + `images/` + self-hosted `fonts/`. Served by
+  **nginx:alpine** in a container (`Dockerfile` + `nginx.conf`), same shape as
+  the Agentas sites.
+- **[FACT]** `script.js` provides: bilingual EN/NO toggle, mobile menu,
+  scroll-reveal animations, project modals, and a runtime-assembled email.
+
+## 3. Facts that bite
+- **[FACT]** **Bilingual is a `textContent` swap.** `setLanguage()` swaps
+  `data-en`/`data-no` on every tagged node, persisted in `localStorage['cc-lang']`
+  (confirmed — legacy `cc-` key kept; renaming it resets stored prefs).
+  INVARIANT: a `data-en/no` element must hold **plain text only** (the swap
+  destroys child nodes) — arrows/icons go OUTSIDE, around an inner translatable
+  `<span>`. Adding content? Add BOTH languages or it won't translate.
+- **[FACT]** **Inter is self-hosted** — one variable `woff2`, **LATIN subset
+  only** (`fonts/inter-latin-var.woff2`, `<link rel=preload … crossorigin>`). NO
+  Google Fonts (removed to kill render-blocking). The latin range covers
+  Norwegian æ/ø/å; glyphs outside latin need a different subset file.
+- **[FACT]** **Email is base64-assembled at runtime** into `#cc-email` — the
+  plaintext stays out of the committed source (bot-harvest defense).
+- **[FACT]** **Cache-bust discipline:** `styles.css?v=N` + `script.js?v=N` in
+  `index.html` — bump on any functional CSS/JS change (currently v=7 / v=5).
+  Assets serve `immutable, 30d` and are Cloudflare-edge-cached; the HTML is
+  `no-cache`. **Unversioned files** (`robots.txt`, `favicon.*`,
+  `apple-touch-icon.png`, `og-card.jpg`, any reused image name) can serve
+  **stale from the CF edge after a deploy** → Custom-Purge that URL in Cloudflare
+  (the exact list + the verify-with-`?cb=1` trick are in CodeMap).
+- **[FACT]** **Marketing-safe images only** — no client names / repo paths /
+  failing tests visible (same rule as agentas-sites).
+
+## 4. Deploy
+- **[FACT]** Push **`master`** → `.github/workflows/deploy.yml` → Tailscale SSH →
+  LXC `/apps/martin-portfolio` → `docker compose build --no-cache && up -d`.
+  Manual re-run via `workflow_dispatch`. Host port **3040** (3030 was taken by
+  epoch-sim).
