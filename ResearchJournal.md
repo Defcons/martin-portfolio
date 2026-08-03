@@ -2,9 +2,9 @@
 
 _Append-only chronological history: what shipped when. The distilled current
 truth lives in [`KnowledgeBase.md`](KnowledgeBase.md); the code index in
-[`CodeMap.md`](CodeMap.md)._
+[`OrientationMap.md`](OrientationMap.md)._
 
-_The triad: **CodeMap = the machine · KnowledgeBase = the model ·
+_The triad: **OrientationMap = the machine · KnowledgeBase = the model ·
 ResearchJournal = the history.**_
 
 _Last verified: 2026-08-03 (three-cards commit, master) — appended the

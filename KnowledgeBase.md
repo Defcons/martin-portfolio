@@ -2,18 +2,18 @@
 
 _The distilled truth about the site: what it is, stack, deploy, and the facts
 that bite. The code index (where things live + invariants) is
-[`CodeMap.md`](CodeMap.md); the chronological history is
+[`OrientationMap.md`](OrientationMap.md); the chronological history is
 [`ResearchJournal.md`](ResearchJournal.md)._
 
-_The triad: **CodeMap = the machine · KnowledgeBase = the model ·
+_The triad: **OrientationMap = the machine · KnowledgeBase = the model ·
 ResearchJournal = the history.**_
 
-_Last verified: 2026-08-03 @ b16ef6c (master) — seeded from README + CodeMap +
+_Last verified: 2026-08-03 @ b16ef6c (master) — seeded from README + OrientationMap +
 code spot-checks (title, self-hosted font, `cc-lang` key, cache-bust versions)._
 
 ## How to read this doc
 **[FACT]** = code/deploy-verified. **[HYP]** = hypothesis + confidence. Volatile
-numbers a file owns (cache-bust `?v=`, breakpoints) live in CodeMap and in the
+numbers a file owns (cache-bust `?v=`, breakpoints) live in OrientationMap and in the
 code — code wins any conflict.
 
 ## 1. What it is
@@ -53,7 +53,7 @@ code — code wins any conflict.
   `no-cache`. **Unversioned files** (`robots.txt`, `favicon.*`,
   `apple-touch-icon.png`, `og-card.jpg`, any reused image name) can serve
   **stale from the CF edge after a deploy** → Custom-Purge that URL in Cloudflare
-  (the exact list + the verify-with-`?cb=1` trick are in CodeMap).
+  (the exact list + the verify-with-`?cb=1` trick are in OrientationMap).
 - **[FACT]** **Marketing-safe images only** — no client names / repo paths /
   failing tests visible (same rule as agentas-sites).
 

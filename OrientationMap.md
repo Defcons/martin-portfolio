@@ -1,4 +1,4 @@
-# CodeMap — martin-portfolio (martindavidsen.cc)
+# OrientationMap — martin-portfolio (martindavidsen.cc)
 
 _Last verified: 2026-08-03 (three-cards commit, master) — 13 work cards; screenshot-staging rule clarified (light theme where the app has one)_
 
