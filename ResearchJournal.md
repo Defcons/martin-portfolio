@@ -59,6 +59,14 @@ These apps are dark-only, so the light-theme screenshot rule didn't apply
 Go simulator, Watcher after vehicle telemetry, WebOps directly before Website
 Studio (internal platform → productised service).
 
+### 2026-08-03 — Norwegian title pass
+David flagged that several NO card titles were calques of English tech phrasing.
+Seven titles rewritten to idiomatic Norwegian from picked options (e.g.
+"Automatisering av kjøretøytelemetri" → "Automatisk kjørebok og timeføring",
+"Tre lokal-først PWA-er" → "Tre apper for babytiden"). Standing rule captured
+in global memory: translate the outcome, not the English compound; offer
+variants for NO copy.
+
 ## Note
 The domain evolved `martin.defc0n.no` → **martindavidsen.cc** — the permanent
 personal brand, kept deliberately distinct from the agentas.net company sites.
