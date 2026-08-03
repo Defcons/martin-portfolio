@@ -1,6 +1,6 @@
 # CodeMap — martin-portfolio (martindavidsen.cc)
 
-_Last verified: 2026-08-03 @ ac9caf7 (master) — standardized filename → CodeMap.md; pointers spot-checked_
+_Last verified: 2026-08-03 (Baby Suite card commit, master) — corrected cache-bust versions to match code (v=7/v=5); screenshot-staging rule added_
 
 Single-page static personal portfolio. No build step. Structure: see README.md.
 
@@ -33,7 +33,7 @@ Single-page static personal portfolio. No build step. Structure: see README.md.
 ## Conventions / gotchas
 
 - **Cache-bust:** `styles.css?v=N` + `script.js?v=N` in `index.html` — bump on any functional
-  CSS/JS change (currently **v=6 / v=4**). Image `data-shot`s carry `?v=1`; new image = new
+  CSS/JS change (currently **v=7 / v=5**). Image `data-shot`s carry `?v=1`; new image = new
   filename instead of bump.
 - **UNVERSIONED files + Cloudflare cache:** assets are served `Cache-Control: immutable, 30d`
   and Cloudflare caches them at the edge; the HTML is `no-cache` (nginx `expires -1` in `location /`).
@@ -55,4 +55,6 @@ Single-page static personal portfolio. No build step. Structure: see README.md.
   the 100vh hero defeats the tall-viewport trick. Verify renders with a real browser
   (Chrome MCP: navigate → wait ~1.5s → screenshot).
 - **Images must be marketing-safe** (no client names/repo paths/failing tests) — same rule as
-  agentas-sites.
+  agentas-sites. App screenshots are **staged with synthetic demo data** (never real family/user
+  state; sync neutered so demo data can't reach production KV) and shot in the app's **light
+  theme** to match the site (David, 2026-08-03).

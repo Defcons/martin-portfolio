@@ -7,8 +7,8 @@ truth lives in [`KnowledgeBase.md`](KnowledgeBase.md); the code index in
 _The triad: **CodeMap = the machine · KnowledgeBase = the model ·
 ResearchJournal = the history.**_
 
-_Last verified: 2026-08-03 @ b16ef6c (master) — reconstructed from `git log`
-(14 commits)._
+_Last verified: 2026-08-03 (Baby Suite card commit, master) — appended the
+Baby Suite entry._
 
 ## Timeline
 
@@ -36,6 +36,16 @@ Removed the contact form; copy fixes; image cleanup.
 ### 2026-08-03 — Triad standardization
 CODE-MAP.md → CodeMap.md (`~/.claude/CLAUDE.md` §5); this KnowledgeBase + Journal
 seeded the same day (docs-only pass).
+
+### 2026-08-03 — Baby Suite card (10th work card)
+Added the family baby apps (Defcons/baby: contraction timer + baby tracker +
+pelvic trainer) as one "Selected Work" card after NoBS. Firsts: the site's first
+**public-repo link** and the first real use of the modal's `data-link2` (repo +
+live landing). Screenshots (`images/babysuite*.jpg`) were staged from patched
+local copies — worker URL pointed at an unreachable port, synthetic demo data
+seeded via injected localStorage script, **light theme** per David — so no real
+family data or production KV was ever involved. HTML-only change + new image
+filenames → no cache-bust, no CF purge needed.
 
 ## Note
 The domain evolved `martin.defc0n.no` → **martindavidsen.cc** — the permanent
