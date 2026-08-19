@@ -1,6 +1,6 @@
 # OrientationMap — martin-portfolio (martindavidsen.cc)
 
-_Last verified: 2026-08-03 (three-cards commit, master) — 13 work cards; screenshot-staging rule clarified (light theme where the app has one)_
+_Last verified: 2026-08-19 — `#focus` retitled "What I'm good at" + gained a full-width **Private & On-Prem AI** feature pillar (`.service-card--feature`) below the four cards; Local LLMs/Ollama added to Skills. Honest-capability framing (I run local models hands-on + self-hosting; no client-deployment claims). styles.css v7→v8._
 
 Single-page static personal portfolio. No build step. Structure: see README.md.
 

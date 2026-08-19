@@ -1342,6 +1342,39 @@ footer {
 /* ---- Focus grid (4 cards) ---- */
 .focus-grid { grid-template-columns: repeat(4, 1fr); }
 
+/* Full-width feature card for the private/on-prem AI pillar — spans the focus grid so it
+   reads as a highlighted capability below the four cards, not an orphan fifth. */
+.service-card--feature {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    background: linear-gradient(135deg, var(--accent-glow), transparent);
+}
+.service-feature-icon {
+    flex-shrink: 0;
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+.service-feature-icon svg { width: 28px; height: 28px; }
+.service-feature-content { flex: 1; min-width: 0; }
+.service-feature-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 8px;
+}
+.service-feature-content h3 { margin-bottom: 10px; }
+.service-feature-content p { margin-bottom: 16px; }
+
 /* ---- Work section background ---- */
 #work {
     background: var(--bg-primary);
@@ -1571,6 +1604,7 @@ footer {
     .about-photo { width: 160px; height: 160px; }
     .focus-grid { grid-template-columns: 1fr; }
     .skills-grid { grid-template-columns: 1fr; }
+    .service-card--feature { flex-direction: column; text-align: center; gap: 18px; }
     .section-lead { margin-top: -24px; }
     .timeline-head { flex-direction: column; gap: 2px; }
 }

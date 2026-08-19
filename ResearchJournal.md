@@ -7,8 +7,8 @@ truth lives in [`KnowledgeBase.md`](KnowledgeBase.md); the code index in
 _The triad: **OrientationMap = the machine · KnowledgeBase = the model ·
 ResearchJournal = the history.**_
 
-_Last verified: 2026-08-03 (three-cards commit, master) — appended the
-Watcher/Oslo-Scout/WebOps entry._
+_Last verified: 2026-08-19 — added the Private & On-Prem AI focus pillar +
+Skills tags; honest-capability framing._
 
 ## Timeline
 
@@ -66,6 +66,18 @@ Seven titles rewritten to idiomatic Norwegian from picked options (e.g.
 "Tre lokal-først PWA-er" → "Tre apper for babytiden"). Standing rule captured
 in global memory: translate the outcome, not the English compound; offer
 variants for NO copy.
+
+### 2026-08-19 — Private & On-Prem AI pillar
+`#focus` retitled "Four things I'm good at" → "What I'm good at" and gained a
+full-width `.service-card--feature` pillar below the four cards — the local/
+on-prem AI capability David wants to foreground. Personal-voice copy, kept
+honest: "I run open-weight LLMs on my own machines and homelab" (true — David
+confirmed hands-on local models + a self-hosted inference box), and "bring the
+cloud RAG/agent patterns on-premise" framed as capability, not a shipped client
+deployment. Local LLMs + Ollama added to the Skills "AI & LLMs" group. New CSS
+`.service-card--feature` (+ ≤768 stack); `styles.css v7→v8`. Mirrors the apex
+`#services` pillar (agentas-sites RJ, same day). HTML+CSS change → cache-bust
+bumped; held for David's copy review before push.
 
 ## Note
 The domain evolved `martin.defc0n.no` → **martindavidsen.cc** — the permanent
