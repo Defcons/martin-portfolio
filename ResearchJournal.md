@@ -4,11 +4,11 @@ _Append-only chronological history: what shipped when. The distilled current
 truth lives in [`KnowledgeBase.md`](KnowledgeBase.md); the code index in
 [`OrientationMap.md`](OrientationMap.md)._
 
-_The triad: **OrientationMap = the machine · KnowledgeBase = the model ·
-ResearchJournal = the history.**_
+_The bible set: **OrientationMap = the machine · KnowledgeBase = the model ·
+ResearchJournal = the history · ToDo = deferrals · Testing = pending verification.**_
 
-_Last verified: 2026-08-19 — added the Private & On-Prem AI focus pillar +
-Skills tags; honest-capability framing._
+_Last verified: 2026-08-20 @ ac64bfc (master) — bible-freshening pass (see
+Timeline entry below)._
 
 ## Timeline
 
@@ -78,6 +78,15 @@ deployment. Local LLMs + Ollama added to the Skills "AI & LLMs" group. New CSS
 `.service-card--feature` (+ ≤768 stack); `styles.css v7→v8`. Mirrors the apex
 `#services` pillar (agentas-sites RJ, same day). HTML+CSS change → cache-bust
 bumped; held for David's copy review before push.
+
+### 2026-08-20 — Bible-freshening pass
+Estate-wide docs maintenance (CLAUDE.md §5). Spot-checked OM's subsystem
+pointers/symbols against code — all resolved. Found and fixed a stale
+cache-bust figure (OM + KB said "v=7/v=5"; code has been v=9/v=5 since the
+08-19 pillar work). Normalized the "triad" self-description in KB/RJ headers
+to the current six-doc bible (ToDo.md + Testing.md existed but weren't
+listed). Added OM's missing bible-docs pointer list. Normalized the
+Testing.md stub into a clean honest-empty ledger. No site behavior changed.
 
 ## Note
 The domain evolved `martin.defc0n.no` → **martindavidsen.cc** — the permanent

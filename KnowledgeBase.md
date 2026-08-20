@@ -5,11 +5,12 @@ that bite. The code index (where things live + invariants) is
 [`OrientationMap.md`](OrientationMap.md); the chronological history is
 [`ResearchJournal.md`](ResearchJournal.md)._
 
-_The triad: **OrientationMap = the machine · KnowledgeBase = the model ·
-ResearchJournal = the history.**_
+_The bible set: **OrientationMap = the machine · KnowledgeBase = the model ·
+ResearchJournal = the history · ToDo = deferrals · Testing = pending verification.**_
 
-_Last verified: 2026-08-03 @ b16ef6c (master) — seeded from README + OrientationMap +
-code spot-checks (title, self-hosted font, `cc-lang` key, cache-bust versions)._
+_Last verified: 2026-08-20 @ ac64bfc (master) — bible-freshening pass: re-checked
+facts against OrientationMap + code (cache-bust was stale at v=7, corrected to
+v=9); added the Private & On-Prem AI framing fact (08-19 change)._
 
 ## How to read this doc
 **[FACT]** = code/deploy-verified. **[HYP]** = hypothesis + confidence. Volatile
@@ -48,7 +49,7 @@ code — code wins any conflict.
 - **[FACT]** **Email is base64-assembled at runtime** into `#cc-email` — the
   plaintext stays out of the committed source (bot-harvest defense).
 - **[FACT]** **Cache-bust discipline:** `styles.css?v=N` + `script.js?v=N` in
-  `index.html` — bump on any functional CSS/JS change (currently v=7 / v=5).
+  `index.html` — bump on any functional CSS/JS change (currently v=9 / v=5).
   Assets serve `immutable, 30d` and are Cloudflare-edge-cached; the HTML is
   `no-cache`. **Unversioned files** (`robots.txt`, `favicon.*`,
   `apple-touch-icon.png`, `og-card.jpg`, any reused image name) can serve
@@ -56,6 +57,13 @@ code — code wins any conflict.
   (the exact list + the verify-with-`?cb=1` trick are in OrientationMap).
 - **[FACT]** **Marketing-safe images only** — no client names / repo paths /
   failing tests visible (same rule as agentas-sites).
+- **[FACT]** **Private & On-Prem AI pillar (added 2026-08-19) is framed as
+  capability, not a shipped client deployment.** The full-width
+  `.service-card--feature` card below `#focus`'s four cards says "I run
+  open-weight LLMs on my own machines and homelab" — true (hands-on local
+  models + a self-hosted inference box) — but does NOT claim a completed
+  client on-prem AI project. Keep future AI copy on this site to the same
+  honest line (standing capability-vs-deployment framing rule, David).
 
 ## 4. Deploy
 - **[FACT]** Push **`master`** → `.github/workflows/deploy.yml` → Tailscale SSH →

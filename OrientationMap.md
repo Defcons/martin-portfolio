@@ -1,8 +1,20 @@
 # OrientationMap — martin-portfolio (martindavidsen.cc)
 
-_Last verified: 2026-08-19 — `#focus` retitled "What I'm good at" + gained a full-width **Private & On-Prem AI** feature pillar (`.service-card--feature`) below the four cards; Local LLMs/Ollama added to Skills. Honest-capability framing (I run local models hands-on + self-hosting; no client-deployment claims). styles.css v7→v9 (v9 = feature-card icon top-aligned)._
+_Last verified: 2026-08-20 @ ac64bfc (master) — bible-freshening pass: subsystem
+pointers/symbols spot-checked against code (all resolved); corrected a stale
+cache-bust figure below (docs said v=7, code has been v=9 since the 08-19 pillar
+work). Site's latest feature (08-19): `#focus` retitled "What I'm good at" +
+gained a full-width **Private & On-Prem AI** feature pillar (`.service-card--feature`)
+below the four cards; Local LLMs/Ollama added to Skills. Honest-capability framing
+(I run local models hands-on + self-hosting; no client-deployment claims)._
 
 Single-page static personal portfolio. No build step. Structure: see README.md.
+
+**Bible docs** (all at repo root — no `docs/` dir): this file (hub) ·
+[`KnowledgeBase.md`](KnowledgeBase.md) (behavior facts, FACT/HYP-tagged) ·
+[`ResearchJournal.md`](ResearchJournal.md) (append-only history) ·
+[`ToDo.md`](ToDo.md) (deferrals) · [`Testing.md`](Testing.md) (pending manual
+tests). No `NavigationMap.md` — this file stays under the ~20 KB split line.
 
 ## Subsystems
 
@@ -33,7 +45,7 @@ Single-page static personal portfolio. No build step. Structure: see README.md.
 ## Conventions / gotchas
 
 - **Cache-bust:** `styles.css?v=N` + `script.js?v=N` in `index.html` — bump on any functional
-  CSS/JS change (currently **v=7 / v=5**). Image `data-shot`s carry `?v=1`; new image = new
+  CSS/JS change (currently **v=9 / v=5**). Image `data-shot`s carry `?v=1`; new image = new
   filename instead of bump.
 - **UNVERSIONED files + Cloudflare cache:** assets are served `Cache-Control: immutable, 30d`
   and Cloudflare caches them at the edge; the HTML is `no-cache` (nginx `expires -1` in `location /`).
