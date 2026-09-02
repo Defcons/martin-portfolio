@@ -127,6 +127,23 @@ counts 3·2·3·2·2·2·2·1, Automation expands to its 3 cards, NO toggle swap
 in screenshots (scroll-reveal + capture quirk) — verify visually in real Chrome, but DOM/CSS assertions
 via its `javascript_tool` are reliable.
 
+### 2026-09-02c — OG share card refreshed + made generator-owned
+Spun out of the agentas-sites OG/LinkedIn session the same day (see that repo's
+ResearchJournal 2026-09-02: the "couldn't generate a preview" was LinkedIn's
+negative cache, and its first light apex card came back blurry — LinkedIn
+downscales cards to ~500px, killing fine detail). Martin chose "refresh, keep
+photo" over a text card for the portfolio (a face beats a logo for a personal
+brand). New root `gen-og-card.py` renders `images/og-card.jpg` as a faithful
+refresh of the hand-made original — same layout (circular `martin-400.jpg`
+headshot left / name-role-location right), rebuilt on the site's `:root` palette
+with a `--gradient-accent` photo ring + underline, SUPERSAMPLED 3×→LANCZOS on
+flat backgrounds, validated against a simulated LinkedIn downscale (~523×274
+JPEG) before shipping. Head: og:image/twitter:image/JSON-LD `image` → `?v=1`
+(og-card leaves the unversioned-CF-purge list), + `og:image:type`/`og:image:alt`
++ `twitter:image`. Committed surgically around an in-flight working-tree edit
+from the parallel career session (project-card changes left uncommitted, only
+the head hunk of index.html staged). Facts promoted → KnowledgeBase §3.
+
 ## Note
 The domain evolved `martin.defc0n.no` → **martindavidsen.cc** — the permanent
 personal brand, kept deliberately distinct from the agentas.net company sites.

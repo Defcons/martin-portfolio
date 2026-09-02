@@ -8,9 +8,11 @@ that bite. The code index (where things live + invariants) is
 _The bible set: **OrientationMap = the machine · KnowledgeBase = the model ·
 ResearchJournal = the history · ToDo = deferrals · Testing = pending verification.**_
 
-_Last verified: 2026-08-20 @ ac64bfc (master) — bible-freshening pass: re-checked
-facts against OrientationMap + code (cache-bust was stale at v=7, corrected to
-v=9); added the Private & On-Prem AI framing fact (08-19 change)._
+_Last verified: 2026-09-02 (master) — added the generator-owned OG-card FACT
+(photo-forward refresh, supersampled crispness rule, `?v=` discipline; og-card
+left the unversioned-purge list) + deferred volatile cache-bust N to
+OrientationMap/code per this doc's own policy. Prior: 2026-08-20 @ ac64bfc
+bible-freshening pass; Private & On-Prem AI framing fact (08-19)._
 
 ## How to read this doc
 **[FACT]** = code/deploy-verified. **[HYP]** = hypothesis + confidence. Volatile
@@ -49,12 +51,24 @@ code — code wins any conflict.
 - **[FACT]** **Email is base64-assembled at runtime** into `#cc-email` — the
   plaintext stays out of the committed source (bot-harvest defense).
 - **[FACT]** **Cache-bust discipline:** `styles.css?v=N` + `script.js?v=N` in
-  `index.html` — bump on any functional CSS/JS change (currently v=9 / v=5).
-  Assets serve `immutable, 30d` and are Cloudflare-edge-cached; the HTML is
-  `no-cache`. **Unversioned files** (`robots.txt`, `favicon.*`,
-  `apple-touch-icon.png`, `og-card.jpg`, any reused image name) can serve
-  **stale from the CF edge after a deploy** → Custom-Purge that URL in Cloudflare
-  (the exact list + the verify-with-`?cb=1` trick are in OrientationMap).
+  `index.html` — bump on any functional CSS/JS change (current N lives in
+  OrientationMap/code — code wins). Assets serve `immutable, 30d` and are
+  Cloudflare-edge-cached; the HTML is `no-cache`. **Unversioned files**
+  (`robots.txt`, `favicon.*`, `apple-touch-icon.png`, any reused image name) can
+  serve **stale from the CF edge after a deploy** → Custom-Purge that URL in
+  Cloudflare (the exact list + the verify-with-`?cb=1` trick are in
+  OrientationMap). `og-card.jpg` left this list 2026-09-02 — now referenced
+  `?v=N`, so a regen bumps N instead of purging.
+- **[FACT]** **The OG share card is generator-owned** (2026-09-02):
+  `gen-og-card.py` (repo root, not served) renders `images/og-card.jpg` —
+  photo-forward refresh of the original hand-made card (circular headshot +
+  `--gradient-accent` ring, name/role/"Founder of Agentas AS"/domain) on the
+  site's own `:root` palette. Rendered SUPERSAMPLED (3×→LANCZOS, flat
+  backgrounds) because LinkedIn downscales cards to ~500px + re-encodes — fine
+  detail turns to mush (rule established on the agentas-sites cards the same
+  day, incl. the eyeball-check: downscale to ~523×274 JPEG q85 and look at
+  THAT). Regen = rerun + bump `?v=` (og:image, twitter:image, JSON-LD `image`)
+  + LinkedIn Post-Inspector re-scrape. Needs `_assets/inter.ttf` (gitignored).
 - **[FACT]** **Marketing-safe images only** — no client names / repo paths /
   failing tests visible (same rule as agentas-sites).
 - **[FACT]** **Private & On-Prem AI pillar (added 2026-08-19) is framed as
