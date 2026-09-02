@@ -144,6 +144,31 @@ JPEG) before shipping. Head: og:image/twitter:image/JSON-LD `image` → `?v=1`
 from the parallel career session (project-card changes left uncommitted, only
 the head hunk of index.html staged). Facts promoted → KnowledgeBase §3.
 
+### 2026-09-02d — Full screenshot pass: every card has a shot + games/clouddrive fixes
+Martin's polish list, executed in one batch:
+1. **Games**: Dreadmark moved before Frostwake; badges swapped (Dreadmark → Live,
+   Frostwake → In dev) — done by a deterministic split/reassemble script, cards byte-identical.
+2. **Self-Hosted File Platform → open source**: "Open source" badge (live-green), public
+   `github.com/Defcons/clouddrive` link, `data-private` dropped; better screenshot (`?v=2`).
+3. **NoBS**: replaced both shots with ONE image — the landing page's "The whole app, no
+   clutter" 4-phone showcase, captured from nobs.agentas.net via headless Chrome
+   (puppeteer-core driving system Chrome, deviceScaleFactor 2, element-screenshot of the
+   `section.band`) → 1600px JPG. `data-shot2` removed; orphaned `images/nobs-2.jpg` deleted.
+4. **Four new screenshots wired** (Martin supplied via `Downloads\port pics`): consulting.jpg
+   (`data-fit=contain`), trading.jpg, tablescout.jpg, assistkey.jpg → the four cards that had
+   no `data-shot`. **Every one of the 17 cards now has a working screenshot** (verified by
+   loading all `data-shot`s in-browser — no 404s).
+5. **Publish-safety redactions (PIL pixelation) before wiring**: consulting.jpg showed real
+   prospect companies, real person names (from scraped ads), and the `tech.agentas.net`
+   hostname → all pixelated (8 company bands, 4 contact bands, activity entry, outbox
+   sender, smtp footer); tablescout.jpg leaked the home address in "distances from …" →
+   pixelated (career-KB §1 never-public rule). Trading/assistkey/clouddrive were clean.
+   Redactions verified by re-reading the output images.
+
+HTML + images only — no CSS/JS change → cache-bust stays v=11/v=6 (image URLs got their own
+`?v` bumps: nobs `?v=2`, clouddrive `?v=2`, four new `?v=1`). Still pending: a NEW vehicle
+telemetry image (not in the batch) → ToDo.
+
 ## Note
 The domain evolved `martin.defc0n.no` → **martindavidsen.cc** — the permanent
 personal brand, kept deliberately distinct from the agentas.net company sites.

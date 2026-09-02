@@ -1,6 +1,12 @@
 # OrientationMap — martin-portfolio (martindavidsen.cc)
 
-_Last verified: 2026-09-02c (master) — OG share card REFRESHED + made generator-owned
+_Last verified: 2026-09-02d (master) — **every one of the 17 work cards now has a `data-shot`**
+(4 new: consulting/trading/tablescout/assistkey; nobs + clouddrive replaced → `?v=2`;
+`nobs-2.jpg` deleted). consulting + tablescout shots are PIL-pixelated for publish-safety
+(real names/companies/hostname; home address) — see RJ 2026-09-02d. Games order:
+**Dreadmark (Live) before Frostwake (In dev)**. clouddrive card is now **Open source**
+(badge + GitHub link, no `data-private`). HTML+images only — cache-bust still v=11/v=6.
+Pending: new vehicle-telemetry image (ToDo). Prior 09-02c: OG share card REFRESHED + made generator-owned
 (`gen-og-card.py` → `images/og-card.jpg`, photo-forward light card on the site palette,
 supersampled for LinkedIn-downscale crispness); head og:image/twitter:image/JSON-LD now `?v=1`
 (og-card left the unversioned-CF-purge list) + added `og:image:type`/`alt` + `twitter:image`.
