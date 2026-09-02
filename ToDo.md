@@ -11,11 +11,11 @@ both sites aligned; history in ResearchJournal 2026-09-02.)_
 (nothing yet)
 
 ## Blocked / needs the user
-- [ ] **Vehicle Telemetry card image update** (Martin, 2026-09-02) — Martin wants a new
-  picture on the "Vehicle Telemetry Automation" card; the `Downloads\port pics` batch
-  covered the other 5 cards but contained no vehicle image. Card still shows the old
-  `images/vehicle.webp?v=1`. Waiting on a new image from Martin → then save to `images/`,
-  wire `data-shot` (bump `?v` / new filename per convention).
+- [x] **Vehicle Telemetry card image update** — DONE 2026-09-02: Martin delivered
+  `vehicle.jpg` (Kjørebok dashboard); From/To addresses + Purpose labels PIL-pixelated
+  (real movement locations + client-site naming) before publish; wired as
+  `images/vehicle.jpg?v=1` (new filename), orphaned `vehicle.webp` deleted. Same
+  redacted image mirrored to the apex card (`?v=3`).
 
 ## Done (prune on next touch)
 (nothing yet)

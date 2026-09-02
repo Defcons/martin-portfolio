@@ -169,6 +169,16 @@ HTML + images only — no CSS/JS change → cache-bust stays v=11/v=6 (image URL
 `?v` bumps: nobs `?v=2`, clouddrive `?v=2`, four new `?v=1`). Still pending: a NEW vehicle
 telemetry image (not in the batch) → ToDo.
 
+### 2026-09-02e — Vehicle Telemetry screenshot (last missing card image)
+Martin delivered `vehicle.jpg` (the Kjørebok dashboard — trip tracking, monthly
+reimbursement breakdown, recent-trips table). REDACTED before publish (PIL pixelation,
+same pipeline as consulting/tablescout): the From/To columns exposed REAL movement
+addresses (incl. the home area) and "Work: OneCo" client-site naming; Purpose labels also
+covered. Stats/km/dates/types stay legible. Wired as `images/vehicle.jpg?v=1` (new
+filename per convention); orphaned `vehicle.webp` deleted. The same redacted image also
+replaced the apex copy (`agentas-sites` `images/projects/vehicle.jpg` → `?v=3`).
+Every card image on both surfaces is now current.
+
 ## Note
 The domain evolved `martin.defc0n.no` → **martindavidsen.cc** — the permanent
 personal brand, kept deliberately distinct from the agentas.net company sites.
