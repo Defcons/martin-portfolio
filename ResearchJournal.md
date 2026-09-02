@@ -88,6 +88,23 @@ to the current six-doc bible (ToDo.md + Testing.md existed but weren't
 listed). Added OM's missing bible-docs pointer list. Normalized the
 Testing.md stub into a clean honest-empty ledger. No site behavior changed.
 
+### 2026-09-02 — Category restructure + new cards + fritid (career-alignment)
+Part of the cross-surface career alignment (canon in `C:\Dev\career\`). The `#work`
+grid was reorganized from a flat card list into **9 labeled category groups** (new
+`.ai-cat` CSS spanning the grid): Analytics Platform · Apps · Cyber Security ·
+Economy · Tools · Automation · Business Automation · Games · Websites & Client Sites.
+**Four new modal cards** — Automated Trading Platform, Table-Scout, AssistKey
+(GitHub link), Consulting Lead Engine (describe-only) — added without `data-shot`
+(modal hides the media area when no shot). The old "Oslo-Scout — Market Falsification
+Rig" card was **reframed to "AI-Assisted Market Analysis"** (dropped the internal
+name, "Oslo Børs", and the paper-vs-live framing) per the career KnowledgeBase §4.12
+public-safety rule. Siemens Energy timeline entry: **Symra → first oil** (resolved the
+long-standing conflict vs agentas.net, which was already correct) + a **well-builder
+tool** line. Beyond/fritid gained a 4th personal card **"Life outside the screen"**
+(nature/boat/training/family/home). `styles.css v9→v10`. The heavy grid reorder was
+done by a subagent under verbatim-preservation rules; render verified via a local
+static server (category labels, new cards, fritid card all correct) before push.
+
 ## Note
 The domain evolved `martin.defc0n.no` → **martindavidsen.cc** — the permanent
 personal brand, kept deliberately distinct from the agentas.net company sites.

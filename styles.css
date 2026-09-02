@@ -905,6 +905,19 @@ section { padding: 120px 0; }
     gap: 24px;
 }
 
+.ai-cat {
+    grid-column: 1 / -1;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-top: 40px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+}
+.ai-cat:first-child { margin-top: 0; }
+
 .ai-card {
     background: var(--bg-card);
     border: 1px solid var(--border);

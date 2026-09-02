@@ -1,12 +1,19 @@
 # OrientationMap — martin-portfolio (martindavidsen.cc)
 
-_Last verified: 2026-08-20 @ ac64bfc (master) — bible-freshening pass: subsystem
-pointers/symbols spot-checked against code (all resolved); corrected a stale
-cache-bust figure below (docs said v=7, code has been v=9 since the 08-19 pillar
-work). Site's latest feature (08-19): `#focus` retitled "What I'm good at" +
-gained a full-width **Private & On-Prem AI** feature pillar (`.service-card--feature`)
-below the four cards; Local LLMs/Ollama added to Skills. Honest-capability framing
-(I run local models hands-on + self-hosting; no client-deployment claims)._
+_Last verified: 2026-09-02 (master) — career-alignment pass: the `#work` "Selected
+Work" grid is now grouped into 9 category labels (new `.ai-cat` rule in styles.css —
+`grid-column: 1/-1` full-width label; categories = Analytics Platform · Apps · Cyber
+Security · Economy · Tools · Automation · Business Automation · Games · Websites &
+Client Sites). 4 new modal cards added (Automated Trading Platform, Table-Scout,
+AssistKey [links to GitHub], Consulting Lead Engine) — note these have NO `data-shot`,
+which the modal handles by hiding the image area. Old "Oslo-Scout" card reframed to
+"AI-Assisted Market Analysis" (no internal name / venue / paper-vs-live framing).
+Beyond/fritid gained a 4th personal card "Life outside the screen". Siemens Energy
+timeline: Symra now "first oil" + well-builder line. **Cache-bust bumped v=9 → v=10**
+(styles.css only; script.js still v=5). Prior 08-20 note below._
+
+_(prior) Last verified: 2026-08-20 @ ac64bfc — subsystem pointers spot-checked;
+`#focus` "What I'm good at" + Private & On-Prem AI pillar; Local LLMs/Ollama in Skills._
 
 Single-page static personal portfolio. No build step. Structure: see README.md.
 
@@ -45,7 +52,7 @@ tests). No `NavigationMap.md` — this file stays under the ~20 KB split line.
 ## Conventions / gotchas
 
 - **Cache-bust:** `styles.css?v=N` + `script.js?v=N` in `index.html` — bump on any functional
-  CSS/JS change (currently **v=9 / v=5**). Image `data-shot`s carry `?v=1`; new image = new
+  CSS/JS change (currently **v=10 / v=5**). Image `data-shot`s carry `?v=1`; new image = new
   filename instead of bump.
 - **UNVERSIONED files + Cloudflare cache:** assets are served `Cache-Control: immutable, 30d`
   and Cloudflare caches them at the edge; the HTML is `no-cache` (nginx `expires -1` in `location /`).
