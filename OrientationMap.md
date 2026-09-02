@@ -1,16 +1,22 @@
 # OrientationMap — martin-portfolio (martindavidsen.cc)
 
-_Last verified: 2026-09-02 (master) — career-alignment pass: the `#work` "Selected
-Work" grid is now grouped into 9 category labels (new `.ai-cat` rule in styles.css —
-`grid-column: 1/-1` full-width label; categories = Analytics Platform · Apps · Cyber
-Security · Economy · Tools · Automation · Business Automation · Games · Websites &
-Client Sites). 4 new modal cards added (Automated Trading Platform, Table-Scout,
-AssistKey [links to GitHub], Consulting Lead Engine) — note these have NO `data-shot`,
-which the modal handles by hiding the image area. Old "Oslo-Scout" card reframed to
-"AI-Assisted Market Analysis" (no internal name / venue / paper-vs-live framing).
-Beyond/fritid gained a 4th personal card "Life outside the screen". Siemens Energy
-timeline: Symra now "first oil" + well-builder line. **Cache-bust bumped v=9 → v=10**
-(styles.css only; script.js still v=5). Prior 08-20 note below._
+_Last verified: 2026-09-02b (master) — the `#work` grid is now **8 collapsible accordion
+sections**: `.ai-sections` > `.ai-section` > (`.ai-cat` `<button>` header with `.ai-cat-name`
++ `.ai-cat-count` pill + `.ai-cat-chevron`) + `.ai-section-panel` > `.ai-section-inner` >
+per-section `.ai-grid` of cards. **Default-collapsed**, smooth expand via animatable
+`grid-template-rows: 0fr→1fr` toggled by the `.open` class. JS `initAccordions()` (script.js)
+toggles `.open`/`aria-expanded`, injects each `.ai-cat-count` (card count), and adds `.visible`
+to a section's `.ai-card`s on open (they carry `.fade-in` from `initScrollAnimations` but stay
+unobserved while clipped). **"Business Automation" category was MERGED into Automation** (WebOps
++ Consulting Lead Engine now sit with Vehicle Telemetry); section order = Automation · Economy ·
+Tools · Cyber Security · Analytics Platform · Apps · Games · Websites & Client Sites.
+**Cache-bust v=10→v=11 (styles) + v=5→v=6 (script).** Prior 09-02 + 08-20 notes below._
+
+_(prior 2026-09-02) career-alignment pass: introduced the category grouping (then 9 flat
+`.ai-cat` labels) + 4 new modal cards (Automated Trading Platform, Table-Scout, AssistKey,
+Consulting Lead Engine — no `data-shot`, modal hides the image area) + "Oslo-Scout" reframed to
+"AI-Assisted Market Analysis" + Beyond "Life outside the screen" card + Siemens Symra first-oil/
+well-builder line. Cache-bust was v=9→v=10._
 
 _(prior) Last verified: 2026-08-20 @ ac64bfc — subsystem pointers spot-checked;
 `#focus` "What I'm good at" + Private & On-Prem AI pillar; Local LLMs/Ollama in Skills._
@@ -42,6 +48,14 @@ tests). No `NavigationMap.md` — this file stays under the ~20 KB split line.
   modal, not on the card face. Cards get a JS-assigned `aria-labelledby` (their h3 id) so the
   role=button name follows the language toggle; the open dialog **traps Tab focus** (keydown
   handler cycles focusables within `#projectModal`).
+- **Category accordion** — `script.js` `initAccordions()`: each `#work` category is a
+  `.ai-section` whose `.ai-cat` `<button>` header toggles `.open` on the section (+ `aria-expanded`).
+  Collapse/expand is pure CSS: `.ai-section-panel { grid-template-rows: 0fr }` → `1fr` under `.open`,
+  with `.ai-section-inner { overflow:hidden; min-height:0 }` doing the clipping. JS also injects the
+  `.ai-cat-count` pill and, on open, adds `.visible` to that section's cards (they get `.fade-in` from
+  `initScrollAnimations` but are never observed-visible while clipped, so they'd stay at opacity 0
+  otherwise). **INVARIANT:** the header label lives in `.ai-cat-name` (the ONLY `data-en/no` element
+  in the header) — keep count/chevron OUTSIDE it (see the Bilingual-toggle text-only rule).
 - **Email obfuscation** — `script.js` init: address base64-assembled at runtime into `#cc-email`
   (keeps plaintext out of the repo).
 - **Fonts** — Inter is **self-hosted** (`fonts/inter-latin-var.woff2`, one variable file, weights
@@ -52,7 +66,7 @@ tests). No `NavigationMap.md` — this file stays under the ~20 KB split line.
 ## Conventions / gotchas
 
 - **Cache-bust:** `styles.css?v=N` + `script.js?v=N` in `index.html` — bump on any functional
-  CSS/JS change (currently **v=10 / v=5**). Image `data-shot`s carry `?v=1`; new image = new
+  CSS/JS change (currently **v=11 / v=6**). Image `data-shot`s carry `?v=1`; new image = new
   filename instead of bump.
 - **UNVERSIONED files + Cloudflare cache:** assets are served `Cache-Control: immutable, 30d`
   and Cloudflare caches them at the edge; the HTML is `no-cache` (nginx `expires -1` in `location /`).

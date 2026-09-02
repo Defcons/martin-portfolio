@@ -247,6 +247,24 @@
         });
     }
 
+    // ---- Collapsible Category Sections ----
+    function initAccordions() {
+        document.querySelectorAll('.ai-section').forEach(section => {
+            const btn = section.querySelector('.ai-cat');
+            const count = section.querySelector('.ai-cat-count');
+            const cards = section.querySelectorAll('.ai-card');
+            if (count) count.textContent = cards.length;
+            if (!btn) return;
+            btn.addEventListener('click', () => {
+                const open = section.classList.toggle('open');
+                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+                // Cards carry .fade-in (opacity:0) from initScrollAnimations but stay
+                // unobserved while the panel is clipped; reveal them on expand.
+                if (open) cards.forEach(c => c.classList.add('visible'));
+            });
+        });
+    }
+
     // ---- Initialize ----
     function init() {
         // Set language
@@ -290,6 +308,9 @@
 
         // Project detail modal
         initModal();
+
+        // Collapsible category sections
+        initAccordions();
 
         // Scroll animations
         initScrollAnimations();

@@ -19,7 +19,7 @@
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="preload" as="font" type="font/woff2" href="fonts/inter-latin-var.woff2" crossorigin>
-    <link rel="stylesheet" href="styles.css?v=10">
+    <link rel="stylesheet" href="styles.css?v=11">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -188,94 +188,65 @@
             <div class="section-label" data-en="Selected Work" data-no="Utvalgt arbeid">Selected Work</div>
             <h2 class="section-title" data-en="Things I've built and run myself" data-no="Ting jeg har bygget og driftet selv">Things I've built and run myself</h2>
             <p class="section-lead" data-en="A selection of software and AI systems I've built end-to-end on my own infrastructure. Real users, real traffic, real consequences when something breaks. Each one focuses on the engineering — the architecture and the operational discipline — rather than the specific domain it serves." data-no="Et utvalg programvare- og AI-systemer jeg har bygget fra A til Å på egen infrastruktur. Ekte brukere, ekte trafikk, ekte konsekvenser når noe ryker. Hver enkelt fokuserer på ingeniørarbeidet — arkitekturen og driftsdisiplinen — fremfor det spesifikke domenet det betjener.">A selection of software and AI systems I've built end-to-end on my own infrastructure. Real users, real traffic, real consequences when something breaks. Each one focuses on the engineering — the architecture and the operational discipline — rather than the specific domain it serves.</p>
-            <div class="ai-grid">
-                <div class="ai-cat" data-en="Analytics Platform" data-no="Analyseplattform">Analytics Platform</div>
+            <div class="ai-sections">
+                <div class="ai-section">
+                    <button type="button" class="ai-cat" aria-expanded="false" aria-controls="aisec-automation">
+                        <span class="ai-cat-name" data-en="Automation" data-no="Automasjon">Automation</span>
+                        <span class="ai-cat-meta"><span class="ai-cat-count" aria-hidden="true"></span><svg class="ai-cat-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+                    </button>
+                    <div class="ai-section-panel" id="aisec-automation">
+                        <div class="ai-section-inner">
+                            <div class="ai-grid">
                 <div class="ai-card ai-card--modal" role="button" tabindex="0"
-                     data-shot="images/epoglogs.jpg?v=1" data-shot2="images/epoglogs-2.jpg?v=1" data-link="https://epoglogs.com" data-link-label="epoglogs.com">
-                    <span class="ai-badge ai-badge--live" data-en="Live" data-no="Live">Live</span>
+                     data-shot="images/vehicle.webp?v=1" data-private="1">
+                    <span class="ai-badge" data-en="Private" data-no="Privat">Private</span>
                     <div class="ai-card-icon">
-                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14M5 17l2-6h10l2 6M5 17v3h3v-3M16 17v3h3v-3"/><circle cx="8" cy="14" r="1"/><circle cx="16" cy="14" r="1"/></svg>
                     </div>
-                    <h3 data-en="Multi-User Analytics Platform" data-no="Offentlig analyseplattform">Multi-User Analytics Platform</h3>
-                    <p data-en="A public analytics platform with a server-side parsing pipeline (worker-thread architecture for high-throughput ingestion), normalised relational storage, and a modern web front-end. Runs across four isolated containers — separate dev and prod environments — behind a shared reverse proxy. Built and operated single-handedly." data-no="En offentlig analyseplattform med en server-side parser-pipeline (worker-thread-arkitektur for høyt ingest-volum), normalisert relasjonell lagring og en moderne web-frontend. Kjører på tvers av fire isolerte containere — separate dev- og produksjonsmiljøer — bak en delt reverse proxy. Bygget og driftet alene.">A public analytics platform with a server-side parsing pipeline (worker-thread architecture for high-throughput ingestion), normalised relational storage, and a modern web front-end. Runs across four isolated containers — separate dev and prod environments — behind a shared reverse proxy. Built and operated single-handedly.</p>
+                    <h3 data-en="Vehicle Telemetry Automation" data-no="Automatisk kjørebok og timeføring">Vehicle Telemetry Automation</h3>
+                    <p data-en="An automation pipeline that pulls live vehicle telemetry into a structured database, then runs scheduled jobs that feed mileage and timesheet entries to downstream business systems. Replaces a recurring monthly manual task entirely — small in scope, real in time saved." data-no="En automatiseringspipeline som henter sanntidstelemetri fra kjøretøy inn i en strukturert database, deretter kjører planlagte jobber som mater kilometer- og timeoppføringer til nedstrøms forretningssystemer. Erstatter en gjentakende manuell månedlig oppgave fullstendig — lite i omfang, ekte i spart tid.">An automation pipeline that pulls live vehicle telemetry into a structured database, then runs scheduled jobs that feed mileage and timesheet entries to downstream business systems. Replaces a recurring monthly manual task entirely — small in scope, real in time saved.</p>
                     <div class="service-tags">
-                        <span>Node.js</span><span>SQLite</span><span>Workers</span><span>Docker</span>
+                        <span>Python</span><span>APIs</span><span>Cron</span>
                     </div>
                 <span class="ai-card-cta"><span data-en="View details" data-no="Se detaljer">View details</span> →</span>
                 </div>
                 <div class="ai-card ai-card--modal" role="button" tabindex="0"
-                     data-shot="images/sim.jpg?v=1" data-link="https://sim.epoglogs.com" data-link-label="sim.epoglogs.com">
-                    <span class="ai-badge ai-badge--live" data-en="Live" data-no="Live">Live</span>
+                     data-shot="images/webops.jpg?v=1" data-shot2="images/webops-2.jpg?v=1" data-private="1">
+                    <span class="ai-badge" data-en="Private" data-no="Privat">Private</span>
                     <div class="ai-card-icon">
-                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg>
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h7M17 7h3M4 12h3M11 12h9M4 17h11M19 17h1"/><circle cx="14.5" cy="7" r="2"/><circle cx="8.5" cy="12" r="2"/><circle cx="16.5" cy="17" r="2"/></svg>
                     </div>
-                    <h3 data-en="Go Computational Simulator" data-no="Go-simulator med kontinuerlig evaluering">Go Computational Simulator</h3>
-                    <p data-en="A computational simulator written in Go with a browser-based UI and a continuous evaluation harness that compares simulator output against real observed data — surfacing discrepancies explicitly rather than papering over them. Multi-class architecture with a shared widget system across simulators." data-no="En beregningsbasert simulator skrevet i Go med et nettleserbasert grensesnitt og en kontinuerlig evalueringsharness som sammenligner simulator-output mot reelle observerte data — synliggjør avvik eksplisitt fremfor å skjule dem. Multi-klasse-arkitektur med et delt widget-system på tvers av simulatorer.">A computational simulator written in Go with a browser-based UI and a continuous evaluation harness that compares simulator output against real observed data — surfacing discrepancies explicitly rather than papering over them. Multi-class architecture with a shared widget system across simulators.</p>
+                    <h3 data-en="Agentas WebOps — Internal Ops Panel" data-no="Agentas WebOps — Internt driftspanel">Agentas WebOps — Internal Ops Panel</h3>
+                    <p data-en="The internal panel that runs the website business end-to-end: client and site registry, an accounting-driven billing watch that auto-suspends non-paying sites via an nginx maintenance map, and a full leads engine — public-registry discovery, enrichment and scoring, drip outreach with hard daily caps, and a deal pipeline through to invoicing. Express + built-in node:sqlite, zero native dependencies, one process. The unglamorous machinery that makes the studio run itself." data-no="Det interne panelet som driver nettsidevirksomheten fra ende til ende: klient- og nettstedsregister, regnskapsdrevet betalingsovervåking som automatisk suspenderer ubetalte nettsteder via et nginx-vedlikeholdskart, og en komplett leads-motor — utforsking i offentlige registre, berikelse og scoring, drypputsendelse med harde dagstak, og en deal-pipeline helt til fakturering. Express + innebygd node:sqlite, null native avhengigheter, én prosess. Det lite glamorøse maskineriet som får studioet til å drive seg selv.">The internal panel that runs the website business end-to-end: client and site registry, an accounting-driven billing watch that auto-suspends non-paying sites via an nginx maintenance map, and a full leads engine — public-registry discovery, enrichment and scoring, drip outreach with hard daily caps, and a deal pipeline through to invoicing. Express + built-in node:sqlite, zero native dependencies, one process. The unglamorous machinery that makes the studio run itself.</p>
                     <div class="service-tags">
-                        <span>Go</span><span>WebUI</span><span>Eval harness</span>
-                    </div>
-                <span class="ai-card-cta"><span data-en="View details" data-no="Se detaljer">View details</span> →</span>
-                </div>
-                <div class="ai-cat" data-en="Apps" data-no="Apper">Apps</div>
-                <div class="ai-card ai-card--modal" role="button" tabindex="0"
-                     data-shot="images/nobs.jpg?v=1" data-shot2="images/nobs-2.jpg?v=1"
-                     data-fit="contain"
-                     data-link="https://nobs.agentas.net" data-link-label="nobs.agentas.net">
-                    <span class="ai-badge ai-badge--live" data-en="Live" data-no="Live">Live</span>
-                    <div class="ai-card-icon">
-                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="9" width="3" height="6" rx="1"/><rect x="5.5" y="7" width="3" height="10" rx="1"/><rect x="15.5" y="7" width="3" height="10" rx="1"/><rect x="18.5" y="9" width="3" height="6" rx="1"/><path d="M8.5 12h7"/></svg>
-                    </div>
-                    <h3 data-en="NoBS — Workout Log" data-no="NoBS — Treningslogg">NoBS — Workout Log</h3>
-                    <p data-en="A no-BS gym app — only the stuff you use at the rack: sets, reps, kg, a rest timer, heart rate. Local-first, no account, no subscription. Built as a React + TypeScript PWA, packaged for Android with Capacitor, with its own landing page and public APK download." data-no="En no-BS treningsapp — kun det du faktisk bruker ved stativet: sett, reps, kg, en pausetimer, puls. Lokal-først, ingen konto, ingen abonnement. Bygget som en React + TypeScript PWA, pakket for Android med Capacitor, med egen landingsside og offentlig APK-nedlasting.">A no-BS gym app — only the stuff you use at the rack: sets, reps, kg, a rest timer, heart rate. Local-first, no account, no subscription. Built as a React + TypeScript PWA, packaged for Android with Capacitor, with its own landing page and public APK download.</p>
-                    <div class="service-tags">
-                        <span>React</span><span>TypeScript</span><span>PWA</span><span>Capacitor</span>
+                        <span>Node.js</span><span>Express</span><span>SQLite</span><span>nginx</span>
                     </div>
                     <span class="ai-card-cta"><span data-en="View details" data-no="Se detaljer">View details</span> →</span>
                 </div>
-                <div class="ai-card ai-card--modal" role="button" tabindex="0"
-                     data-shot="images/babysuite.jpg?v=1" data-shot2="images/babysuite-2.jpg?v=1"
-                     data-fit="contain"
-                     data-link="https://github.com/Defcons/baby" data-link-label="github.com/Defcons/baby"
-                     data-link2="https://defcons.github.io/baby/" data-link2-label="defcons.github.io/baby">
-                    <span class="ai-badge ai-badge--live" data-en="Live" data-no="Live">Live</span>
+                <div class="ai-card ai-card--modal" role="button" tabindex="0" data-private="1">
+                    <span class="ai-badge" data-en="Private" data-no="Privat">Private</span>
                     <div class="ai-card-icon">
-                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 5V4a2 2 0 0 1 4 0v1"/><rect x="8.5" y="5" width="7" height="3" rx="1"/><path d="M9.5 8v11a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V8"/><path d="M9.5 12h5M9.5 15.5h5"/></svg>
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-7 8v6l-4 2v-8z"/></svg>
                     </div>
-                    <h3 data-en="Baby Suite — Three Local-First PWAs" data-no="Baby Suite — Tre apper for babytiden">Baby Suite — Three Local-First PWAs</h3>
-                    <p data-en="Three installable web apps built around our baby's arrival — a contraction timer, a feed/sleep/diaper tracker, and a postpartum pelvic-floor trainer. Each app runs a sync conflict model deliberately chosen for the data it handles, with hand-rolled dependency-free Web Push (VAPID + payload encryption in raw WebCrypto), server-side alert rules on a cron, and free-tier quotas treated as a hard design constraint. In daily family production — where an outage means a missed 3 a.m. feed alarm." data-no="Tre installerbare webapper bygget rundt babyens ankomst — en rietimer, en logg for mat/søvn/bleier og en bekkenbunnstrener for barseltiden. Hver app kjører en konfliktmodell for synkronisering bevisst valgt ut fra dataene den håndterer, med håndrullet, avhengighetsfri Web Push (VAPID + payload-kryptering rett i WebCrypto), varslingsregler evaluert server-side på cron, og kvotene på gratisnivået behandlet som en hard designbegrensning. I daglig familieproduksjon — der nedetid betyr et matevarsel som aldri kommer klokka tre om natten.">Three installable web apps built around our baby's arrival — a contraction timer, a feed/sleep/diaper tracker, and a postpartum pelvic-floor trainer. Each app runs a sync conflict model deliberately chosen for the data it handles, with hand-rolled dependency-free Web Push (VAPID + payload encryption in raw WebCrypto), server-side alert rules on a cron, and free-tier quotas treated as a hard design constraint. In daily family production — where an outage means a missed 3 a.m. feed alarm.</p>
+                    <h3 data-en="Consulting Lead Engine" data-no="Consulting-leadmotor">Consulting Lead Engine</h3>
+                    <p data-en="The internal engine behind the Agentas consulting arm: it discovers relevant opportunities from official Norwegian job and company registries, enriches and validates contacts, ranks them into tiers, and drafts paced, gated outreach — a full discover-to-deal pipeline in one hardened Express + node:sqlite service, with measured email-match rates around 50% on real datasets. Internal-only; shown here as a capability." data-no="Den interne motoren bak Agentas' konsulentarm: den finner relevante muligheter fra offisielle norske stillings- og foretaksregistre, beriker og validerer kontakter, rangerer dem i nivåer, og skriver utkast til pacet, portet oppsøk — en komplett oppdage-til-avtale-pipeline i én herdet Express + node:sqlite-tjeneste, med målte e-post-treffrater rundt 50% på reelle datasett. Kun internt; vist her som en kapabilitet.">The internal engine behind the Agentas consulting arm: it discovers relevant opportunities from official Norwegian job and company registries, enriches and validates contacts, ranks them into tiers, and drafts paced, gated outreach — a full discover-to-deal pipeline in one hardened Express + node:sqlite service, with measured email-match rates around 50% on real datasets. Internal-only; shown here as a capability.</p>
                     <div class="service-tags">
-                        <span>Vanilla JS</span><span>PWA</span><span>Cloudflare Workers</span><span>Web Push</span>
+                        <span>Node.js</span><span>Express</span><span>SQLite</span><span>Automation</span>
                     </div>
                     <span class="ai-card-cta"><span data-en="View details" data-no="Se detaljer">View details</span> →</span>
                 </div>
-                <div class="ai-cat" data-en="Cyber Security" data-no="Cybersikkerhet">Cyber Security</div>
-                <div class="ai-card ai-card--modal" role="button" tabindex="0"
-                     data-shot="images/clouddrive.jpg?v=1" data-fit="frame" data-private="1">
-                    <span class="ai-badge" data-en="Private" data-no="Privat">Private</span>
-                    <div class="ai-card-icon">
-                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-0.5 8-5 8-10V6l-8-4z"/></svg>
+                            </div>
+                        </div>
                     </div>
-                    <h3 data-en="Self-Hosted File Platform" data-no="Selvhostet filplattform">Self-Hosted File Platform</h3>
-                    <p data-en="A self-hosted file-management platform (Go + React) built around a deliberate security model from day one — access control, audit logging, encrypted backups, and regularly rehearsed recovery. Designed so that &ldquo;self-hosted&rdquo; is safer than the cloud alternative, not an excuse to be sloppier." data-no="En selvhostet filhåndteringsplattform (Go + React) bygget rundt en bevisst sikkerhetsmodell fra dag én — tilgangskontroll, audit-logging, krypterte backuper og regelmessig øvd gjenoppretting. Designet slik at «selvhostet» er tryggere enn skyalternativet, ikke en unnskyldning for å være slurvete.">A self-hosted file-management platform (Go + React) built around a deliberate security model from day one — access control, audit logging, encrypted backups, and regularly rehearsed recovery. Designed so that &ldquo;self-hosted&rdquo; is safer than the cloud alternative, not an excuse to be sloppier.</p>
-                    <div class="service-tags">
-                        <span>Go</span><span>React</span><span>Security</span>
-                    </div>
-                <span class="ai-card-cta"><span data-en="View details" data-no="Se detaljer">View details</span> →</span>
                 </div>
-                <div class="ai-card ai-card--modal" role="button" tabindex="0"
-                     data-shot="images/homelab.jpg?v=1" data-private="1">
-                    <span class="ai-badge" data-en="Private" data-no="Privat">Private</span>
-                    <div class="ai-card-icon">
-                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><circle cx="7" cy="7" r="0.5" fill="currentColor"/><circle cx="7" cy="17" r="0.5" fill="currentColor"/></svg>
-                    </div>
-                    <h3 data-en="Private Cloud Infrastructure" data-no="Privat skyinfrastruktur">Private Cloud Infrastructure</h3>
-                    <p data-en="A multi-server environment grown over two years into a small private cloud — 15+ services across web apps, automation, monitoring, and home systems. Standardised deployment pipeline, layered defence-in-depth security, three-tier backups with rehearsed recovery, and a living architecture reference kept like a runbook." data-no="Et multi-server-miljø utviklet over to år til en liten privat sky — 15+ tjenester på tvers av webapper, automatisering, overvåking og hjemmesystemer. Standardisert utrullingspipeline, lagdelt defence-in-depth-sikkerhet, tre-lags backup med øvd gjenoppretting, og en levende arkitekturreferanse holdt som en runbook.">A multi-server environment grown over two years into a small private cloud — 15+ services across web apps, automation, monitoring, and home systems. Standardised deployment pipeline, layered defence-in-depth security, three-tier backups with rehearsed recovery, and a living architecture reference kept like a runbook.</p>
-                    <div class="service-tags">
-                        <span>Proxmox</span><span>Docker</span><span>CI/CD</span><span>Restic</span>
-                    </div>
-                <span class="ai-card-cta"><span data-en="View details" data-no="Se detaljer">View details</span> →</span>
-                </div>
-                <div class="ai-cat" data-en="Economy" data-no="Økonomi">Economy</div>
+                <div class="ai-section">
+                    <button type="button" class="ai-cat" aria-expanded="false" aria-controls="aisec-economy">
+                        <span class="ai-cat-name" data-en="Economy" data-no="Økonomi">Economy</span>
+                        <span class="ai-cat-meta"><span class="ai-cat-count" aria-hidden="true"></span><svg class="ai-cat-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+                    </button>
+                    <div class="ai-section-panel" id="aisec-economy">
+                        <div class="ai-section-inner">
+                            <div class="ai-grid">
                 <div class="ai-card ai-card--modal" role="button" tabindex="0" data-private="1">
                     <span class="ai-badge" data-en="Private" data-no="Privat">Private</span>
                     <div class="ai-card-icon">
@@ -301,7 +272,18 @@
                     </div>
                     <span class="ai-card-cta"><span data-en="View details" data-no="Se detaljer">View details</span> →</span>
                 </div>
-                <div class="ai-cat" data-en="Tools" data-no="Verktøy">Tools</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ai-section">
+                    <button type="button" class="ai-cat" aria-expanded="false" aria-controls="aisec-tools">
+                        <span class="ai-cat-name" data-en="Tools" data-no="Verktøy">Tools</span>
+                        <span class="ai-cat-meta"><span class="ai-cat-count" aria-hidden="true"></span><svg class="ai-cat-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+                    </button>
+                    <div class="ai-section-panel" id="aisec-tools">
+                        <div class="ai-section-inner">
+                            <div class="ai-grid">
                 <div class="ai-card ai-card--modal" role="button" tabindex="0"
                      data-shot="images/watcher.jpg?v=1" data-private="1">
                     <span class="ai-badge" data-en="Private" data-no="Privat">Private</span>
@@ -339,47 +321,137 @@
                     </div>
                     <span class="ai-card-cta"><span data-en="View details" data-no="Se detaljer">View details</span> →</span>
                 </div>
-                <div class="ai-cat" data-en="Automation" data-no="Automasjon">Automation</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ai-section">
+                    <button type="button" class="ai-cat" aria-expanded="false" aria-controls="aisec-cyber-security">
+                        <span class="ai-cat-name" data-en="Cyber Security" data-no="Cybersikkerhet">Cyber Security</span>
+                        <span class="ai-cat-meta"><span class="ai-cat-count" aria-hidden="true"></span><svg class="ai-cat-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+                    </button>
+                    <div class="ai-section-panel" id="aisec-cyber-security">
+                        <div class="ai-section-inner">
+                            <div class="ai-grid">
                 <div class="ai-card ai-card--modal" role="button" tabindex="0"
-                     data-shot="images/vehicle.webp?v=1" data-private="1">
+                     data-shot="images/clouddrive.jpg?v=1" data-fit="frame" data-private="1">
                     <span class="ai-badge" data-en="Private" data-no="Privat">Private</span>
                     <div class="ai-card-icon">
-                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14M5 17l2-6h10l2 6M5 17v3h3v-3M16 17v3h3v-3"/><circle cx="8" cy="14" r="1"/><circle cx="16" cy="14" r="1"/></svg>
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-0.5 8-5 8-10V6l-8-4z"/></svg>
                     </div>
-                    <h3 data-en="Vehicle Telemetry Automation" data-no="Automatisk kjørebok og timeføring">Vehicle Telemetry Automation</h3>
-                    <p data-en="An automation pipeline that pulls live vehicle telemetry into a structured database, then runs scheduled jobs that feed mileage and timesheet entries to downstream business systems. Replaces a recurring monthly manual task entirely — small in scope, real in time saved." data-no="En automatiseringspipeline som henter sanntidstelemetri fra kjøretøy inn i en strukturert database, deretter kjører planlagte jobber som mater kilometer- og timeoppføringer til nedstrøms forretningssystemer. Erstatter en gjentakende manuell månedlig oppgave fullstendig — lite i omfang, ekte i spart tid.">An automation pipeline that pulls live vehicle telemetry into a structured database, then runs scheduled jobs that feed mileage and timesheet entries to downstream business systems. Replaces a recurring monthly manual task entirely — small in scope, real in time saved.</p>
+                    <h3 data-en="Self-Hosted File Platform" data-no="Selvhostet filplattform">Self-Hosted File Platform</h3>
+                    <p data-en="A self-hosted file-management platform (Go + React) built around a deliberate security model from day one — access control, audit logging, encrypted backups, and regularly rehearsed recovery. Designed so that &ldquo;self-hosted&rdquo; is safer than the cloud alternative, not an excuse to be sloppier." data-no="En selvhostet filhåndteringsplattform (Go + React) bygget rundt en bevisst sikkerhetsmodell fra dag én — tilgangskontroll, audit-logging, krypterte backuper og regelmessig øvd gjenoppretting. Designet slik at «selvhostet» er tryggere enn skyalternativet, ikke en unnskyldning for å være slurvete.">A self-hosted file-management platform (Go + React) built around a deliberate security model from day one — access control, audit logging, encrypted backups, and regularly rehearsed recovery. Designed so that &ldquo;self-hosted&rdquo; is safer than the cloud alternative, not an excuse to be sloppier.</p>
                     <div class="service-tags">
-                        <span>Python</span><span>APIs</span><span>Cron</span>
+                        <span>Go</span><span>React</span><span>Security</span>
                     </div>
                 <span class="ai-card-cta"><span data-en="View details" data-no="Se detaljer">View details</span> →</span>
                 </div>
-                <div class="ai-cat" data-en="Business Automation" data-no="Forretningsautomatisering">Business Automation</div>
                 <div class="ai-card ai-card--modal" role="button" tabindex="0"
-                     data-shot="images/webops.jpg?v=1" data-shot2="images/webops-2.jpg?v=1" data-private="1">
+                     data-shot="images/homelab.jpg?v=1" data-private="1">
                     <span class="ai-badge" data-en="Private" data-no="Privat">Private</span>
                     <div class="ai-card-icon">
-                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h7M17 7h3M4 12h3M11 12h9M4 17h11M19 17h1"/><circle cx="14.5" cy="7" r="2"/><circle cx="8.5" cy="12" r="2"/><circle cx="16.5" cy="17" r="2"/></svg>
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><circle cx="7" cy="7" r="0.5" fill="currentColor"/><circle cx="7" cy="17" r="0.5" fill="currentColor"/></svg>
                     </div>
-                    <h3 data-en="Agentas WebOps — Internal Ops Panel" data-no="Agentas WebOps — Internt driftspanel">Agentas WebOps — Internal Ops Panel</h3>
-                    <p data-en="The internal panel that runs the website business end-to-end: client and site registry, an accounting-driven billing watch that auto-suspends non-paying sites via an nginx maintenance map, and a full leads engine — public-registry discovery, enrichment and scoring, drip outreach with hard daily caps, and a deal pipeline through to invoicing. Express + built-in node:sqlite, zero native dependencies, one process. The unglamorous machinery that makes the studio run itself." data-no="Det interne panelet som driver nettsidevirksomheten fra ende til ende: klient- og nettstedsregister, regnskapsdrevet betalingsovervåking som automatisk suspenderer ubetalte nettsteder via et nginx-vedlikeholdskart, og en komplett leads-motor — utforsking i offentlige registre, berikelse og scoring, drypputsendelse med harde dagstak, og en deal-pipeline helt til fakturering. Express + innebygd node:sqlite, null native avhengigheter, én prosess. Det lite glamorøse maskineriet som får studioet til å drive seg selv.">The internal panel that runs the website business end-to-end: client and site registry, an accounting-driven billing watch that auto-suspends non-paying sites via an nginx maintenance map, and a full leads engine — public-registry discovery, enrichment and scoring, drip outreach with hard daily caps, and a deal pipeline through to invoicing. Express + built-in node:sqlite, zero native dependencies, one process. The unglamorous machinery that makes the studio run itself.</p>
+                    <h3 data-en="Private Cloud Infrastructure" data-no="Privat skyinfrastruktur">Private Cloud Infrastructure</h3>
+                    <p data-en="A multi-server environment grown over two years into a small private cloud — 15+ services across web apps, automation, monitoring, and home systems. Standardised deployment pipeline, layered defence-in-depth security, three-tier backups with rehearsed recovery, and a living architecture reference kept like a runbook." data-no="Et multi-server-miljø utviklet over to år til en liten privat sky — 15+ tjenester på tvers av webapper, automatisering, overvåking og hjemmesystemer. Standardisert utrullingspipeline, lagdelt defence-in-depth-sikkerhet, tre-lags backup med øvd gjenoppretting, og en levende arkitekturreferanse holdt som en runbook.">A multi-server environment grown over two years into a small private cloud — 15+ services across web apps, automation, monitoring, and home systems. Standardised deployment pipeline, layered defence-in-depth security, three-tier backups with rehearsed recovery, and a living architecture reference kept like a runbook.</p>
                     <div class="service-tags">
-                        <span>Node.js</span><span>Express</span><span>SQLite</span><span>nginx</span>
+                        <span>Proxmox</span><span>Docker</span><span>CI/CD</span><span>Restic</span>
+                    </div>
+                <span class="ai-card-cta"><span data-en="View details" data-no="Se detaljer">View details</span> →</span>
+                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ai-section">
+                    <button type="button" class="ai-cat" aria-expanded="false" aria-controls="aisec-analytics-platform">
+                        <span class="ai-cat-name" data-en="Analytics Platform" data-no="Analyseplattform">Analytics Platform</span>
+                        <span class="ai-cat-meta"><span class="ai-cat-count" aria-hidden="true"></span><svg class="ai-cat-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+                    </button>
+                    <div class="ai-section-panel" id="aisec-analytics-platform">
+                        <div class="ai-section-inner">
+                            <div class="ai-grid">
+                <div class="ai-card ai-card--modal" role="button" tabindex="0"
+                     data-shot="images/epoglogs.jpg?v=1" data-shot2="images/epoglogs-2.jpg?v=1" data-link="https://epoglogs.com" data-link-label="epoglogs.com">
+                    <span class="ai-badge ai-badge--live" data-en="Live" data-no="Live">Live</span>
+                    <div class="ai-card-icon">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
+                    </div>
+                    <h3 data-en="Multi-User Analytics Platform" data-no="Offentlig analyseplattform">Multi-User Analytics Platform</h3>
+                    <p data-en="A public analytics platform with a server-side parsing pipeline (worker-thread architecture for high-throughput ingestion), normalised relational storage, and a modern web front-end. Runs across four isolated containers — separate dev and prod environments — behind a shared reverse proxy. Built and operated single-handedly." data-no="En offentlig analyseplattform med en server-side parser-pipeline (worker-thread-arkitektur for høyt ingest-volum), normalisert relasjonell lagring og en moderne web-frontend. Kjører på tvers av fire isolerte containere — separate dev- og produksjonsmiljøer — bak en delt reverse proxy. Bygget og driftet alene.">A public analytics platform with a server-side parsing pipeline (worker-thread architecture for high-throughput ingestion), normalised relational storage, and a modern web front-end. Runs across four isolated containers — separate dev and prod environments — behind a shared reverse proxy. Built and operated single-handedly.</p>
+                    <div class="service-tags">
+                        <span>Node.js</span><span>SQLite</span><span>Workers</span><span>Docker</span>
+                    </div>
+                <span class="ai-card-cta"><span data-en="View details" data-no="Se detaljer">View details</span> →</span>
+                </div>
+                <div class="ai-card ai-card--modal" role="button" tabindex="0"
+                     data-shot="images/sim.jpg?v=1" data-link="https://sim.epoglogs.com" data-link-label="sim.epoglogs.com">
+                    <span class="ai-badge ai-badge--live" data-en="Live" data-no="Live">Live</span>
+                    <div class="ai-card-icon">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg>
+                    </div>
+                    <h3 data-en="Go Computational Simulator" data-no="Go-simulator med kontinuerlig evaluering">Go Computational Simulator</h3>
+                    <p data-en="A computational simulator written in Go with a browser-based UI and a continuous evaluation harness that compares simulator output against real observed data — surfacing discrepancies explicitly rather than papering over them. Multi-class architecture with a shared widget system across simulators." data-no="En beregningsbasert simulator skrevet i Go med et nettleserbasert grensesnitt og en kontinuerlig evalueringsharness som sammenligner simulator-output mot reelle observerte data — synliggjør avvik eksplisitt fremfor å skjule dem. Multi-klasse-arkitektur med et delt widget-system på tvers av simulatorer.">A computational simulator written in Go with a browser-based UI and a continuous evaluation harness that compares simulator output against real observed data — surfacing discrepancies explicitly rather than papering over them. Multi-class architecture with a shared widget system across simulators.</p>
+                    <div class="service-tags">
+                        <span>Go</span><span>WebUI</span><span>Eval harness</span>
+                    </div>
+                <span class="ai-card-cta"><span data-en="View details" data-no="Se detaljer">View details</span> →</span>
+                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ai-section">
+                    <button type="button" class="ai-cat" aria-expanded="false" aria-controls="aisec-apps">
+                        <span class="ai-cat-name" data-en="Apps" data-no="Apper">Apps</span>
+                        <span class="ai-cat-meta"><span class="ai-cat-count" aria-hidden="true"></span><svg class="ai-cat-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+                    </button>
+                    <div class="ai-section-panel" id="aisec-apps">
+                        <div class="ai-section-inner">
+                            <div class="ai-grid">
+                <div class="ai-card ai-card--modal" role="button" tabindex="0"
+                     data-shot="images/nobs.jpg?v=1" data-shot2="images/nobs-2.jpg?v=1"
+                     data-fit="contain"
+                     data-link="https://nobs.agentas.net" data-link-label="nobs.agentas.net">
+                    <span class="ai-badge ai-badge--live" data-en="Live" data-no="Live">Live</span>
+                    <div class="ai-card-icon">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="9" width="3" height="6" rx="1"/><rect x="5.5" y="7" width="3" height="10" rx="1"/><rect x="15.5" y="7" width="3" height="10" rx="1"/><rect x="18.5" y="9" width="3" height="6" rx="1"/><path d="M8.5 12h7"/></svg>
+                    </div>
+                    <h3 data-en="NoBS — Workout Log" data-no="NoBS — Treningslogg">NoBS — Workout Log</h3>
+                    <p data-en="A no-BS gym app — only the stuff you use at the rack: sets, reps, kg, a rest timer, heart rate. Local-first, no account, no subscription. Built as a React + TypeScript PWA, packaged for Android with Capacitor, with its own landing page and public APK download." data-no="En no-BS treningsapp — kun det du faktisk bruker ved stativet: sett, reps, kg, en pausetimer, puls. Lokal-først, ingen konto, ingen abonnement. Bygget som en React + TypeScript PWA, pakket for Android med Capacitor, med egen landingsside og offentlig APK-nedlasting.">A no-BS gym app — only the stuff you use at the rack: sets, reps, kg, a rest timer, heart rate. Local-first, no account, no subscription. Built as a React + TypeScript PWA, packaged for Android with Capacitor, with its own landing page and public APK download.</p>
+                    <div class="service-tags">
+                        <span>React</span><span>TypeScript</span><span>PWA</span><span>Capacitor</span>
                     </div>
                     <span class="ai-card-cta"><span data-en="View details" data-no="Se detaljer">View details</span> →</span>
                 </div>
-                <div class="ai-card ai-card--modal" role="button" tabindex="0" data-private="1">
-                    <span class="ai-badge" data-en="Private" data-no="Privat">Private</span>
+                <div class="ai-card ai-card--modal" role="button" tabindex="0"
+                     data-shot="images/babysuite.jpg?v=1" data-shot2="images/babysuite-2.jpg?v=1"
+                     data-fit="contain"
+                     data-link="https://github.com/Defcons/baby" data-link-label="github.com/Defcons/baby"
+                     data-link2="https://defcons.github.io/baby/" data-link2-label="defcons.github.io/baby">
+                    <span class="ai-badge ai-badge--live" data-en="Live" data-no="Live">Live</span>
                     <div class="ai-card-icon">
-                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-7 8v6l-4 2v-8z"/></svg>
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 5V4a2 2 0 0 1 4 0v1"/><rect x="8.5" y="5" width="7" height="3" rx="1"/><path d="M9.5 8v11a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V8"/><path d="M9.5 12h5M9.5 15.5h5"/></svg>
                     </div>
-                    <h3 data-en="Consulting Lead Engine" data-no="Consulting-leadmotor">Consulting Lead Engine</h3>
-                    <p data-en="The internal engine behind the Agentas consulting arm: it discovers relevant opportunities from official Norwegian job and company registries, enriches and validates contacts, ranks them into tiers, and drafts paced, gated outreach — a full discover-to-deal pipeline in one hardened Express + node:sqlite service, with measured email-match rates around 50% on real datasets. Internal-only; shown here as a capability." data-no="Den interne motoren bak Agentas' konsulentarm: den finner relevante muligheter fra offisielle norske stillings- og foretaksregistre, beriker og validerer kontakter, rangerer dem i nivåer, og skriver utkast til pacet, portet oppsøk — en komplett oppdage-til-avtale-pipeline i én herdet Express + node:sqlite-tjeneste, med målte e-post-treffrater rundt 50% på reelle datasett. Kun internt; vist her som en kapabilitet.">The internal engine behind the Agentas consulting arm: it discovers relevant opportunities from official Norwegian job and company registries, enriches and validates contacts, ranks them into tiers, and drafts paced, gated outreach — a full discover-to-deal pipeline in one hardened Express + node:sqlite service, with measured email-match rates around 50% on real datasets. Internal-only; shown here as a capability.</p>
+                    <h3 data-en="Baby Suite — Three Local-First PWAs" data-no="Baby Suite — Tre apper for babytiden">Baby Suite — Three Local-First PWAs</h3>
+                    <p data-en="Three installable web apps built around our baby's arrival — a contraction timer, a feed/sleep/diaper tracker, and a postpartum pelvic-floor trainer. Each app runs a sync conflict model deliberately chosen for the data it handles, with hand-rolled dependency-free Web Push (VAPID + payload encryption in raw WebCrypto), server-side alert rules on a cron, and free-tier quotas treated as a hard design constraint. In daily family production — where an outage means a missed 3 a.m. feed alarm." data-no="Tre installerbare webapper bygget rundt babyens ankomst — en rietimer, en logg for mat/søvn/bleier og en bekkenbunnstrener for barseltiden. Hver app kjører en konfliktmodell for synkronisering bevisst valgt ut fra dataene den håndterer, med håndrullet, avhengighetsfri Web Push (VAPID + payload-kryptering rett i WebCrypto), varslingsregler evaluert server-side på cron, og kvotene på gratisnivået behandlet som en hard designbegrensning. I daglig familieproduksjon — der nedetid betyr et matevarsel som aldri kommer klokka tre om natten.">Three installable web apps built around our baby's arrival — a contraction timer, a feed/sleep/diaper tracker, and a postpartum pelvic-floor trainer. Each app runs a sync conflict model deliberately chosen for the data it handles, with hand-rolled dependency-free Web Push (VAPID + payload encryption in raw WebCrypto), server-side alert rules on a cron, and free-tier quotas treated as a hard design constraint. In daily family production — where an outage means a missed 3 a.m. feed alarm.</p>
                     <div class="service-tags">
-                        <span>Node.js</span><span>Express</span><span>SQLite</span><span>Automation</span>
+                        <span>Vanilla JS</span><span>PWA</span><span>Cloudflare Workers</span><span>Web Push</span>
                     </div>
                     <span class="ai-card-cta"><span data-en="View details" data-no="Se detaljer">View details</span> →</span>
                 </div>
-                <div class="ai-cat" data-en="Games" data-no="Spill">Games</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ai-section">
+                    <button type="button" class="ai-cat" aria-expanded="false" aria-controls="aisec-games">
+                        <span class="ai-cat-name" data-en="Games" data-no="Spill">Games</span>
+                        <span class="ai-cat-meta"><span class="ai-cat-count" aria-hidden="true"></span><svg class="ai-cat-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+                    </button>
+                    <div class="ai-section-panel" id="aisec-games">
+                        <div class="ai-section-inner">
+                            <div class="ai-grid">
                 <div class="ai-card ai-card--modal" role="button" tabindex="0"
                      data-shot="images/frostwake.jpg?v=1" data-shot2="images/frostwake-2.jpg?v=1" data-link="https://frostwake.agentas.net" data-link-label="frostwake.agentas.net">
                     <span class="ai-badge ai-badge--live" data-en="Live" data-no="Live">Live</span>
@@ -407,7 +479,18 @@
                     </div>
                     <span class="ai-card-cta"><span data-en="View details" data-no="Se detaljer">View details</span> →</span>
                 </div>
-                <div class="ai-cat" data-en="Websites &amp; Client Sites" data-no="Nettsider &amp; kundesider">Websites &amp; Client Sites</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ai-section">
+                    <button type="button" class="ai-cat" aria-expanded="false" aria-controls="aisec-websites-and-client-sites">
+                        <span class="ai-cat-name" data-en="Websites &amp; Client Sites" data-no="Nettsider &amp; kundesider">Websites &amp; Client Sites</span>
+                        <span class="ai-cat-meta"><span class="ai-cat-count" aria-hidden="true"></span><svg class="ai-cat-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+                    </button>
+                    <div class="ai-section-panel" id="aisec-websites-and-client-sites">
+                        <div class="ai-section-inner">
+                            <div class="ai-grid">
                 <div class="ai-card ai-card--modal" role="button" tabindex="0"
                      data-shot="images/webagentas.jpg?v=1"
                      data-link="https://web.agentas.net" data-link-label="web.agentas.net">
@@ -421,6 +504,10 @@
                         <span>Templates</span><span>Nginx</span><span>Docker</span><span>Cloudflare</span>
                     </div>
                     <span class="ai-card-cta"><span data-en="View details" data-no="Se detaljer">View details</span> →</span>
+                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <p class="ai-repo-note">
@@ -677,6 +764,6 @@
         </div>
     </div>
 
-    <script src="script.js?v=5"></script>
+    <script src="script.js?v=6"></script>
 </body>
 </html>

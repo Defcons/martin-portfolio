@@ -903,20 +903,96 @@ section { padding: 120px 0; }
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 24px;
+    padding: 8px 24px 28px;
 }
 
+/* ---- Collapsible category sections (accordion) ---- */
+.ai-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.ai-section {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg-card);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: border-color var(--transition);
+}
+
+.ai-section:hover { border-color: rgba(6, 182, 212, 0.3); }
+
+/* clickable accordion header */
 .ai-cat {
-    grid-column: 1 / -1;
-    font-size: 0.8rem;
-    font-weight: 700;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 24px;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
     color: var(--accent);
+    transition: background var(--transition);
+}
+
+.ai-cat:hover,
+.ai-cat:focus-visible { background: var(--bg-card-hover); }
+
+.ai-cat-name {
+    font-size: 0.85rem;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    margin-top: 40px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--border);
 }
-.ai-cat:first-child { margin-top: 0; }
+
+.ai-cat-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ai-cat-count {
+    min-width: 24px;
+    padding: 2px 9px;
+    border-radius: 999px;
+    background: rgba(6, 182, 212, 0.12);
+    color: var(--accent-secondary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+}
+.ai-cat-count:empty { display: none; }
+
+.ai-cat-chevron {
+    width: 18px;
+    height: 18px;
+    color: var(--accent);
+    flex-shrink: 0;
+    transition: transform var(--transition);
+}
+
+.ai-section.open .ai-cat-chevron { transform: rotate(180deg); }
+
+/* smooth expand via animatable grid rows (0fr -> 1fr) */
+.ai-section-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ai-section.open .ai-section-panel { grid-template-rows: 1fr; }
+
+.ai-section-inner {
+    overflow: hidden;
+    min-height: 0;
+}
 
 .ai-card {
     background: var(--bg-card);
@@ -1864,6 +1940,7 @@ body.modal-open { overflow: hidden; }
     }
     .scroll-indicator::before { animation: none; }
     .modal, .modal-overlay { transition: none; }
+    .ai-section-panel, .ai-cat-chevron { transition: none !important; }
 }
 
 @media print {

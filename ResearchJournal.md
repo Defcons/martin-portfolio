@@ -105,6 +105,28 @@ tool** line. Beyond/fritid gained a 4th personal card **"Life outside the screen
 done by a subagent under verbatim-preservation rules; render verified via a local
 static server (category labels, new cards, fritid card all correct) before push.
 
+### 2026-09-02b — Collapsible category accordions + reorder + merge
+Follow-up to the same-day category restructure, per Martin. Three changes:
+1. **Merged "Business Automation" into "Automation"** — Agentas WebOps + Consulting Lead Engine
+   now sit alongside Vehicle Telemetry ("Automatisk kjørebok") under Automasjon. Grid dropped from
+   9 → 8 categories.
+2. **Reordered sections** to Martin's spec: Automation · Economy · Tools · Cyber Security ·
+   Analytics Platform · Apps · (then Games · Websites & Client Sites).
+3. **Made each category a default-collapsed accordion** — clickable `.ai-cat` `<button>` header
+   (accent label + count pill + rotating chevron) expands a `.ai-section-panel` via the animatable
+   `grid-template-rows: 0fr→1fr` trick (`.ai-section-inner` clips with `overflow:hidden; min-height:0`).
+   New JS `initAccordions()` toggles `.open`/`aria-expanded`, injects the per-section card count, and
+   reveals a section's cards on open. Reduced-motion disables the row + chevron transitions.
+
+The HTML reorder/merge was done by a **deterministic Python script** (scratchpad) that splits the
+grid at `.ai-cat` boundaries and reassembles it — cards preserved byte-for-byte (verified: 17 cards
+in, 17 out; clean diff). Verified in real Chrome (localhost:8899): 8 collapsed bars in the right order,
+counts 3·2·3·2·2·2·2·1, Automation expands to its 3 cards, NO toggle swaps labels
+(Automasjon/Økonomi/Verktøy/…) with counts persisting, modal still opens. `styles.css v=10→v=11`,
+`script.js v=5→v6`. **Gotcha reconfirmed:** the in-app (`Claude_Browser`) MCP renders this page BLANK
+in screenshots (scroll-reveal + capture quirk) — verify visually in real Chrome, but DOM/CSS assertions
+via its `javascript_tool` are reliable.
+
 ## Note
 The domain evolved `martin.defc0n.no` → **martindavidsen.cc** — the permanent
 personal brand, kept deliberately distinct from the agentas.net company sites.
