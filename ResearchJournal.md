@@ -192,3 +192,10 @@ Every card image on both surfaces is now current.
 ## Note
 The domain evolved `martin.defc0n.no` → **martindavidsen.cc** — the permanent
 personal brand, kept deliberately distinct from the agentas.net company sites.
+
+## 2026-09-15 — footer credit retargeted to agentas.net/web
+Per David, the footer "Built by Agentas" credit now points to `https://agentas.net/web/`
+(the web-services storefront, matching the client-sites convention) instead of the apex.
+The About-section link and JSON-LD `sameAs` stay on the apex `https://agentas.net` (identity/
+structured-data — a subpath would be wrong there). Note `/web` 301s to `/web/`, so the trailing
+slash is used to skip the redirect.
