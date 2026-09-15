@@ -1182,6 +1182,17 @@ footer {
     color: var(--text-muted);
 }
 
+.footer-credit {
+    margin-top: 6px;
+}
+
+.footer-credit a {
+    color: var(--text-muted);
+    transition: color var(--transition);
+}
+
+.footer-credit a:hover { color: var(--text-primary); }
+
 /* ---- Animations ---- */
 .fade-in {
     opacity: 0;

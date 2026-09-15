@@ -12,6 +12,16 @@ Timeline entry below)._
 
 ## Timeline
 
+### 2026-09-15 — Footer "Built by Agentas" credit
+Added an explicit followable footer credit under the copyright line in the existing
+`<footer>` (`.footer-bottom.footer-single`): a single `<a href="https://agentas.net"
+target="_blank" rel="noopener">` carrying `data-en="Built by Agentas"` /
+`data-no="Laget av Agentas"` — text-only inside the anchor so the language toggle's
+`textContent` swap is safe. Normal followable link, NO `rel="nofollow"` (deliberate SEO
+backlink to Martin's own company). agentas.net was already linked from the About section
+and JSON-LD `sameAs`; this is an additional understated credit. New `.footer-credit` CSS
+(muted text, hover to primary). Cache-bust styles `?v=11→v=12` (script unchanged at v=6).
+
 ### 2026-06-30 — Born
 Personal portfolio site created as `martin.defc0n.no`; host port set to 3040
 (3030 was already taken by epoch-sim).

@@ -76,7 +76,7 @@ tests). No `NavigationMap.md` — this file stays under the ~20 KB split line.
 ## Conventions / gotchas
 
 - **Cache-bust:** `styles.css?v=N` + `script.js?v=N` in `index.html` — bump on any functional
-  CSS/JS change (currently **v=11 / v=6**). Image `data-shot`s carry `?v=1`; new image = new
+  CSS/JS change (currently **v=12 / v=6**). Image `data-shot`s carry `?v=1`; new image = new
   filename instead of bump.
 - **UNVERSIONED files + Cloudflare cache:** assets are served `Cache-Control: immutable, 30d`
   and Cloudflare caches them at the edge; the HTML is `no-cache` (nginx `expires -1` in `location /`).
