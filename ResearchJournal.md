@@ -243,3 +243,5 @@ all 8 new images 200; headless-Chrome render of martindavidsen.cc matches the ap
 (no console errors, no horizontal scroll, 2 Products cards). The 5 removed images
 (`trading/watcher/homelab/osloscout/consulting.jpg`, with and without `?v=1`) return 404 with
 `cf-cache-status: MISS` — nothing was held at the Cloudflare edge, so NO Custom-Purge needed.
+
+- **2026-09-25c** — Personal title changed "Software & AI Engineer" → **"AI Architect & Software Engineer"** (NO "KI-arkitekt og programvareingeniør") at the user's request, as part of an AI-architecture positioning push shared with agentas.net (new `/software-for/ai-architecture/` service page there). Keyword note: in English "AI architect" is mostly a job-title search, which is exactly why it belongs in the personal title. Updated hero-role, about-role, <title>, meta/OG/og:image:alt, JSON-LD jobTitle; regenerated the OG card (role line now auto-fits) → `?v=2`. CV + LinkedIn follow in the career session.

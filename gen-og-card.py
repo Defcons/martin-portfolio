@@ -96,7 +96,11 @@ ImageDraw.Draw(bar_mask).rounded_rectangle([TX, uy, TX + name_w, uy + 9 * SS], r
 img.paste(grad, (0, 0), bar_mask)
 d = ImageDraw.Draw(img)
 
-d.text((TX, 336 * SS), 'Software & AI Engineer', font=inter(44), fill=ACCENT, anchor='ls', stroke_width=1 * SS)
+role = 'AI Architect & Software Engineer'
+role_px = 44
+while d.textlength(role, font=inter(role_px)) > W - TX - 56 * SS:  # shrink to fit the right panel
+    role_px -= 1
+d.text((TX, 336 * SS), role, font=inter(role_px), fill=ACCENT, anchor='ls', stroke_width=1 * SS)
 d.text((TX, 404 * SS), 'Founder of Agentas AS', font=inter(31), fill=SECONDARY, anchor='ls')
 d.text((TX, 458 * SS), 'Stavanger, Norway', font=inter(31), fill=MUTED, anchor='ls')
 d.text((TX, 540 * SS), 'martindavidsen.cc', font=inter(30), fill=INK, anchor='ls', stroke_width=1 * SS)

@@ -1,6 +1,8 @@
 # OrientationMap — martin-portfolio (martindavidsen.cc)
 
-_Last verified: 2026-09-25b — hero redesigned (David picked mockup B): left text + `hero-products.webp` (the apex Consult/Aurly composite) with a round avatar; pill badge / gradient text / grid bg / scroll mouse and their CSS removed; `styles.css?v=13`. Detail → RJ 2026-09-25b._
+_Last verified: 2026-09-25c — personal title → **"AI Architect & Software Engineer"** (NO "KI-arkitekt og programvareingeniør"; user's pick, matches agentas.net founder line; CV/LinkedIn via the career session): hero-role, about-role, <title>, meta/OG/alt, JSON-LD jobTitle; `gen-og-card.py` role line now auto-shrinks to fit → og-card `?v=2`. Detail → RJ 2026-09-25c._
+
+_(prior 2026-09-25b) — hero redesigned (David picked mockup B): left text + `hero-products.webp` (the apex Consult/Aurly composite) with a round avatar; pill badge / gradient text / grid bg / scroll mouse and their CSS removed; `styles.css?v=13`. Detail → RJ 2026-09-25b._
 
 _(prior 2026-09-25) apex-sync pass: new FIRST `#work` category **Products** (Agentas Consult + Aurly, no badge/tags); Consulting Lead Engine card retired (Consult is its successor); the 4 images apex git-rm'd for career-KB §4 leaks replaced by apex's diagrams/redaction; every card links its apex showcase; Dreadmark = Unity 6. HTML+images only (cache-bust unchanged). Detail → RJ 2026-09-25._
 

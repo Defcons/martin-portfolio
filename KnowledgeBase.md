@@ -21,7 +21,7 @@ code — code wins any conflict.
 
 ## 1. What it is
 - **[FACT]** Single-page **personal portfolio** for **Martin Davidsen** —
-  `<title>` "Martin Davidsen — Software & AI Engineer" (confirmed).
+  `<title>` "Martin Davidsen — AI Architect & Software Engineer" (changed 2026-09-25 from "Software & AI Engineer" — user's pick; must match apex founder line, CV and LinkedIn).
   **Person-first, not a company**: framed so employers see the individual,
   leading with software/AI, with the industrial track record as support.
 - **[FACT]** Live at **martindavidsen.cc** (permanent personal-brand domain; born
