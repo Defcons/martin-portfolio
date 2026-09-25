@@ -108,6 +108,8 @@ tests). No `NavigationMap.md` — this file stays under the ~20 KB split line.
   opacity 0 until `.visible`) make one-shot headless-Chrome anchor captures render BLANK, and
   the 100vh hero defeats the tall-viewport trick. Verify renders with a real browser
   (Chrome MCP: navigate → wait ~1.5s → screenshot).
+- **`drafts/`** — preview/mockup scripts (e.g. `hero-variants.py`), NOT served: the Dockerfile
+  COPYs an explicit file list, so anything outside it stays private.
 - **`#work` cards MIRROR apex `#ai`** (agentas-sites `apex/index.html`): same projects, near-same copy,
   shared image files (copied in under their own names). Apex is where the publish-safety review happens
   (binding rules: `C:\Dev\career\KnowledgeBase.md` §4 + "no grey-zone details", e.g. Watcher never names
