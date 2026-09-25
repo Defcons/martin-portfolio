@@ -20,10 +20,6 @@ ResearchJournal 2026-09-02e.)_
   { text-wrap: balance }`; drop the 01–04 numbers on the `#focus` cards (apex removed
   its service numbers); older `#work` cards' status pills + tag rows → plain text per
   the no-badges rule (e.g. a "Status" line in the modal).
-- [ ] **Deploy the 2026-09-25 apex-sync + hero commits, then Cloudflare Custom-Purge the 5 deleted
-  image URLs** (they stay edge-cached up to 30 d even after the files are gone — the
-  4 leaky ones are the point): `https://martindavidsen.cc/images/{trading,watcher,homelab,osloscout,consulting}.jpg?v=1`
-  (+ the same without `?v=1`). Verify each with `curl -sI '…?cb=1'` → 404.
 
 ## Done (prune on next touch)
 (nothing yet)

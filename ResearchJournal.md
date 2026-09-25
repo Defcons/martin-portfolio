@@ -235,3 +235,11 @@ screen). Removed the orphaned CSS (`.hero-bg-grid/-badge/-highlight/-scroll`,
 `.hero-name/.hero-role` overrides, reduced-motion/print hero bits). `styles.css?v=13`.
 Verified with Playwright at 1440/1280/1024/900/768/375/320 (EN + NO): no horizontal scroll,
 both images load, no console errors.
+
+### 2026-09-25c — deployed + live-verified
+Pushed `162dbdb..f929af6` (David: "you push it") → "Deploy to Production" run 36193325900
+green. Live: HTML carries `styles.css?v=13`, `hero-products.webp?v=1`, `#aisec-products`;
+all 8 new images 200; headless-Chrome render of martindavidsen.cc matches the approved B hero
+(no console errors, no horizontal scroll, 2 Products cards). The 5 removed images
+(`trading/watcher/homelab/osloscout/consulting.jpg`, with and without `?v=1`) return 404 with
+`cf-cache-status: MISS` — nothing was held at the Cloudflare edge, so NO Custom-Purge needed.
