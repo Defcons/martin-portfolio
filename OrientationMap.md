@@ -1,6 +1,8 @@
 # OrientationMap — martin-portfolio (martindavidsen.cc)
 
-_Last verified: 2026-09-02d (master) — **every one of the 17 work cards now has a `data-shot`**
+_Last verified: 2026-09-25 — apex-sync pass: new FIRST `#work` category **Products** (Agentas Consult + Aurly, no badge/tags); Consulting Lead Engine card retired (Consult is its successor); the 4 images apex git-rm'd for career-KB §4 leaks replaced by apex's diagrams/redaction; every card links its apex showcase; Dreadmark = Unity 6. HTML+images only (cache-bust unchanged). Detail → RJ 2026-09-25._
+
+_(prior 2026-09-02d) **every one of the 17 work cards now has a `data-shot`**
 (4 new: consulting/trading/tablescout/assistkey; nobs + clouddrive replaced → `?v=2`;
 `nobs-2.jpg` deleted). consulting + tablescout shots are PIL-pixelated for publish-safety
 (real names/companies/hostname; home address) — see RJ 2026-09-02d. Games order:
@@ -106,6 +108,13 @@ tests). No `NavigationMap.md` — this file stays under the ~20 KB split line.
   opacity 0 until `.visible`) make one-shot headless-Chrome anchor captures render BLANK, and
   the 100vh hero defeats the tall-viewport trick. Verify renders with a real browser
   (Chrome MCP: navigate → wait ~1.5s → screenshot).
+- **`#work` cards MIRROR apex `#ai`** (agentas-sites `apex/index.html`): same projects, near-same copy,
+  shared image files (copied in under their own names). Apex is where the publish-safety review happens
+  (binding rules: `C:\Dev\career\KnowledgeBase.md` §4 + "no grey-zone details", e.g. Watcher never names
+  its sources) — when apex changes a shared card's claim or image, mirror it here, or a leak apex fixed stays
+  live on this site (happened: 09-25). Each card's modal links its apex showcase
+  `https://agentas.net/projects/<slug>/` (cross-link, don't duplicate); live-site/GitHub link stays first.
+  New cards follow the no-badges rule (no status pill, no tag row) — older siblings keep theirs until touched.
 - **Images must be marketing-safe** (no client names/repo paths/failing tests) — same rule as
   agentas-sites. App screenshots are **staged with synthetic demo data** (never real user/family/
   client state; sync/API/DB neutered or stubbed so staging can't touch production) and shot in the

@@ -199,3 +199,24 @@ Per David, the footer "Built by Agentas" credit now points to `https://agentas.n
 The About-section link and JSON-LD `sameAs` stay on the apex `https://agentas.net` (identity/
 structured-data — a subpath would be wrong there). Note `/web` 301s to `/web/`, so the trailing
 slash is used to skip the redirect.
+
+## 2026-09-25 — apex-sync pass (Products category + publish-safety mirror)
+Trigger (David): the apex got a big 09-25 pass (agentas-sites `49bac06`: hero, "Products"
+category, 18 `/projects/<slug>/` showcases, §4 safety fixes) and the portfolio should reflect it.
+Audit found the portfolio still serving BYTE-IDENTICAL copies (sha1-matched) of the 4 card
+images apex git-rm'd that day for leaking internal names / trading venue / paper trading /
+infra topology: `trading.jpg`, `watcher.jpg`, `homelab.jpg`, `osloscout.jpg`. Replaced with
+apex's vetted files under new names (`trading-platform.webp`, `watcher.webp`,
+`private-cloud.webp` = diagrams; `market-analysis.jpg` = redacted shot); old files git-rm'd.
+Same drift in copy: Dreadmark card said TypeScript/Three.js (it is Unity 6 — the Frostwake
+stack), Watcher named "marketplaces… job boards" (grey-zone + job-hunt angle, career KB §4.8),
+Analytics said "four isolated containers" (stale since coalogs came down 09-09) → all three
+now carry apex's 09-25 wording (NO text uses "AI", not apex's SEO "KI", for page consistency).
+Added: **Products** as the first `#work` category — Agentas Consult + Aurly, copy + screenshots
+from apex (demo data), no badge/tags per the standing no-badges rule. Retired: Consulting Lead
+Engine card (Consult is the productised successor; apex retired it the same day) +
+`consulting.jpg`. Every card now links its apex showcase (all 17 URLs curl-verified 200).
+Baby Suite GitHub/Pages links dropped (apex dropped them: the repo may go private) → showcase
+link instead. Website Studio link `web.agentas.net` → `agentas.net/web/`. Skills: + C#,
+Next.js, PostGIS. Agentas timeline entry names the two products. Verified with Playwright
+(EN/NO, 1280 + 375 px: no console errors, no horizontal scroll, all 24 card images 200).
