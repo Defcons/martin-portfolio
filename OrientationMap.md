@@ -1,6 +1,8 @@
 # OrientationMap — martin-portfolio (martindavidsen.cc)
 
-_Last verified: 2026-09-25 — apex-sync pass: new FIRST `#work` category **Products** (Agentas Consult + Aurly, no badge/tags); Consulting Lead Engine card retired (Consult is its successor); the 4 images apex git-rm'd for career-KB §4 leaks replaced by apex's diagrams/redaction; every card links its apex showcase; Dreadmark = Unity 6. HTML+images only (cache-bust unchanged). Detail → RJ 2026-09-25._
+_Last verified: 2026-09-25b — hero redesigned (David picked mockup B): left text + `hero-products.webp` (the apex Consult/Aurly composite) with a round avatar; pill badge / gradient text / grid bg / scroll mouse and their CSS removed; `styles.css?v=13`. Detail → RJ 2026-09-25b._
+
+_(prior 2026-09-25) apex-sync pass: new FIRST `#work` category **Products** (Agentas Consult + Aurly, no badge/tags); Consulting Lead Engine card retired (Consult is its successor); the 4 images apex git-rm'd for career-KB §4 leaks replaced by apex's diagrams/redaction; every card links its apex showcase; Dreadmark = Unity 6. HTML+images only (cache-bust unchanged). Detail → RJ 2026-09-25._
 
 _(prior 2026-09-02d) **every one of the 17 work cards now has a `data-shot`**
 (4 new: consulting/trading/tablescout/assistkey; nobs + clouddrive replaced → `?v=2`;
@@ -78,7 +80,7 @@ tests). No `NavigationMap.md` — this file stays under the ~20 KB split line.
 ## Conventions / gotchas
 
 - **Cache-bust:** `styles.css?v=N` + `script.js?v=N` in `index.html` — bump on any functional
-  CSS/JS change (currently **v=12 / v=6**). Image `data-shot`s carry `?v=1`; new image = new
+  CSS/JS change (currently **v=13 / v=6**). Image `data-shot`s carry `?v=1`; new image = new
   filename instead of bump.
 - **UNVERSIONED files + Cloudflare cache:** assets are served `Cache-Control: immutable, 30d`
   and Cloudflare caches them at the edge; the HTML is `no-cache` (nginx `expires -1` in `location /`).
@@ -108,8 +110,6 @@ tests). No `NavigationMap.md` — this file stays under the ~20 KB split line.
   opacity 0 until `.visible`) make one-shot headless-Chrome anchor captures render BLANK, and
   the 100vh hero defeats the tall-viewport trick. Verify renders with a real browser
   (Chrome MCP: navigate → wait ~1.5s → screenshot).
-- **`drafts/`** — preview/mockup scripts (e.g. `hero-variants.py`), NOT served: the Dockerfile
-  COPYs an explicit file list, so anything outside it stays private.
 - **`#work` cards MIRROR apex `#ai`** (agentas-sites `apex/index.html`): same projects, near-same copy,
   shared image files (copied in under their own names). Apex is where the publish-safety review happens
   (binding rules: `C:\Dev\career\KnowledgeBase.md` §4 + "no grey-zone details", e.g. Watcher never names
@@ -117,6 +117,8 @@ tests). No `NavigationMap.md` — this file stays under the ~20 KB split line.
   live on this site (happened: 09-25). Each card's modal links its apex showcase
   `https://agentas.net/projects/<slug>/` (cross-link, don't duplicate); live-site/GitHub link stays first.
   New cards follow the no-badges rule (no status pill, no tag row) — older siblings keep theirs until touched.
+  The HERO image `images/hero-products.webp` is also apex's (`apex/images/hero-products.webp`) — when apex
+  regenerates it, copy it over and bump its `?v=` here (images are `immutable` 30 d).
 - **Images must be marketing-safe** (no client names/repo paths/failing tests) — same rule as
   agentas-sites. App screenshots are **staged with synthetic demo data** (never real user/family/
   client state; sync/API/DB neutered or stubbed so staging can't touch production) and shot in the

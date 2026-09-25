@@ -220,3 +220,18 @@ Baby Suite GitHub/Pages links dropped (apex dropped them: the repo may go privat
 link instead. Website Studio link `web.agentas.net` → `agentas.net/web/`. Skills: + C#,
 Next.js, PostGIS. Agentas timeline entry names the two products. Verified with Playwright
 (EN/NO, 1280 + 375 px: no console errors, no horizontal scroll, all 24 card images 200).
+
+### 2026-09-25b — hero redesign (mockup B)
+Why: the hero carried the same tells David called "AI-made" on apex (pill badge, gradient
+text, grid bg + radial glow, bouncing scroll mouse, centred stack). Three variants were mocked
+by DOM injection (A portrait split / B work-forward / C portrait collage); **David picked B.**
+Now: two-column `.hero-grid` — eyebrow "Stavanger, Norway · Founder of Agentas AS", name H1,
+solid-accent role line, the unchanged sub-copy + CTAs, stats as plain dark numbers over a
+hairline; right side `images/hero-products.webp` (apex's framed Consult + Aurly composite, demo
+data) with a round avatar (reuses `martin-200/400.jpg`) + caption. No longer 100vh. Collapses
+to one column ≤900px with the visual capped at 560px (at full tablet width it swamped the
+screen). Removed the orphaned CSS (`.hero-bg-grid/-badge/-highlight/-scroll`,
+`.scroll-indicator` + keyframes, old `.stat*`, old ≤768/≤480 hero rules, the later
+`.hero-name/.hero-role` overrides, reduced-motion/print hero bits). `styles.css?v=13`.
+Verified with Playwright at 1440/1280/1024/900/768/375/320 (EN + NO): no horizontal scroll,
+both images load, no console errors.
