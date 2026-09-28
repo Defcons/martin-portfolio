@@ -323,3 +323,5 @@ apex's pairing), `h1, h2, h3 { text-wrap: balance }` sitewide (replaces the hero
 rule), and the `#focus` cards' 01–04 numbers dropped (markup + the now-unused `.service-num`
 rule). Page height 8768→8166px at 1280 and 13905→13401px at 375; heading line counts unchanged,
 multi-line headings now split evenly; no overflow or console errors. `styles.css?v=17`.
+Same day the user re-inspected martindavidsen.cc in LinkedIn's Post Inspector: the `?v=4` card
+(2026-09-28c) shows sharp. The OG-legibility rule is promoted to FACT in the KnowledgeBase.

@@ -82,11 +82,10 @@ code — code wins any conflict.
   LANCZOS + JPEG q85 downscale: the 2026-09-28 green card (31px secondary lines, green
   role text) passed that local check yet the user saw it blurry on LinkedIn. So the local
   check must be harsher (≈400px copy, JPEG q60, upscaled to 520).
-- **[HYP 70%]** Text ≥40px on the 1200px canvas, bold weights, dark ink instead of
+- **[FACT]** Text ≥40px on the 1200px canvas, bold weights, dark ink instead of
   accent-coloured text (chroma subsampling smears coloured strokes) and a q95 4:4:4 source
-  make the card read sharp on LinkedIn. Evidence: under the harsh local check the `?v=4`
-  card is clearly legible where `?v=3` was not. Settles with the pending LinkedIn re-scrape
-  (Testing.md).
+  make the card read sharp on LinkedIn: the `?v=4` card passed the harsh local check where
+  `?v=3` failed, and the user confirmed it in LinkedIn's Post Inspector (2026-09-28).
 - **[FACT]** **Marketing-safe images only** — no client names / repo paths /
   failing tests visible (same rule as agentas-sites).
 - **[FACT]** **Private & On-Prem AI pillar (added 2026-08-19) is framed as
