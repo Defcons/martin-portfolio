@@ -56,7 +56,9 @@ code — code wins any conflict.
   `opsz,wght` (77 KB) — the opsz axis matters: without it large headings lose
   their display cut.
 - **[FACT]** **Email is base64-assembled at runtime** into `#cc-email` — the
-  plaintext stays out of the committed source (bot-harvest defense).
+  plaintext stays out of the committed source (bot-harvest defense). The address is
+  `davidsen908@gmail.com` ON PURPOSE (user, 2026-09-28): the one exception to the career
+  canon's martin@agentas.net — don't "unify" it.
 - **[FACT]** **Cache-bust discipline:** `styles.css?v=N` + `script.js?v=N` in
   `index.html` — bump on any functional CSS/JS change (current N lives in
   OrientationMap/code — code wins). Assets serve `immutable, 30d` and are
@@ -73,10 +75,18 @@ code — code wins any conflict.
   RGB values are copied into the script by hand (2026-09-28: sand + fjord green). Rendered SUPERSAMPLED (3×→LANCZOS, flat
   backgrounds) because LinkedIn downscales cards to ~500px + re-encodes — fine
   detail turns to mush (rule established on the agentas-sites cards the same
-  day, incl. the eyeball-check: downscale to ~523×274 JPEG q85 and look at
-  THAT). Regen = rerun + bump `?v=` (og:image, twitter:image, JSON-LD `image`)
-  + LinkedIn Post-Inspector re-scrape. Needs `_assets/inter.ttf` + `_assets/bricolage.ttf`
-  (gitignored; the latter = `fonts/bricolage-latin-var.woff2` saved with `flavor=None`).
+  day). Regen = rerun + bump `?v=` (og:image, twitter:image, JSON-LD `image`)
+  + LinkedIn Post-Inspector re-scrape. Needs `_assets/inter-var.ttf` + `_assets/bricolage.ttf`
+  (gitignored; both = the site's woff2 saved with fontTools `flavor=None`).
+- **[FACT]** LinkedIn's Post Inspector shows the card SOFTER than a plain ~523px
+  LANCZOS + JPEG q85 downscale: the 2026-09-28 green card (31px secondary lines, green
+  role text) passed that local check yet the user saw it blurry on LinkedIn. So the local
+  check must be harsher (≈400px copy, JPEG q60, upscaled to 520).
+- **[HYP 70%]** Text ≥40px on the 1200px canvas, bold weights, dark ink instead of
+  accent-coloured text (chroma subsampling smears coloured strokes) and a q95 4:4:4 source
+  make the card read sharp on LinkedIn. Evidence: under the harsh local check the `?v=4`
+  card is clearly legible where `?v=3` was not. Settles with the pending LinkedIn re-scrape
+  (Testing.md).
 - **[FACT]** **Marketing-safe images only** — no client names / repo paths /
   failing tests visible (same rule as agentas-sites).
 - **[FACT]** **Private & On-Prem AI pillar (added 2026-08-19) is framed as

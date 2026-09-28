@@ -1,6 +1,8 @@
 # OrientationMap — martin-portfolio (martindavidsen.cc)
 
-_Last verified: 2026-09-28 — **Nordic restyle** (user picked mockup 3 of 4): sand + fjord-green `:root` palette, Bricolage Grotesque display face (self-hosted) + Inter body, soft borderless cards, pill buttons, portrait hero with a "Now building" link (no more apex composite), status/tags/counts as plain text; OG card + favicons regenerated green (og `?v=3`, icons `?v=2`); `styles.css?v=14`. Detail → RJ 2026-09-28b._
+_Last verified: 2026-09-28c — OG card re-laid-out for LinkedIn legibility (bigger/bolder DARK text, 2-line role, q95 4:4:4 → `?v=4`); phones show the hero portrait FIRST (`order:-1`, 260px, note hangs off its bottom edge); `styles.css?v=15`; contact email stays Gmail (user). Detail → RJ 2026-09-28c._
+
+_(prior 2026-09-28b) **Nordic restyle** (user picked mockup 3 of 4): sand + fjord-green `:root` palette, Bricolage Grotesque display face (self-hosted) + Inter body, soft borderless cards, pill buttons, portrait hero with a "Now building" link (no more apex composite), status/tags/counts as plain text; OG card + favicons regenerated green (og `?v=3`, icons `?v=2`); `styles.css?v=14`. Detail → RJ 2026-09-28b._
 
 _(prior 2026-09-25c) personal title → **"AI Architect & Software Engineer"** (NO "KI-arkitekt og programvareingeniør"; user's pick, matches agentas.net founder line; CV/LinkedIn via the career session): hero-role, about-role, <title>, meta/OG/alt, JSON-LD jobTitle; `gen-og-card.py` role line now auto-shrinks to fit → og-card `?v=2`. Detail → RJ 2026-09-25c._
 
@@ -86,12 +88,14 @@ tests). No `NavigationMap.md` — this file stays under the ~20 KB split line.
 - **Look & tokens** — the palette, radii and shadows live in `:root` (`styles.css`); components use
   the tokens, so a colour change is a token change. Status (`.ai-badge`, `.modal-badge`), tech tags
   (`.service-tags`) and accordion counts (`.ai-cat-count`) render as PLAIN TEXT per the no-badges
-  rule — don't reintroduce pills.
+  rule — don't reintroduce pills. Hero: DOM order is text then `.hero-visual` (portrait +
+  `.hero-now` link); at ≤900px CSS `order: -1` shows the portrait FIRST (user's call via
+  "as you recommend", 2026-09-28) — screen readers still get the name first.
 
 ## Conventions / gotchas
 
 - **Cache-bust:** `styles.css?v=N` + `script.js?v=N` in `index.html` — bump on any functional
-  CSS/JS change (currently **v=14 / v=6**). Image `data-shot`s carry `?v=1`; new image = new
+  CSS/JS change (currently **v=15 / v=6**). Image `data-shot`s carry `?v=1`; new image = new
   filename instead of bump.
 - **UNVERSIONED files + Cloudflare cache:** assets are served `Cache-Control: immutable, 30d`
   and Cloudflare caches them at the edge; the HTML is `no-cache` (nginx `expires -1` in `location /`).
@@ -106,8 +110,9 @@ tests). No `NavigationMap.md` — this file stays under the ~20 KB split line.
   `gen-og-card.py` — regenerate, don't hand-edit; its palette constants mirror `:root` BY HAND
   (change both). Renders SUPERSAMPLED (3×→LANCZOS) on flat bgs so it stays crisp after LinkedIn's
   ~500px downscale (rule learned on the agentas-sites cards, see that repo's KB §SEO). Needs
-  `_assets/inter.ttf` + `_assets/bricolage.ttf` (gitignored; the latter = the site woff2
-  decompressed with fontTools; root `.py`/`_assets/` are never served — Dockerfile COPYs an
+  `_assets/inter-var.ttf` + `_assets/bricolage.ttf` (gitignored; both = the site's woff2 files
+  decompressed with fontTools). LinkedIn legibility rules (≥40px text, dark ink not accent-coloured
+  text, q95 4:4:4) are in the script's docstring; root `.py`/`_assets/` are never served — Dockerfile COPYs an
   explicit list). Favicons (`favicon.svg/-32.png/.ico`, `apple-touch-icon.png`) are hand-made
   to match the nav monogram (green circle, white "MD"). After a regen: bump `?v=` on og:image + twitter:image + JSON-LD `image`, then a
   LinkedIn Post-Inspector re-scrape.

@@ -386,9 +386,9 @@ button:focus-visible {
 @media (max-width: 900px) {
     #hero { padding: 104px 0 56px; background: var(--bg-primary); }
     .hero-grid { grid-template-columns: 1fr; gap: 44px; }
-    .hero-visual { justify-self: start; max-width: 340px; }
+    .hero-visual { order: -1; justify-self: start; max-width: 260px; }
     .hero-stats { gap: 28px; }
-    .hero-now { left: 12px; }
+    .hero-now { left: 12px; bottom: -18px; }
 }
 
 /* ---- Sections Common ---- */

@@ -287,3 +287,21 @@ Deployed `cd38c8c` (run 36380780205 green) and live-verified: all new assets 200
 both fonts, `martin-hero.jpg`, `og-card.jpg?v=3`, the four `?v=2` icons); headless Chrome on
 martindavidsen.cc at 1280 and 375 loads Inter + Bricolage, `--accent` = `#1e5b4d`, no console
 errors, no horizontal overflow.
+
+### 2026-09-28c — sharper OG card, portrait-first phones, Gmail stays
+- **OG card blurry on LinkedIn** (user screenshot of the Post Inspector, `?v=3`): the card was
+  the new one, but the 31px secondary lines and the green role line were mush. A plain
+  523px LANCZOS + q70 local downscale had looked fine, so LinkedIn degrades harder than that.
+  Re-laid-out in `gen-og-card.py`: name auto-fit up to 92px, role on two lines at 50px bold in
+  dark ink, "Founder of Agentas AS" 42px, domain 42px bold, "Stavanger, Norway" dropped, ring
+  10px, photo panel 450px; fonts now weight-controlled via `_assets/inter-var.ttf` (the site's
+  variable Inter; the old `_assets/inter.ttf` was a static Medium); saved q95 4:4:4 → `?v=4`.
+  Harsh local stand-in (400px copy, q60, shown at 520px): new card legible, old one not.
+  Pending the user's re-scrape (Testing.md).
+- **Phone hero** — user: "as you recommend" → portrait first on ≤900px (`order: -1`, 260px wide),
+  "Now building" note hangs 18px off the photo's bottom edge. Name still on the first screen at
+  375×812 and 320×640 (checked), 26px clear above the eyebrow at 375. `styles.css?v=15`.
+- **Contact email** — user: keep `davidsen908@gmail.com` on the portfolio (recorded in the KB and
+  in the career KB §1 as the deliberate exception).
+- **Desktop hero background** (user: hard sand block vs rounded photo looks odd) — three options
+  mocked (`hero_panel.py` → screenshots + `drafts/mockups/hero-*.html`), pick pending (ToDo).
