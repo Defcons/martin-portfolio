@@ -230,7 +230,6 @@ button:focus-visible {
 #hero {
     padding: 136px 0 96px;
     overflow: hidden;
-    background: linear-gradient(90deg, var(--bg-primary) 0 60%, var(--bg-secondary) 60% 100%);
 }
 
 .hero-grid {
@@ -343,10 +342,20 @@ button:focus-visible {
 
 .hero-visual {
     position: relative;
+    isolation: isolate;
     justify-self: end;
     width: 100%;
     max-width: 440px;
     margin: 0;
+}
+
+.hero-visual::before {
+    content: '';
+    position: absolute;
+    inset: -40px -48px -40px -84px;
+    z-index: -1;
+    background: var(--bg-secondary);
+    border-radius: 40px;
 }
 
 .hero-portrait {
@@ -383,10 +392,15 @@ button:focus-visible {
     color: var(--accent);
 }
 
+@media (max-width: 1160px) {
+    .hero-visual::before { left: -44px; }
+}
+
 @media (max-width: 900px) {
-    #hero { padding: 104px 0 56px; background: var(--bg-primary); }
+    #hero { padding: 104px 0 56px; }
     .hero-grid { grid-template-columns: 1fr; gap: 44px; }
     .hero-visual { order: -1; justify-self: start; max-width: 260px; }
+    .hero-visual::before { display: none; }
     .hero-stats { gap: 28px; }
     .hero-now { left: 12px; bottom: -18px; }
 }

@@ -305,3 +305,14 @@ errors, no horizontal overflow.
   in the career KB §1 as the deliberate exception).
 - **Desktop hero background** (user: hard sand block vs rounded photo looks odd) — three options
   mocked (`hero_panel.py` → screenshots + `drafts/mockups/hero-*.html`), pick pending (ToDo).
+
+### 2026-09-28d — hero background option A shipped
+User: "looks good" (taken as A, the recommended option; flagged in chat). Hero loses the 60/40
+split gradient (plain `--bg-primary`, so it ends cleanly before the sand About section); a
+rounded 40px sand panel sits behind the portrait as `.hero-visual::before`, 40px above/below,
+48px right, 84px left. Real-source check caught what the mockup screenshots (1280/1440 only)
+did not: at 1024px the panel painted over the end of the intro paragraph — once the photo fills
+its grid column (≤~1160px) an 84px reach exceeds the 72px column gap. Fixed with a ≤1160px
+override to 44px; a 901–1920px sweep (10px steps) then measured ≥28px between the panel and
+every hero text line, no overflow, no console errors. Hidden ≤900px (phone/tablet layout keeps
+the portrait-first stack). `styles.css?v=16`.

@@ -1,6 +1,8 @@
 # OrientationMap — martin-portfolio (martindavidsen.cc)
 
-_Last verified: 2026-09-28c — OG card re-laid-out for LinkedIn legibility (bigger/bolder DARK text, 2-line role, q95 4:4:4 → `?v=4`); phones show the hero portrait FIRST (`order:-1`, 260px, note hangs off its bottom edge); `styles.css?v=15`; contact email stays Gmail (user). Detail → RJ 2026-09-28c._
+_Last verified: 2026-09-28d — desktop hero background = option A: plain hero bg + a rounded (40px) sand panel as `.hero-visual::before` (84px left of the photo, 44px at ≤1160px so it never covers the text column; hidden ≤900px); `styles.css?v=16`. Detail → RJ 2026-09-28d._
+
+_(prior 2026-09-28c) OG card re-laid-out for LinkedIn legibility (bigger/bolder DARK text, 2-line role, q95 4:4:4 → `?v=4`); phones show the hero portrait FIRST (`order:-1`, 260px, note hangs off its bottom edge); `styles.css?v=15`; contact email stays Gmail (user). Detail → RJ 2026-09-28c._
 
 _(prior 2026-09-28b) **Nordic restyle** (user picked mockup 3 of 4): sand + fjord-green `:root` palette, Bricolage Grotesque display face (self-hosted) + Inter body, soft borderless cards, pill buttons, portrait hero with a "Now building" link (no more apex composite), status/tags/counts as plain text; OG card + favicons regenerated green (og `?v=3`, icons `?v=2`); `styles.css?v=14`. Detail → RJ 2026-09-28b._
 
@@ -90,12 +92,16 @@ tests). No `NavigationMap.md` — this file stays under the ~20 KB split line.
   (`.service-tags`) and accordion counts (`.ai-cat-count`) render as PLAIN TEXT per the no-badges
   rule — don't reintroduce pills. Hero: DOM order is text then `.hero-visual` (portrait +
   `.hero-now` link); at ≤900px CSS `order: -1` shows the portrait FIRST (user's call via
-  "as you recommend", 2026-09-28) — screen readers still get the name first.
+  "as you recommend", 2026-09-28) — screen readers still get the name first. The sand panel
+  behind the desktop portrait is `.hero-visual::before` (`isolation: isolate` keeps its
+  `z-index: -1` inside the figure). Its left reach must stay below the 72px column gap once the
+  photo fills its column (≤~1160px), or it paints over the intro paragraph — hence the
+  ≤1160px override; sweep 901–1440px for text clearance after touching the grid or panel.
 
 ## Conventions / gotchas
 
 - **Cache-bust:** `styles.css?v=N` + `script.js?v=N` in `index.html` — bump on any functional
-  CSS/JS change (currently **v=15 / v=6**). Image `data-shot`s carry `?v=1`; new image = new
+  CSS/JS change (currently **v=16 / v=6**). Image `data-shot`s carry `?v=1`; new image = new
   filename instead of bump.
 - **UNVERSIONED files + Cloudflare cache:** assets are served `Cache-Control: immutable, 30d`
   and Cloudflare caches them at the edge; the HTML is `no-cache` (nginx `expires -1` in `location /`).
