@@ -325,3 +325,9 @@ rule). Page height 8768→8166px at 1280 and 13905→13401px at 375; heading lin
 multi-line headings now split evenly; no overflow or console errors. `styles.css?v=17`.
 Same day the user re-inspected martindavidsen.cc in LinkedIn's Post Inspector: the `?v=4` card
 (2026-09-28c) shows sharp. The OG-legibility rule is promoted to FACT in the KnowledgeBase.
+
+### 2026-09-28f — deploys are never cancelled mid-run
+`deploy.yml`: `cancel-in-progress: false`, so a newer push waits its turn instead of cancelling a running
+deploy, and the deploy job has a 45-min limit with a 40-min `command_timeout` (the SSH action's default was
+10 min). A deploy cut off between stopping the old container and starting the new one leaves the site down, and
+a slow build on the box can take ~20 min.
