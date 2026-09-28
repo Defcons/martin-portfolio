@@ -1,13 +1,13 @@
 """Preview-only restyle mockups for martindavidsen.cc: theme CSS + small hero DOM swaps injected
 into the real local page. Nothing here touches the site files.
 Usage: from the repo root run `python -m http.server 8765 --bind 127.0.0.1`, then
-       `python drafts/restyle-mockups.py <outdir outside the repo> [v1 v2 v3 v4]`."""
-import sys, pathlib
+       `python drafts/restyle-mockups.py <outdir outside the repo> [v1 v2 v3 v4]`   (screenshots)
+   or  `python drafts/restyle-mockups.py --html`   (open-in-a-browser files in drafts/mockups/, gitignored)."""
+import sys, pathlib, re, base64, shutil
 from playwright.sync_api import sync_playwright
 from PIL import Image, ImageDraw, ImageFont
 
-out = pathlib.Path(sys.argv[1]); out.mkdir(parents=True, exist_ok=True)
-ONLY = sys.argv[2:]
+REPO = pathlib.Path(__file__).resolve().parent.parent
 URL = "http://127.0.0.1:8765/"
 PORTRAIT = r"C:\Dev\career\cv\martin@2x.jpg"
 GF = "https://fonts.googleapis.com/css2?"
@@ -325,7 +325,7 @@ def grid(cells, cols, pad=20, bg="#cbd5e1"):
         s.paste(c, (pad + (i % cols) * (w + pad), pad + (i // cols) * (h + pad)))
     return s
 
-def run():
+def run(out, ONLY):
     heroes, mobiles = [], []
     with sync_playwright() as p:
         br = p.chromium.launch()
@@ -364,4 +364,68 @@ def run():
     grid(mobiles, len(mobiles)).save(out / "overview-mobile.png")
     print("done")
 
-run()
+FILES = {"v1": "1-field-notes.html", "v2": "2-control-room.html", "v3": "3-nordic.html", "v4": "4-swiss.html"}
+SWITCH_CSS = """
+.mk-switch { position: fixed; left: 12px; bottom: 12px; z-index: 3000; display: flex; flex-wrap: wrap; align-items: center; gap: 2px;
+  padding: 6px; background: rgba(17,17,17,.9); border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,.3); font: 600 12px/1.2 system-ui, sans-serif; }
+.mk-switch a { color: #fff; padding: 6px 9px; border-radius: 5px; text-decoration: none; }
+.mk-switch a:hover { background: rgba(255,255,255,.15); }
+.mk-switch a[aria-current] { background: #fff; color: #111; }
+"""
+
+def build_html(dest):
+    """Standalone mockup pages that open straight from disk (file://): the real index.html + the theme CSS,
+    with site assets referenced from the repo root and Inter embedded (Firefox blocks file:// fonts
+    loaded from a parent folder)."""
+    dest.mkdir(parents=True, exist_ok=True)
+    shutil.copy(PORTRAIT, dest / "portrait.jpg")
+    src = (REPO / "index.html").read_text(encoding="utf-8")
+    src = re.sub(r'<link rel="preload" as="font"[^>]*>\s*', "", src)
+    src = re.sub(r'(?<=["\s,])(images/|fonts/|styles\.css|script\.js|favicon|apple-touch-icon)', r"../../\1", src)
+    inter = base64.b64encode((REPO / "fonts" / "inter-latin-var.woff2").read_bytes()).decode()
+    face = ("@font-face { font-family: 'Inter'; font-style: normal; font-weight: 300 800; font-display: swap;"
+            f" src: url(data:font/woff2;base64,{inter}) format('woff2'); }}")
+    for key, v in V.items():
+        links = "".join(f'<a href="{f}"{" aria-current=\"page\"" if k == key else ""}>{V[k]["short"].split(" —")[0]}</a>'
+                        for k, f in FILES.items())
+        switch = f'<nav class="mk-switch" aria-label="Mockups"><a href="index.html">All</a>{links}</nav>\n'
+        page = src.replace('<html lang="en">', f'<html lang="en" class="mk mk-{key}">', 1)
+        page = re.sub(r"<title>", f"<title>Mockup {v['short'].split(' —')[0].strip()} · ", page, count=1)
+        page = page.replace("</head>", f'<link rel="stylesheet" href="{GF}{v["fonts"]}&display=swap">\n'
+                                       f"<style>\n{face}\n{COMMON}{v['css']}{SWITCH_CSS}</style>\n</head>", 1)
+        page = re.sub(r'(<figure class="hero-visual">).*?(</figure>)',
+                      lambda m: m.group(1) + v["hero"].replace("/__mock/portrait.jpg", "portrait.jpg") + m.group(2),
+                      page, count=1, flags=re.S)
+        page = page.replace("</body>", switch + "</body>", 1)
+        (dest / FILES[key]).write_text(page, encoding="utf-8", newline="\n")
+    cards = "".join(
+        f'<a class="card" href="{FILES[k]}"><img src="hero-{k}.png" alt=""><b>{v["short"]}</b></a>'
+        for k, v in V.items())
+    (dest / "index.html").write_text(f"""<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio restyle mockups</title>
+<style>
+:root {{ --bg: #f4f5f7; --fg: #111827; --muted: #5b6270; --card: #fff; --line: #e3e6eb; }}
+body {{ margin: 0; font: 16px/1.5 system-ui, sans-serif; background: var(--bg); color: var(--fg); }}
+main {{ max-width: 1120px; margin: 0 auto; padding: 40px 16px; }}
+h1 {{ margin: 0 0 6px; font-size: 1.6rem; }} p {{ margin: 0 0 28px; color: var(--muted); }}
+.grid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }}
+.card {{ display: block; background: var(--card); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; color: inherit; text-decoration: none; }}
+.card:hover {{ border-color: #9aa3b2; }} .card img {{ display: block; width: 100%; height: auto; border-bottom: 1px solid var(--line); }}
+.card b {{ display: block; padding: 12px 14px; }}
+a {{ color: #1d4ed8; }}
+</style></head><body><main>
+<h1>Portfolio restyle mockups</h1>
+<p>Same page, same wording, four looks. Open one, then use the switcher bottom-left to jump between them.
+Compare with the <a href="https://martindavidsen.cc">live portfolio</a> and <a href="https://agentas.net">agentas.net</a>.</p>
+<div class="grid">{cards}</div>
+</main></body></html>
+""", encoding="utf-8", newline="\n")
+    print("wrote", sorted(p.name for p in dest.iterdir()))
+
+if __name__ == "__main__":
+    if sys.argv[1:2] == ["--html"]:
+        build_html(REPO / "drafts" / "mockups")
+    else:
+        o = pathlib.Path(sys.argv[1]); o.mkdir(parents=True, exist_ok=True)
+        run(o, sys.argv[2:])
