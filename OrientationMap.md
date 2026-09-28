@@ -1,6 +1,8 @@
 # OrientationMap — martin-portfolio (martindavidsen.cc)
 
-_Last verified: 2026-09-28d — desktop hero background = option A: plain hero bg + a rounded (40px) sand panel as `.hero-visual::before` (84px left of the photo, 44px at ≤1160px so it never covers the text column; hidden ≤900px); `styles.css?v=16`. Detail → RJ 2026-09-28d._
+_Last verified: 2026-09-28e — style carry-overs shipped: `section` padding 80px (56px ≤768), `h1, h2, h3 { text-wrap: balance }` sitewide, `#focus` 01–04 numbers (`.service-num`) removed; `styles.css?v=17`. Detail → RJ 2026-09-28e._
+
+_(prior 2026-09-28d) desktop hero background = option A: plain hero bg + a rounded (40px) sand panel as `.hero-visual::before` (84px left of the photo, 44px at ≤1160px so it never covers the text column; hidden ≤900px); `styles.css?v=16`. Detail → RJ 2026-09-28d._
 
 _(prior 2026-09-28c) OG card re-laid-out for LinkedIn legibility (bigger/bolder DARK text, 2-line role, q95 4:4:4 → `?v=4`); phones show the hero portrait FIRST (`order:-1`, 260px, note hangs off its bottom edge); `styles.css?v=15`; contact email stays Gmail (user). Detail → RJ 2026-09-28c._
 
@@ -101,7 +103,7 @@ tests). No `NavigationMap.md` — this file stays under the ~20 KB split line.
 ## Conventions / gotchas
 
 - **Cache-bust:** `styles.css?v=N` + `script.js?v=N` in `index.html` — bump on any functional
-  CSS/JS change (currently **v=16 / v=6**). Image `data-shot`s carry `?v=1`; new image = new
+  CSS/JS change (currently **v=17 / v=6**). Image `data-shot`s carry `?v=1`; new image = new
   filename instead of bump.
 - **UNVERSIONED files + Cloudflare cache:** assets are served `Cache-Control: immutable, 30d`
   and Cloudflare caches them at the edge; the HTML is `no-cache` (nginx `expires -1` in `location /`).

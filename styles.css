@@ -257,7 +257,6 @@ button:focus-visible {
     letter-spacing: -0.04em;
     line-height: 1.04;
     margin-bottom: 12px;
-    text-wrap: balance;
 }
 
 .hero-role {
@@ -406,7 +405,9 @@ button:focus-visible {
 }
 
 /* ---- Sections Common ---- */
-section { padding: 120px 0; }
+section { padding: 80px 0; }
+
+h1, h2, h3 { text-wrap: balance; }
 
 .section-label {
     display: flex;
@@ -646,13 +647,6 @@ section { padding: 120px 0; }
     transform: translateY(-4px);
 }
 
-.service-num {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--accent);
-    margin-bottom: 16px;
-    font-family: var(--font-display);
-}
 
 .service-card h3 {
     font-size: 1.1rem;
@@ -1248,7 +1242,7 @@ footer {
 }
 
 @media (max-width: 768px) {
-    section { padding: 80px 0; }
+    section { padding: 56px 0; }
 
     .about-grid {
         grid-template-columns: 1fr;

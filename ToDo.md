@@ -14,10 +14,7 @@ shipped, RJ 2026-09-28d; phone hero + contact email — answered, RJ 2026-09-28c
   re-shoots, copy the new file in under a NEW name (e.g. `aurly-3.webp`) and repoint the card.
 
 ## Blocked / needs the user
-- [ ] **Smaller style carry-overs from the apex 09-25 pass — proposed, awaiting OK:**
-  section padding 120→80px (apex: "too much space between sections"); `h1,h2,h3
-  { text-wrap: balance }`; drop the 01–04 numbers on the `#focus` cards (the Nordic mockup
-  kept them, in green). (The pills/tags → plain text item shipped with the restyle.)
+(nothing — the style carry-overs shipped 2026-09-28, RJ 2026-09-28e)
 
 ## Done (prune on next touch)
 (nothing yet)

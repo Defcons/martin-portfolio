@@ -316,3 +316,10 @@ its grid column (≤~1160px) an 84px reach exceeds the 72px column gap. Fixed wi
 override to 44px; a 901–1920px sweep (10px steps) then measured ≥28px between the panel and
 every hero text line, no overflow, no console errors. Hidden ≤900px (phone/tablet layout keeps
 the portrait-first stack). `styles.css?v=16`.
+
+### 2026-09-28e — style carry-overs shipped (user: "do those style tweaks")
+The three leftovers from the apex 09-25 pass: `section` padding 120→80px (and 80→56px ≤768,
+apex's pairing), `h1, h2, h3 { text-wrap: balance }` sitewide (replaces the hero name's own
+rule), and the `#focus` cards' 01–04 numbers dropped (markup + the now-unused `.service-num`
+rule). Page height 8768→8166px at 1280 and 13905→13401px at 375; heading line counts unchanged,
+multi-line headings now split evenly; no overflow or console errors. `styles.css?v=17`.
