@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 """Generate the martindavidsen.cc Open Graph share card (images/og-card.jpg).
 
-Photo-forward refresh of the original hand-made card: same layout (circular
-headshot left, name/role/location right) rebuilt on the site's own :root palette
-from styles.css, with the --gradient-accent (#2563eb -> #06b6d4) as a photo ring
-+ an underline under the name. Final image 1200x630 (Open Graph spec).
+Photo-forward card: circular headshot left, name/role/location right, on the
+site's own :root palette from styles.css (sand + fjord green since the 2026-09
+restyle), with --accent as a photo ring + an underline under the name and the
+name set in the site's display face. Final image 1200x630 (Open Graph spec).
 
 CRISPNESS (learned on the agentas card, 2026-09-02): LinkedIn downscales the
 card to ~500px + re-encodes, so render SUPERSAMPLED (3x -> LANCZOS), keep the
@@ -12,8 +12,10 @@ background flat, use bold high-contrast type. Eyeball a ~523x274 JPEG of the
 output before shipping - that's what platforms actually show.
 
 Headshot source = images/martin-400.jpg (the site's own headshot crop; ~1:1
-with the final circle so the supersample roundtrip is lossless). Font =
-_assets/inter.ttf (gitignored; copy of the agentas-sites ogcard-gen font).
+with the final circle so the supersample roundtrip is lossless). Fonts =
+_assets/inter.ttf (gitignored; copy of the agentas-sites ogcard-gen font) and
+_assets/bricolage.ttf (gitignored; fonts/bricolage-latin-var.woff2 decompressed
+with fontTools: TTFont(woff2).flavor = None; .save(ttf)).
 Root *.py files are NOT served (Dockerfile COPYs an explicit file list).
 
 og-card.jpg is UNVERSIONED in the head by default and CF-edge-cached - this
@@ -27,45 +29,39 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 FONT = os.path.join(ROOT, '_assets', 'inter.ttf')
+DISPLAY_FONT = os.path.join(ROOT, '_assets', 'bricolage.ttf')
 PHOTO = os.path.join(ROOT, 'images', 'martin-400.jpg')
 OUT = os.path.join(ROOT, 'images', 'og-card.jpg')
 
 # styles.css :root tokens.
-BG = (255, 255, 255)          # --bg-primary
-BG2 = (243, 246, 252)         # --bg-secondary
-INK = (15, 23, 42)            # --text-primary
-SECONDARY = (58, 66, 86)      # --text-secondary
-MUTED = (92, 103, 128)        # --text-muted
-ACCENT = (37, 99, 235)        # --accent            #2563eb
-GRAD_START = (37, 99, 235)    # --gradient-accent start
-GRAD_END = (6, 182, 212)      # --gradient-accent end #06b6d4
-BORDER = (229, 233, 242)      # --border
+BG = (251, 249, 245)          # --bg-primary
+BG2 = (241, 235, 224)         # --bg-secondary
+INK = (20, 33, 29)            # --text-primary
+SECONDARY = (60, 73, 68)      # --text-secondary
+MUTED = (102, 115, 109)       # --text-muted
+ACCENT = (30, 91, 77)         # --accent            #1e5b4d
+BORDER = (230, 222, 208)      # --border
 
 SS = 3
 W, H = 1200 * SS, 630 * SS
 inter = lambda s: ImageFont.truetype(FONT, s * SS)
 
 
-def diag_gradient(c1, c2):
-    """Full-canvas 135deg linear gradient c1->c2 (--gradient-accent direction)."""
-    g = Image.new('RGB', (W, H), c1)
-    gd = ImageDraw.Draw(g)
-    diag = W + H
-    for i in range(0, diag, SS):
-        t = i / diag
-        gd.line([(0, i), (i, 0)], fill=tuple(int(c1[k] + (c2[k] - c1[k]) * t) for k in range(3)), width=SS)
-    return g
+def display(s, weight=700):
+    f = ImageFont.truetype(DISPLAY_FONT, s * SS)
+    f.set_variation_by_axes([96, weight])   # axes: opsz, wght
+    return f
 
 
 img = Image.new('RGB', (W, H), BG)
 d = ImageDraw.Draw(img)
-grad = diag_gradient(GRAD_START, GRAD_END)
+grad = Image.new('RGB', (W, H), ACCENT)
 
 # --- soft --bg-secondary wash on the photo half (flat, no fine texture) ---
 d.rectangle([0, 0, 500 * SS, H], fill=BG2)
 d.line([(500 * SS, 0), (500 * SS, H)], fill=BORDER, width=1 * SS)
 
-# --- circular headshot, gradient ring ---
+# --- circular headshot, accent ring ---
 CIRCLE = 380 * SS
 cx, cy = 250 * SS, H // 2                      # circle center
 px, py = cx - CIRCLE // 2, cy - CIRCLE // 2    # photo top-left
@@ -85,11 +81,11 @@ d = ImageDraw.Draw(img)
 
 # --- text block, right ---
 TX = 566 * SS
-name_f = inter(74)
-d.text((TX, 232 * SS), 'Martin Davidsen', font=name_f, fill=INK, anchor='ls', stroke_width=2 * SS)
+name_f = display(78)
+d.text((TX, 232 * SS), 'Martin Davidsen', font=name_f, fill=INK, anchor='ls')
 name_w = d.textlength('Martin Davidsen', font=name_f)
 
-# gradient underline under the name (site's --gradient-accent motif)
+# accent underline under the name
 uy = 254 * SS
 bar_mask = Image.new('L', (W, H), 0)
 ImageDraw.Draw(bar_mask).rounded_rectangle([TX, uy, TX + name_w, uy + 9 * SS], radius=4 * SS, fill=255)

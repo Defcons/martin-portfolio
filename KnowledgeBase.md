@@ -8,7 +8,9 @@ that bite. The code index (where things live + invariants) is
 _The bible set: **OrientationMap = the machine · KnowledgeBase = the model ·
 ResearchJournal = the history · ToDo = deferrals · Testing = pending verification.**_
 
-_Last verified: 2026-09-02 (master) — added the generator-owned OG-card FACT
+_Last verified: 2026-09-28 — Nordic restyle: look now deliberately distinct from
+agentas.net; two self-hosted fonts; OG card on the new palette. Prior: 2026-09-02
+(master) — added the generator-owned OG-card FACT
 (photo-forward refresh, supersampled crispness rule, `?v=` discipline; og-card
 left the unversioned-purge list) + deferred volatile cache-bust N to
 OrientationMap/code per this doc's own policy. Prior: 2026-08-20 @ ac64bfc
@@ -25,9 +27,11 @@ code — code wins any conflict.
   **Person-first, not a company**: framed so employers see the individual,
   leading with software/AI, with the industrial track record as support.
 - **[FACT]** Live at **martindavidsen.cc** (permanent personal-brand domain; born
-  as `martin.defc0n.no`). Shares its **visual language** (dark theme, Inter, card
-  styling) with agentas.net, but the content is re-framed first-person —
-  **cross-link, don't duplicate** the two.
+  as `martin.defc0n.no`). Since 2026-09-28 its **look is deliberately its own**
+  (sand + fjord green, Bricolage Grotesque headings, portrait hero) — until then it
+  shared agentas.net's tokens, hero image and components so closely that it read
+  as a copy (user's verdict; side-by-side audit in RJ 2026-09-28). Content is
+  first-person; projects and screenshots are shared — **cross-link, don't duplicate**.
 
 ## 2. Stack
 - **[FACT]** Plain **static** site, **no build step**: `index.html` +
@@ -44,10 +48,13 @@ code — code wins any conflict.
   INVARIANT: a `data-en/no` element must hold **plain text only** (the swap
   destroys child nodes) — arrows/icons go OUTSIDE, around an inner translatable
   `<span>`. Adding content? Add BOTH languages or it won't translate.
-- **[FACT]** **Inter is self-hosted** — one variable `woff2`, **LATIN subset
-  only** (`fonts/inter-latin-var.woff2`, `<link rel=preload … crossorigin>`). NO
-  Google Fonts (removed to kill render-blocking). The latin range covers
-  Norwegian æ/ø/å; glyphs outside latin need a different subset file.
+- **[FACT]** **Fonts are self-hosted** — Inter (body) and Bricolage Grotesque
+  (display), each one variable **LATIN-subset** `woff2` in `fonts/`, each
+  preloaded. NO Google Fonts (removed to kill render-blocking). The latin range
+  covers Norwegian æ/ø/å and the em/en dashes; neither file has → (U+2192), so
+  arrows render in a system fallback. Bricolage is Google Fonts' latin file for
+  `opsz,wght` (77 KB) — the opsz axis matters: without it large headings lose
+  their display cut.
 - **[FACT]** **Email is base64-assembled at runtime** into `#cc-email` — the
   plaintext stays out of the committed source (bot-harvest defense).
 - **[FACT]** **Cache-bust discipline:** `styles.css?v=N` + `script.js?v=N` in
@@ -61,14 +68,15 @@ code — code wins any conflict.
   `?v=N`, so a regen bumps N instead of purging.
 - **[FACT]** **The OG share card is generator-owned** (2026-09-02):
   `gen-og-card.py` (repo root, not served) renders `images/og-card.jpg` —
-  photo-forward refresh of the original hand-made card (circular headshot +
-  `--gradient-accent` ring, name/role/"Founder of Agentas AS"/domain) on the
-  site's own `:root` palette. Rendered SUPERSAMPLED (3×→LANCZOS, flat
+  photo-forward card (circular headshot + `--accent` ring, name in Bricolage,
+  role/"Founder of Agentas AS"/domain) on the site's own `:root` palette, whose
+  RGB values are copied into the script by hand (2026-09-28: sand + fjord green). Rendered SUPERSAMPLED (3×→LANCZOS, flat
   backgrounds) because LinkedIn downscales cards to ~500px + re-encodes — fine
   detail turns to mush (rule established on the agentas-sites cards the same
   day, incl. the eyeball-check: downscale to ~523×274 JPEG q85 and look at
   THAT). Regen = rerun + bump `?v=` (og:image, twitter:image, JSON-LD `image`)
-  + LinkedIn Post-Inspector re-scrape. Needs `_assets/inter.ttf` (gitignored).
+  + LinkedIn Post-Inspector re-scrape. Needs `_assets/inter.ttf` + `_assets/bricolage.ttf`
+  (gitignored; the latter = `fonts/bricolage-latin-var.woff2` saved with `flavor=None`).
 - **[FACT]** **Marketing-safe images only** — no client names / repo paths /
   failing tests visible (same rule as agentas-sites).
 - **[FACT]** **Private & On-Prem AI pillar (added 2026-08-19) is framed as

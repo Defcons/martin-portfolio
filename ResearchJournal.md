@@ -256,3 +256,30 @@ tag pills and blue icon tiles. Four whole-page directions mocked on the real con
 Control Room, Nordic, Swiss — heroes, full pages (1280) and phone heroes (375), no horizontal
 overflow at either width. Mockup-only gotcha: lazy logos need a scroll-walk before a full-page
 capture or they render as empty boxes. Pick pending (ToDo).
+Same day: `restyle-mockups.py --html` wrote open-from-disk copies to `drafts/mockups/`
+(gitignored). The export embeds Inter as a data: URI because browsers may block file:// fonts
+from a parent folder (Firefox's strict file-origin policy; not tested here) — in Chrome the
+embedded face is the one in use, the stylesheet's own Inter face stays `unloaded`. Styles,
+script and images load fine from the parent folder.
+
+### 2026-09-28b — Nordic restyle shipped (user picked mockup 3)
+Moved mockup 3 into the real source, rule by rule rather than as an override layer:
+- `:root` → sand `#fbf9f5`/`#f1ebe0`, fjord green `#1e5b4d`, warm shadows, radius 18/12/28,
+  `--font-display`, `--status-dev`; `--gradient-accent` removed (all six uses were plain
+  `background:`, now `var(--accent)`).
+- Bricolage Grotesque self-hosted (`fonts/bricolage-latin-var.woff2`, Google Fonts' latin file
+  for `opsz,wght`, 77 KB) on name, section titles, card/accordion titles, stats, modal title.
+- Borderless soft cards, pill buttons/links, sentence-case section labels with a short rule,
+  accordion names in the display face; status/tags/counts as plain text in cards AND the modal.
+- Hero: portrait (`images/martin-hero.jpg`, 880×1100, a 4:5 crop of the CV headshot) + a "Now
+  building / Bygger nå" link to `#work`; the apex composite, the round avatar and the About photo
+  are gone (`hero-products.webp`, `martin-200.jpg` deleted; `martin-400.jpg` stays — the OG
+  generator's input). Fixed one mockup flaw: the Private & On-Prem AI icon was white on pale
+  green, now green.
+- OG card regenerated on the new palette with the name in Bricolage (`?v=3`); favicons redrawn
+  as the green "MD" circle and versioned `?v=2` in the head so no Cloudflare purge is needed.
+Verified locally with Playwright at 1440/1280/1024/900/768/375/320: both fonts load, no
+horizontal overflow, no console errors, badges/tags computed with no background or border, modal
+opens with a plain status line, EN/NO swap incl. "Bygger nå"; the 1280 hero matches the mockup
+side by side. Left alone (pre-existing unused CSS): `.founder-photo`, `.project-featured`,
+`#ai::before`, `.logo-icon` still carry old blue values.
