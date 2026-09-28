@@ -245,3 +245,14 @@ all 8 new images 200; headless-Chrome render of martindavidsen.cc matches the ap
 `cf-cache-status: MISS` — nothing was held at the Cloudflare edge, so NO Custom-Purge needed.
 
 - **2026-09-25c** — Personal title changed "Software & AI Engineer" → **"AI Architect & Software Engineer"** (NO "KI-arkitekt og programvareingeniør") at the user's request, as part of an AI-architecture positioning push shared with agentas.net (new `/software-for/ai-architecture/` service page there). Keyword note: in English "AI architect" is mostly a job-title search, which is exactly why it belongs in the personal title. Updated hero-role, about-role, <title>, meta/OG/og:image:alt, JSON-LD jobTitle; regenerated the OG card (role line now auto-fits) → `?v=2`. CV + LinkedIn follow in the career session.
+
+### 2026-09-28 — "doesn't look like a copy of apex": audit + four restyle mockups
+Side-by-side full-page renders of the live apex and portfolio showed the portfolio is apex
+re-skinned: identical tokens (Inter, `#2563eb`, blue→cyan gradient, radius 12/8/20, 1200px),
+the same hero layout with the SAME product composite (adopted 09-25b as hero option B), the same
+accordion with the same Products cards, the same small-caps-label + bold-title section heads,
+tag pills and blue icon tiles. Four whole-page directions mocked on the real content by
+`drafts/restyle-mockups.py` (theme CSS + hero-visual swap, copy untouched): Field Notes,
+Control Room, Nordic, Swiss — heroes, full pages (1280) and phone heroes (375), no horizontal
+overflow at either width. Mockup-only gotcha: lazy logos need a scroll-walk before a full-page
+capture or they render as empty boxes. Pick pending (ToDo).
