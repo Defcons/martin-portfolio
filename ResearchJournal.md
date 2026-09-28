@@ -283,3 +283,7 @@ horizontal overflow, no console errors, badges/tags computed with no background 
 opens with a plain status line, EN/NO swap incl. "Bygger nå"; the 1280 hero matches the mockup
 side by side. Left alone (pre-existing unused CSS): `.founder-photo`, `.project-featured`,
 `#ai::before`, `.logo-icon` still carry old blue values.
+Deployed `cd38c8c` (run 36380780205 green) and live-verified: all new assets 200 (`styles.css?v=14`,
+both fonts, `martin-hero.jpg`, `og-card.jpg?v=3`, the four `?v=2` icons); headless Chrome on
+martindavidsen.cc at 1280 and 375 loads Inter + Bricolage, `--accent` = `#1e5b4d`, no console
+errors, no horizontal overflow.
