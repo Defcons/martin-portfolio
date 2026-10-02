@@ -1,6 +1,8 @@
 # OrientationMap — martin-portfolio (martindavidsen.cc)
 
-_Last verified: 2026-09-28e — style carry-overs shipped: `section` padding 80px (56px ≤768), `h1, h2, h3 { text-wrap: balance }` sitewide, `#focus` 01–04 numbers (`.service-num`) removed; `styles.css?v=17`. Detail → RJ 2026-09-28e._
+_Last verified: 2026-10-02 — contact email switched to martin@agentas.net (`script.js` base64 in the `#cc-email` block; reverses the 09-28 keep-Gmail call); `script.js?v=7`. Detail → RJ 2026-10-02._
+
+_(prior 2026-09-28e) style carry-overs shipped: `section` padding 80px (56px ≤768), `h1, h2, h3 { text-wrap: balance }` sitewide, `#focus` 01–04 numbers (`.service-num`) removed; `styles.css?v=17`. Detail → RJ 2026-09-28e._
 
 _(prior 2026-09-28d) desktop hero background = option A: plain hero bg + a rounded (40px) sand panel as `.hero-visual::before` (84px left of the photo, 44px at ≤1160px so it never covers the text column; hidden ≤900px); `styles.css?v=16`. Detail → RJ 2026-09-28d._
 
@@ -103,7 +105,7 @@ tests). No `NavigationMap.md` — this file stays under the ~20 KB split line.
 ## Conventions / gotchas
 
 - **Cache-bust:** `styles.css?v=N` + `script.js?v=N` in `index.html` — bump on any functional
-  CSS/JS change (currently **v=17 / v=6**). Image `data-shot`s carry `?v=1`; new image = new
+  CSS/JS change (currently **v=17 / v=7**). Image `data-shot`s carry `?v=1`; new image = new
   filename instead of bump.
 - **UNVERSIONED files + Cloudflare cache:** assets are served `Cache-Control: immutable, 30d`
   and Cloudflare caches them at the edge; the HTML is `no-cache` (nginx `expires -1` in `location /`).

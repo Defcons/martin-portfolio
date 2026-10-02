@@ -331,3 +331,9 @@ Same day the user re-inspected martindavidsen.cc in LinkedIn's Post Inspector: t
 deploy, and the deploy job has a 45-min limit with a 40-min `command_timeout` (the SSH action's default was
 10 min). A deploy cut off between stopping the old container and starting the new one leaves the site down, and
 a slow build on the box can take ~20 min.
+
+### 2026-10-02 — contact email → martin@agentas.net
+User reversed the 2026-09-28 "keep Gmail" decision: the contact card now assembles
+`martin@agentas.net` (new base64 in `script.js`; `script.js?v=7`), matching the CV, LinkedIn and
+GitHub. Verified locally: card text and `mailto:` show the new address, no "gmail" left in the
+rendered page. KnowledgeBase email FACT and career KB section 1 updated.

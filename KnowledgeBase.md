@@ -57,8 +57,8 @@ code — code wins any conflict.
   their display cut.
 - **[FACT]** **Email is base64-assembled at runtime** into `#cc-email` — the
   plaintext stays out of the committed source (bot-harvest defense). The address is
-  `davidsen908@gmail.com` ON PURPOSE (user, 2026-09-28): the one exception to the career
-  canon's martin@agentas.net — don't "unify" it.
+  `martin@agentas.net` (user, 2026-10-02; reverses the 2026-09-28 "keep Gmail" call), the
+  same single public contact as the CV, LinkedIn and GitHub (career KB §1).
 - **[FACT]** **Cache-bust discipline:** `styles.css?v=N` + `script.js?v=N` in
   `index.html` — bump on any functional CSS/JS change (current N lives in
   OrientationMap/code — code wins). Assets serve `immutable, 30d` and are

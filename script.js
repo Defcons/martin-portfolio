@@ -301,7 +301,7 @@
         const emailLink = document.getElementById('cc-email');
         const emailText = document.getElementById('cc-email-text');
         if (emailLink && emailText) {
-            const addr = atob('ZGF2aWRzZW45MDhAZ21haWwuY29t');
+            const addr = atob('bWFydGluQGFnZW50YXMubmV0');
             emailLink.href = 'mailto:' + addr;
             emailText.textContent = addr;
         }
