@@ -9,7 +9,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 REPO = pathlib.Path(__file__).resolve().parent.parent
 URL = "http://127.0.0.1:8765/"
-PORTRAIT = r"C:\Dev\career\cv\martin@2x.jpg"
+PORTRAIT = r"C:\Dev\life\career\cv\martin@2x.jpg"
 GF = "https://fonts.googleapis.com/css2?"
 
 # ---------------------------------------------------------------- shared: no chips / pills / bubbles
