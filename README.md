@@ -16,7 +16,7 @@ Plain static site — no build step.
 - `styles.css` — base shared with the Agentas site + personal-portfolio additions at the bottom
 - `script.js` — language toggle, mobile menu, scroll animations, runtime-assembled email
 - `images/` — portrait, project shots, company logos
-- `Dockerfile` + `nginx.conf` — nginx:alpine container, same as the Agentas sites
+- `Dockerfile` + `nginx.conf` — `nginxinc/nginx-unprivileged:alpine` container (runs as uid 101, listens on 3040), same as the Agentas sites
 
 ## Run locally
 
@@ -25,7 +25,7 @@ Plain static site — no build step.
 python -m http.server 8080
 # or build the container
 docker build -t martin-portfolio .
-docker run --rm -p 8080:80 martin-portfolio
+docker run --rm -p 3040:3040 martin-portfolio
 ```
 
 ## Sections
