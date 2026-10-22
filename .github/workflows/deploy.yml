@@ -14,7 +14,24 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # The image and docker-compose.yml as the box runs them: uid 101, a read-only filesystem, the page answering on 3040
+  # and no redirect carrying the port. A container that cannot start in that shape stops the deploy here, not on the box.
+  container:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Start the production container in its shape
+        run: bash tests/container-smoke.sh
+
   deploy:
+    needs: container
+    # A manual run on another branch tests it and deploys nothing.
+    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:

@@ -3,7 +3,17 @@ services:
     build: .
     container_name: martin-portfolio
     restart: unless-stopped
+    # Not root: nginx-unprivileged runs as uid 101, the files are read-only and /tmp (pid file, temp paths) is the only
+    # writable place.
+    user: "101:101"
+    read_only: true
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    tmpfs:
+      - /tmp
     environment:
       - TZ=Europe/Oslo
     ports:
-      - "3040:80"
+      # host:container, the same number.
+      - "3040:3040"
