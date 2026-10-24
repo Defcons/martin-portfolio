@@ -29,6 +29,12 @@ for path in / /styles.css /script.js /robots.txt /favicon.svg /fonts/inter-latin
   [ "$s" = 200 ] || fail "$base$path answers $s, not 200"
 done
 
+# Versioned assets, webp pictures included, get the long immutable cache; the HTML does not.
+for path in /styles.css /images/aurly-1.webp; do
+  curl -s -o /dev/null -D - "$base$path" | tr -d '\r' | grep -qi '^cache-control:.*immutable' || fail "$base$path is not served immutable"
+done
+if curl -s -o /dev/null -D - "$base/" | tr -d '\r' | grep -qi '^cache-control:.*immutable'; then fail "$base/ is served immutable"; fi
+
 # Directory URLs without the slash: relative Location, never the host or the port.
 redirects_to /fonts /fonts/
 redirects_to /images /images/
