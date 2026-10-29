@@ -35,6 +35,14 @@ for path in /styles.css /images/aurly-1.webp; do
 done
 if curl -s -o /dev/null -D - "$base/" | tr -d '\r' | grep -qi '^cache-control:.*immutable'; then fail "$base/ is served immutable"; fi
 
+# The security headers reach the assets too, not only the HTML (an add_header in a location drops the server's).
+for path in / /styles.css /script.js /images/aurly-1.webp /fonts/inter-latin-var.woff2; do
+  h="$(curl -s -o /dev/null -D - "$base$path" | tr -d '\r')"
+  for want in 'x-content-type-options: nosniff' 'x-frame-options: sameorigin' 'referrer-policy: strict-origin-when-cross-origin'; do
+    printf '%s\n' "$h" | grep -qi "^$want\$" || fail "$base$path lacks '$want'"
+  done
+done
+
 # Directory URLs without the slash: relative Location, never the host or the port.
 redirects_to /fonts /fonts/
 redirects_to /images /images/
