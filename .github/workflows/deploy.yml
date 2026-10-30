@@ -48,23 +48,26 @@ jobs:
           version:         1.102.4
           sha256sum:       50748df1045e60b5b695f19f4c56b0da36c019948b440fb456b6584a50f0d8b9
 
+      - name: Wait for subnet routes
+        run: sleep 10
+
+      # Plain OpenSSH, so no third-party SSH binary gets the key. DEPLOY_KNOWN_HOSTS pins the box's host
+      # keys, and the step stops when it is not set.
       - name: Deploy via SSH over Tailscale
-        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1.2.5
-        with:
-          host:     ${{ secrets.DEPLOY_HOST }}
-          port:     ${{ secrets.DEPLOY_PORT }}
-          username: ${{ secrets.DEPLOY_USER }}
-          key:      ${{ secrets.DEPLOY_SSH_KEY }}
-          # pins the target's ECDSA host key (appleboy's client asks for ECDSA first)
-          fingerprint: ${{ secrets.DEPLOY_HOST_FINGERPRINT }}
-          # Generous (the action's default is 10m): a slow build on the box can take ~20 min, and a deploy cut off mid-swap leaves the app down.
-          command_timeout: 40m
-          script: |
-            set -euo pipefail
-            git config --global --add safe.directory /apps/martin-portfolio
-            cd /apps/martin-portfolio
-            git fetch origin
-            git reset --hard origin/master
-            docker compose build --no-cache
-            docker compose up -d
-            echo "Martin portfolio deploy complete"
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_PORT: ${{ secrets.DEPLOY_PORT }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+          DEPLOY_CMD: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          if [ -z "$DEPLOY_KNOWN_HOSTS" ]; then echo "::error::DEPLOY_KNOWN_HOSTS is not set"; exit 1; fi
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          timeout 2400 ssh -i ~/.ssh/deploy_key -p "$DEPLOY_PORT" \
+            -o StrictHostKeyChecking=yes -o BatchMode=yes -o ConnectTimeout=60 -o ServerAliveInterval=30 \
+            "$DEPLOY_USER@$DEPLOY_HOST" "$DEPLOY_CMD"
