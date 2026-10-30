@@ -30,10 +30,13 @@ for path in / /styles.css /script.js /robots.txt /favicon.svg /fonts/inter-latin
 done
 
 # Versioned assets, webp pictures included, get the long immutable cache; the HTML does not.
+# The headers are read whole first: with pipefail, grep -q quitting early can break tr's pipe and fail the check.
 for path in /styles.css /images/aurly-1.webp; do
-  curl -s -o /dev/null -D - "$base$path" | tr -d '\r' | grep -qi '^cache-control:.*immutable' || fail "$base$path is not served immutable"
+  h="$(curl -s -o /dev/null -D - "$base$path" | tr -d '\r')"
+  printf '%s\n' "$h" | grep -qi '^cache-control:.*immutable' || fail "$base$path is not served immutable"
 done
-if curl -s -o /dev/null -D - "$base/" | tr -d '\r' | grep -qi '^cache-control:.*immutable'; then fail "$base/ is served immutable"; fi
+h="$(curl -s -o /dev/null -D - "$base/" | tr -d '\r')"
+if printf '%s\n' "$h" | grep -qi '^cache-control:.*immutable'; then fail "$base/ is served immutable"; fi
 
 # The security headers reach the assets too, not only the HTML (an add_header in a location drops the server's).
 for path in / /styles.css /script.js /images/aurly-1.webp /fonts/inter-latin-var.woff2; do
