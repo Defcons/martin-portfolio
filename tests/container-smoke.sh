@@ -24,7 +24,7 @@ redirects_to() { # path expected-Location
   [ "$loc" = "$2" ] || fail "$base$1 redirects to '$loc', not '$2' (a Location with a host or ':$PORT' breaks behind the proxy)"
 }
 
-for path in / /styles.css /script.js /robots.txt /favicon.svg /fonts/inter-latin-var.woff2 /some/deep/route; do
+for path in / /privacy.html /styles.css /script.js /robots.txt /favicon.svg /fonts/inter-latin-var.woff2 /some/deep/route; do
   s="$(status "$path")"
   [ "$s" = 200 ] || fail "$base$path answers $s, not 200"
 done
@@ -39,12 +39,17 @@ h="$(curl -s -o /dev/null -D - "$base/" | tr -d '\r')"
 if printf '%s\n' "$h" | grep -qi '^cache-control:.*immutable'; then fail "$base/ is served immutable"; fi
 
 # The security headers reach the assets too, not only the HTML (an add_header in a location drops the server's).
-for path in / /styles.css /script.js /images/aurly-1.webp /fonts/inter-latin-var.woff2; do
+for path in / /privacy.html /styles.css /script.js /images/aurly-1.webp /fonts/inter-latin-var.woff2; do
   h="$(curl -s -o /dev/null -D - "$base$path" | tr -d '\r')"
   for want in 'x-content-type-options: nosniff' 'x-frame-options: sameorigin' 'referrer-policy: strict-origin-when-cross-origin'; do
     printf '%s\n' "$h" | grep -qi "^$want\$" || fail "$base$path lacks '$want'"
   done
 done
+
+# The privacy page says the visitor's address is in no log: the container keeps no access log, so an address NPM forwards
+# in X-Forwarded-For never reaches docker logs.
+curl -s -o /dev/null -H "X-Forwarded-For: 203.0.113.77" "$base/privacy.html"
+if $C logs 2>&1 | grep -q 203.0.113.77; then fail "the container log holds a forwarded visitor address"; fi
 
 # Directory URLs without the slash: relative Location, never the host or the port.
 redirects_to /fonts /fonts/
